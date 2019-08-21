@@ -17,6 +17,7 @@
 
     <v-content>
       <HelloWorld/>
+      <v-btn @click="guardar" block color="blue">Buttom</v-btn>
     </v-content>
   </v-app>
 </template>
@@ -32,5 +33,10 @@ export default {
   data: () => ({
     //
   }),
+  methods:{
+    guardar: function (){
+      console.log('Que onda perro')
+    }
+  }
 };
 </script>
