@@ -1,42 +1,31 @@
 <template>
   <v-app>
-    <v-app-bar app>
-      <v-toolbar-title class="headline text-uppercase">
-        <span>Vuetify</span>
-        <span class="font-weight-light">MATERIAL DESIGN</span>
-      </v-toolbar-title>
-      <v-spacer></v-spacer>
-      <v-btn
-        text
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-      >
-        <span class="mr-2">Latest Release</span>
+    <AppToolbar/>
+
+
+    <v-footer fixed class="justify-space-between" color="#FFD800"> 
+      <v-row justify="space-between" align="center">
+
+      <v-btn icon>
+          <v-icon>mdi-magnify</v-icon>
       </v-btn>
-    </v-app-bar>
+      </v-row>
+    </v-footer>
+
 
     <v-content>
-      <HelloWorld/>
-      <v-btn @click="guardar" block color="blue">Buttom</v-btn>
+
     </v-content>
   </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld';
+import AppToolbar from "@/components/AppToolbar.vue"
 
 export default {
   name: 'App',
   components: {
-    HelloWorld,
-  },
-  data: () => ({
-    //
-  }),
-  methods:{
-    guardar: function (){
-      console.log('Que onda perro')
-    }
+    AppToolbar
   }
 };
 </script>
