@@ -2,13 +2,12 @@ import Vue from 'vue'
 import App from './App.vue'
 import vuetify from './plugins/vuetify'
 import firebase from 'firebase'
-import Footer from './components/Footer'
 
 Vue.config.productionTip = false
 
 new Vue({
   vuetify,
-  render: h => h(Footer)
+  render: h => h(App)
 }).$mount('#app')
 
 var firebaseConfig = {
