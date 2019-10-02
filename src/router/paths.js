@@ -1,6 +1,7 @@
 export default [
     {
         path: '/',
-        redirect: '/inicio'
+        redirect: '/inicio',
+        component: Rubros
     },
 ]

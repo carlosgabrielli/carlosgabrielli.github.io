@@ -8,11 +8,11 @@
     grow
     color="teal"
   >
-    <v-btn>
+    <v-btn @click="$router.push('/')">
       <v-icon>mdi-home</v-icon>
     </v-btn>
 
-    <v-btn>
+    <v-btn  @click="$router.push('/rubros')">
       <v-icon>mdi-magnify</v-icon>
     </v-btn>
 
