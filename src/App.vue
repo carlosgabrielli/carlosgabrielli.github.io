@@ -1,13 +1,17 @@
 <template>
+
   <v-app>
         <v-app-bar absolute class="justify-space-between" color="#FFD800">
             <AppToolbar/>
+            
     </v-app-bar>
     <v-content>
+
     <Rubros/>
     </v-content>
     <Footer/>
   </v-app>
+  
 </template>
 
 <script>

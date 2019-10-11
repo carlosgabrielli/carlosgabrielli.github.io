@@ -1,4 +1,5 @@
 <template>
+
   <v-card
     class="mx-auto"
     max-width="200"
@@ -10,8 +11,9 @@
     >
       <v-card-title class="align-end fill-height">Restaurantes</v-card-title>
     </v-img>
-
+  <v-btn>login con google perro</v-btn>
   </v-card>
+    
 </template>
 <script>
 export default {
