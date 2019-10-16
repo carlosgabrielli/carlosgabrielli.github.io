@@ -1,8 +1,5 @@
 <template>
-  <v-card
-    class="mx-auto"
-    max-width="500"
-  >
+
     <v-container fluid>
       <v-row dense>
         <v-col
@@ -22,7 +19,7 @@
           </v-card>
         </v-col>
       </v-row>
-    </v-container>
+
     
     <h2 class="ps-3 pb-3">Promociones</h2>
 
@@ -132,7 +129,7 @@
       </v-list-item-content>
     </v-list-item>
   </v-card>
-  </v-card>
+    </v-container>
   
 </template>
 <script>
