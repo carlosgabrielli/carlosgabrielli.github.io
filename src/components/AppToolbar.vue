@@ -1,112 +1,69 @@
 <template>
-  <div>
-    <v-navigation-drawer
-      v-model="drawer"
-      app
-      left
-      color="#2A5D7C"
-      dark
+<div>
+  <v-dialog
+      v-model="dialog"
+  hide-overlay transition="dialog-bottom-transition"
+      fullscreen
     >
-    <v-card
-    class="mx-auto"
-    max-width="434"
-    tile
-    color="#033655"
-  >
-      <v-row
-        align="end"
-        class="fill-height"
-        no-gutters
-      >
-        <v-col
-          align-self="middle"
-          class="pa-0"
-          cols="2"
-        >
-        <v-avatar>
-           <v-icon>mdi-account-circle</v-icon>
-        </v-avatar>
-        </v-col>
-        <v-col class="pa-0" align-self="middle"
-           cols="10">
-          <v-list-item
-            color="#2A5D7C"
+      <v-card>
+        <v-toolbar dark color="primary">
+          <v-btn icon dark @click="dialog = false">
+            <v-icon>mdi-close</v-icon>
+          </v-btn>
+          <v-toolbar-title>Carlos Perdomo</v-toolbar-title>
+          <v-spacer></v-spacer>
+          <v-toolbar-items>
+          </v-toolbar-items>
+        </v-toolbar>
+        <v-card-title class="headline">Use Google's location service?</v-card-title>
+
+        <v-card-text>
+          Let Google help apps determine location. This means sending anonymous location data to Google, even when no apps are running.
+        </v-card-text>
+
+        <v-card-actions>
+          <v-spacer></v-spacer>
+
+          <v-btn
+            color="green darken-1"
+            text
+            @click="dialog = false"
           >
-            <v-list-item-content>
-              <v-list-item-title v-if="user" class="title">{{ user.displayName }}</v-list-item-title>
-            </v-list-item-content>
-          </v-list-item>
-        </v-col>
-      </v-row>
+            Disagree
+          </v-btn>
 
-  </v-card>
-      <v-list dense>
-        <v-list-item @click="$router.push('/')">
-          <v-list-item-action>
-            <v-icon>mdi-home</v-icon>
-          </v-list-item-action>
-          <v-list-item-content>
-            <v-list-item-title>Inicio</v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
-        <v-list-item @click="$router.push('/pelus')">
-          <v-list-item-action>
-            <v-icon>mdi-cards-heart</v-icon>
-          </v-list-item-action>
-          <v-list-item-content>
-            <v-list-item-title>Favoritos</v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
-        <v-list-item>
-          <v-list-item-action>
-            <v-icon>mdi-map-marker-radius</v-icon>
-          </v-list-item-action>
-          <v-list-item-content>
-            <v-list-item-title>Ver mapa</v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
-        <v-divider></v-divider>
-        <v-list-item>
-          <v-list-item-action>
-            <v-icon>mdi-settings</v-icon>
-          </v-list-item-action>
-          <v-list-item-content>
-            <v-list-item-title>Ajustes</v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>  
-        <v-list-item>
-          <v-list-item-action>
-            <v-icon>mdi-file-question-outline</v-icon>
-          </v-list-item-action>
-          <v-list-item-content>
-            <v-list-item-title>Preguntas Frecuentes</v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
-        <v-list-item @click="logout">
-          <v-list-item-action>
-            <v-icon>mdi-exit-to-app</v-icon>
-          </v-list-item-action>
-          <v-list-item-content>
-            <v-list-item-title>Salir</v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
-        
-      </v-list>
-    </v-navigation-drawer>
+          <v-btn
+            color="green darken-1"
+            text
+            @click="dialog = false"
+          >
+            Agree
+          </v-btn>
+        </v-card-actions>
+      </v-card>
+    </v-dialog>
 
-    <v-app-bar
-      app
-      color="#2A5D7C"
-      dark
-    >
-      <div></div>
-      <v-toolbar-title></v-toolbar-title>
-      <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
+    <v-app-bar absolute class="justify-space-between" color="primary">
+        <v-row justify="space-between" align="center">
+
+          
+
+        <v-btn icon @click.stop="dialog = true">
+            <v-icon>mdi-account-outline</v-icon>
+        </v-btn>
+
+         
+
+            <v-avatar>
+            <img src="@/assets/icon-definitivo.png" alt="">
+            </v-avatar>
+
+        <v-btn icon fab>
+            <v-icon>mdi-bell-outline</v-icon>
+        </v-btn>
+        </v-row>
     </v-app-bar>
-
-   
-  
-  </div>
+</div>
 </template>
 
 <script>
@@ -114,9 +71,11 @@
     props: {
       source: String,
     },
-    data: () => ({
-      drawer: null,
-    }),
+    data () {
+      return {
+        dialog: false,
+      }
+    },
     computed: {
       user () {
         return this.$store.getters['auth/getUser']
@@ -133,4 +92,5 @@
     }
     }
   }
+  
 </script>
