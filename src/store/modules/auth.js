@@ -1,14 +1,24 @@
 import firebase from 'firebase'
 
+<<<<<<< HEAD
 // Son todas las variables (atributos) del objeto auth
 const state = {
     token: null,
     user: null,
     login: false
+=======
+// son todas las variables (atributos) del objeto auth
+const state = {
+    tokenId: null,
+    userName: null,
+    userEmail: null,
+    login: false,
+>>>>>>> 8144f179c22b4746a773804167526bfd0d713082
 }
 
 // Todas las funciones que me muestren los datos que contienen los state
 const getters = {
+<<<<<<< HEAD
     getToken(state) {
         return state.token
     },
@@ -16,10 +26,23 @@ const getters = {
         return state.user
     },
     getLogin(state) {
+=======
+    getToken (state){
+        return state.tokenId
+    },
+    getUserName (state){
+        return state.userName
+    },
+    getUserEmail (state){
+        return state.userEmail
+    },
+    getlogin (state){
+>>>>>>> 8144f179c22b4746a773804167526bfd0d713082
         return state.login
     }
 }
 
+<<<<<<< HEAD
 // Funciones que me permiten alterar los state
 const actions = {
     login({ commit }) {
@@ -101,8 +124,29 @@ const mutations = {
 
 export default {
     namespaced: true,
+=======
+// Funciones qeu me permiten alterar los state
+const actions = {
+    login ({commit}) {
+        
+
+        }
+    }
+
+
+const mutations = {
+
+}
+
+export default{
+    namespace: true,
+>>>>>>> 8144f179c22b4746a773804167526bfd0d713082
     state,
     getters,
     actions,
     mutations
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 8144f179c22b4746a773804167526bfd0d713082

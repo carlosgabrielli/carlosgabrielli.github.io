@@ -1,4 +1,5 @@
 <template>
+<<<<<<< HEAD
 
     <v-container fluid>
       <v-row dense>
@@ -137,5 +138,15 @@ export default {
   name: 'Home',
   components: {
   }
+=======
+<div>
+  HOME 
+</div>
+</template>
+<script>
+export default {
+  name: 'Home'
+
+>>>>>>> 8144f179c22b4746a773804167526bfd0d713082
 };
 </script>
