@@ -1,31 +1,5 @@
 <template>
   <v-container fluid>
-    <v-row dense>
-      <v-col v-for="card in cards" :key="card.title" :cols="card.flex">
-        <v-card>
-          <v-img
-            :src="card.src"
-            class="white--text align-end"
-            gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
-            height="150px"
-          >
-            <v-card-title v-text="card.title"></v-card-title>
-          </v-img>
-        </v-card>
-      </v-col>
-    </v-row>
-
-    <h2 class="ps-3 pb-3">Promociones</h2>
-
-    <v-row align="center" justify="center">
-      <v-img
-        src="https://picsum.photos/id/11/500/300"
-        lazy-src="https://picsum.photos/id/11/10/6"
-        aspect-ratio="1"
-        max-width="330"
-        max-height="150"
-      ></v-img>
-    </v-row>
     <h2 class="ps-3 pb-0 pt-5 title">Restaurantes / Bares</h2>
     <p class="ps-3 pt-0">Los mas populares</p>
 

@@ -6,14 +6,16 @@
           <v-btn icon dark @click="dialog = false">
             <v-icon>mdi-close</v-icon>
           </v-btn>
-          <v-toolbar-title>Carlos Perdomo</v-toolbar-title>
+          <v-toolbar-title>Mi cuenta</v-toolbar-title>
           <v-spacer></v-spacer>
           <v-toolbar-items></v-toolbar-items>
         </v-toolbar>
-        <v-card-title class="headline">Use Google's location service?</v-card-title>
-
-        <v-card-text>Let Google help apps determine location. This means sending anonymous location data to Google, even when no apps are running.</v-card-text>
-
+        <v-card-title class="headline" v-if="user">{{ user.displayName }}</v-card-title>
+        <v-row justify="center">
+          <v-avatar class="profile" color="grey" size="120">
+            <v-img src="https://cdn.vuetifyjs.com/images/profiles/marcus.jpg"></v-img>
+          </v-avatar>
+        </v-row>
         <v-card-actions>
           <v-spacer></v-spacer>
 
