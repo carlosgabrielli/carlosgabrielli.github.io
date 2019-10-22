@@ -1,96 +1,76 @@
 <template>
-<div>
-  <v-dialog
-      v-model="dialog"
-  hide-overlay transition="dialog-bottom-transition"
-      fullscreen
-    >
+  <div>
+    <v-dialog v-model="dialog" hide-overlay transition="dialog-bottom-transition" fullscreen>
       <v-card>
         <v-toolbar dark color="primary">
           <v-btn icon dark @click="dialog = false">
             <v-icon>mdi-close</v-icon>
           </v-btn>
-          <v-toolbar-title>Carlos Perdomo</v-toolbar-title>
+          <v-toolbar-title>Mi cuenta</v-toolbar-title>
           <v-spacer></v-spacer>
-          <v-toolbar-items>
-          </v-toolbar-items>
+          <v-toolbar-items></v-toolbar-items>
         </v-toolbar>
-        <v-card-title class="headline">Use Google's location service?</v-card-title>
-
-        <v-card-text>
-          Let Google help apps determine location. This means sending anonymous location data to Google, even when no apps are running.
-        </v-card-text>
-
+        <v-card-title class="headline" v-if="user">{{ user.displayName }}</v-card-title>
+        <v-row justify="center">
+          <v-avatar class="profile" color="grey" size="120">
+            <v-img src="https://cdn.vuetifyjs.com/images/profiles/marcus.jpg"></v-img>
+          </v-avatar>
+        </v-row>
         <v-card-actions>
           <v-spacer></v-spacer>
 
-          <v-btn
-            color="green darken-1"
-            text
-            @click="dialog = false"
-          >
-            Disagree
-          </v-btn>
+          <v-btn color="green darken-1" text @click="dialog = false">Disagree</v-btn>
 
-          <v-btn
-            color="green darken-1"
-            text
-            @click="dialog = false"
-          >
-            Agree
-          </v-btn>
+          <v-btn color="green darken-1" text @click="dialog = false">Agree</v-btn>
         </v-card-actions>
       </v-card>
     </v-dialog>
 
     <v-app-bar absolute class="justify-space-between" color="primary">
-        <v-row justify="space-between" align="center">
-
-          
-
+      <v-row justify="space-between" align="center">
         <v-btn icon @click.stop="dialog = true">
-            <v-icon>mdi-account-outline</v-icon>
+          <v-icon>mdi-account-outline</v-icon>
         </v-btn>
 
-         
-
-            <v-avatar>
-            <img src="@/assets/icon-definitivo.png" alt="">
-            </v-avatar>
+        <v-avatar>
+          <img src="@/assets/icon-definitivo.png" alt />
+        </v-avatar>
 
         <v-btn icon fab>
-            <v-icon>mdi-bell-outline</v-icon>
+          <v-icon>mdi-bell-outline</v-icon>
         </v-btn>
-        </v-row>
+      </v-row>
     </v-app-bar>
-</div>
+  </div>
 </template>
 
 <script>
-  export default {
-    props: {
-      source: String,
-    },
-    data () {
-      return {
-        dialog: false,
-      }
-    },
-    computed: {
-      user () {
-        return this.$store.getters['auth/getUser']
-      }
-    },
-    methods: {
-    logout () {
-      this.$store.dispatch('auth/logout').then(result => {
-        this.$router.replace('/login')
-        console.log()
-    }, error => {
-      //cartel
-      })
+export default {
+  props: {
+    source: String
+  },
+  data() {
+    return {
+      dialog: false
+    };
+  },
+  computed: {
+    user() {
+      return this.$store.getters["auth/getUser"];
     }
+  },
+  methods: {
+    logout() {
+      this.$store.dispatch("auth/logout").then(
+        result => {
+          this.$router.replace("/login");
+          console.log();
+        },
+        error => {
+          //cartel
+        }
+      );
     }
   }
-  
+};
 </script>
