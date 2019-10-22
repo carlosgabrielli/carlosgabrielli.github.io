@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-<<<<<<< HEAD
 import Home from '@/views/Home'
 import Login from '@/views/Login'
 import Admin from '@/views/Admin'
@@ -31,24 +30,7 @@ export default new Router({
             meta: {
                 menu: false
             }
-=======
-import Home from '../views/Home'
-import Rubros from '../views/Rubros'
 
-Vue.use (Router)
-
-export default new Router({
-    routes: [
-        {
-            path: '/',
-            name: 'Home',
-            component: Home
-        },
-        {
-            path: '/rubros',
-            name: 'Rubros',
-            component: Rubros
->>>>>>> 8144f179c22b4746a773804167526bfd0d713082
         }
     ]
 })
