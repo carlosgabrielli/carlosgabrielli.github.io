@@ -4,20 +4,20 @@
      <v-content>
      <router-view/>
     </v-content>
-
-   
+   <Footer/>
   </v-app>
 </template>
 
 <script>
 
 import AppToolbar from './components/AppToolbar.vue';
-
+import Footer from './components/Footer.vue';
 
 export default {
   name: 'app',
   components: {
-    AppToolbar
+    AppToolbar,
+    Footer
   },
   data() {
     return {
