@@ -10,10 +10,11 @@
           <v-spacer></v-spacer>
           <v-toolbar-items></v-toolbar-items>
         </v-toolbar>
-        <v-card-title class="headline" v-if="user">{{ user.displayName }}</v-card-title>
+        <v-card-title v-if="user">{{ user.displayName }}</v-card-title>
+        <v-card-subtitle>{{user.email}}</v-card-subtitle>
         <v-row justify="center">
           <v-avatar class="profile" color="grey" size="120">
-            <v-img src="https://cdn.vuetifyjs.com/images/profiles/marcus.jpg"></v-img>
+            <v-img :src="user.photoURL" width="100"></v-img>
           </v-avatar>
         </v-row>
         <v-card-actions>
