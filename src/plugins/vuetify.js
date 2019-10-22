@@ -7,7 +7,6 @@ export default new Vuetify({
   icons: {
     iconfont: 'mdi',
   },
-<<<<<<< HEAD
   theme: {
     themes: {
       light: {
@@ -20,6 +19,4 @@ export default new Vuetify({
       },
     },
   },
-=======
->>>>>>> 8144f179c22b4746a773804167526bfd0d713082
 });

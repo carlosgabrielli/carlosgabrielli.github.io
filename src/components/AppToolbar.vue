@@ -1,5 +1,4 @@
 <template>
-<<<<<<< HEAD
 <div>
   <v-dialog
       v-model="dialog"
@@ -57,16 +56,6 @@
 
             <v-avatar>
             <img src="@/assets/icon-definitivo.png" alt="">
-=======
-    <v-app-bar absolute class="justify-space-between" color="#FFD800">
-        <v-row justify="space-between" align="center">
-        <v-btn icon>
-            <v-icon>mdi-account-outline</v-icon>
-        </v-btn>
-
-            <v-avatar>
-            <img src="@/assets/img/icon-definitivo.png" alt="">
->>>>>>> 8144f179c22b4746a773804167526bfd0d713082
             </v-avatar>
 
         <v-btn icon fab>
@@ -74,7 +63,6 @@
         </v-btn>
         </v-row>
     </v-app-bar>
-<<<<<<< HEAD
 </div>
 </template>
 
@@ -106,14 +94,3 @@
   }
   
 </script>
-=======
-
-</template>
-
-<script>
-export default {
-  name: 'AppToolbar'
-
-};
-</script>
->>>>>>> 8144f179c22b4746a773804167526bfd0d713082
