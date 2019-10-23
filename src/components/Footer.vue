@@ -1,5 +1,5 @@
 <template>
-  <v-footer fixed style="padding:0;">
+  <v-footer app fixed style="padding:0;">
     <v-bottom-navigation :value="activeBtn" grow color="teal">
       <v-btn @click="$router.push('/')">
         <v-icon>mdi-home-outline</v-icon>
