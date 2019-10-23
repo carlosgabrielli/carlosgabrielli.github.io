@@ -109,7 +109,7 @@
                 </v-col>
             </v-row>
             <v-row class="mb-10 mt-0">
-                <v-col>
+                <v-col class="p-0">
                     <v-text-field :rules="rules" class="pt-0 mt-0" label="$0"></v-text-field>
                 </v-col>
                 <v-col>
@@ -119,9 +119,10 @@
         <!--Boton confirmar-->
             <v-row>
                 <v-col>
-                    <v-btn class="mb-12 mt-0" block color="#FFB74F">Aplicar</v-btn>
+                    <v-btn block color="#FFB74F">Aplicar</v-btn>
                 </v-col>
             </v-row>
+            
     </v-container>
 </template>
 <
