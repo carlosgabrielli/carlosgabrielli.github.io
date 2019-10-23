@@ -2,7 +2,7 @@
   <v-container>
     <v-row>
       <v-col>
-        <v-slide-group class="mt-10">
+        <v-slide-group>
           <v-slide-item>
             <v-card class="mr-2" @click="toggle">
               <v-img src="../assets/img/restaurantes.jpg">
