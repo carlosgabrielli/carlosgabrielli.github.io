@@ -3,6 +3,8 @@ import Router from 'vue-router'
 import Home from '@/views/Home'
 import Login from '@/views/Login'
 import Admin from '@/views/Admin'
+import BaresRestaurantes from '@/views/BaresRestaurantes'
+import Filtros from '@/views/Filtros'
 
 Vue.use(Router)
 
@@ -30,7 +32,22 @@ export default new Router({
             meta: {
                 menu: false
             }
-
+        },
+        {
+            path: '/BaresRestaurantes',
+            name: 'BaresRestaurantes',
+            component: BaresRestaurantes,
+            meta: {
+                menu: false
+            }
+        },
+        {
+            path: '/Filtros',
+            name: 'Filtros',
+            component: Filtros,
+            meta: {
+                menu: false
+            }
         }
     ]
 })

@@ -8,7 +8,7 @@
       </v-toolbar>
       <v-card class="mx-auto box-shadow-none border-0" max-width="400">
         <div class="bg-primary white--text align-end border-radius-bx text-center">
-          <v-avatar class="profile" color="grey" size="100">
+          <v-avatar v-if="user" class="profile" color="grey" size="100">
             <v-img :src="user.photoURL" width="100"></v-img>
           </v-avatar>
           <v-card-title class="d-flex justify-center" v-if="user">{{ user.displayName }}</v-card-title>
