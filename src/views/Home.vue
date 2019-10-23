@@ -45,7 +45,9 @@
       <v-col>
         <v-card class="mb-4" max-width="380" outlined>
           <v-list-item three-line>
-            <v-list-item-avatar tile size="70" color="grey"></v-list-item-avatar>
+            <v-list-item-avatar tile size="70" color="grey lighten-5">
+              <v-img class="mr-2" src="../assets/img/LogoJohnny.png"></v-img>
+            </v-list-item-avatar>
             <v-btn icon class="btn-heart">
               <v-icon size="16">mdi-heart-outline</v-icon>
             </v-btn>
