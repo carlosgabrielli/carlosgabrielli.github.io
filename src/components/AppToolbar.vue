@@ -8,7 +8,7 @@
       </v-toolbar>
       <v-card class="mx-auto box-shadow-none border-0" max-width="400">
         <div class="bg-primary white--text align-end border-radius-bx text-center">
-          <v-avatar class="profile" color="grey" size="100">
+          <v-avatar v-if="user" class="profile" color="grey" size="100">
             <v-img :src="user.photoURL" width="100"></v-img>
           </v-avatar>
           <v-card-title class="d-flex justify-center" v-if="user">{{ user.displayName }}</v-card-title>
@@ -22,7 +22,7 @@
                   <v-text-field label="Nombre" outlined></v-text-field>
                   <v-text-field label="Apellido" outlined></v-text-field>
                   <div class="pb-5">
-                    <a href>Cambiar contraseña</a>
+                    <a href="" v-if="user" @click="logout" >Cerrar sesion</a>
                   </div>
                   <h3 class="border-top pt-5">Mis pedidos</h3>
                 </v-col>
