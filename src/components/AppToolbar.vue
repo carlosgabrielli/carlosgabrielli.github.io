@@ -18,22 +18,37 @@
             <v-container>
               <v-row>
                 <v-col cols="12" sm="6">
-                  <h3 class="mb-5">Mis datos</h3>
-                  <v-text-field label="Nombre" outlined></v-text-field>
-                  <v-text-field label="Apellido" outlined></v-text-field>
-                  <div class="pb-5">
-                    <a href>Cambiar contraseña</a>
-                  </div>
-                  <h3 class="border-top pt-5">Mis pedidos</h3>
+                  
+      <v-list two-line subheader flat> 
+      <v-subheader>MI CUENTA</v-subheader>
+    <v-list-item>
+      <v-list-item-group v-model="item">
+        <v-list-item-title>Editar perfil</v-list-item-title>
+                <v-list-item-title>Tarjetas</v-list-item-title>
+                        <v-list-item-title>Notificaciones</v-list-item-title>
+                                <v-list-item-title>Mis pedidos</v-list-item-title>
+
+
+
+      </v-list-item-group>
+    </v-list-item>
+
+     </v-list>
+
+    <v-list-item two-line>
+      <v-list-item-content>
+        <v-list-item-title>Two-line item</v-list-item-title>
+        <v-list-item-subtitle>Secondary text</v-list-item-subtitle>
+      </v-list-item-content>
+    </v-list-item>
+
+
                 </v-col>
               </v-row>
             </v-container>
           </v-form>
         </v-card-text>
-        <v-card-actions>
-          <v-btn color="orange" text>Share</v-btn>
-          <v-btn color="orange" text>Explore</v-btn>
-        </v-card-actions>
+
       </v-card>
     </v-dialog>
 
@@ -47,9 +62,19 @@
           <img src="@/assets/icon-definitivo.png" alt />
         </v-avatar>
 
+
         <v-btn icon fab>
-          <v-icon>mdi-bell-outline</v-icon>
+ <v-badge 
+         color="red"
+ left>
+      <template v-slot:badge>2</template>
+          <v-icon 
+          @mouseover="show = true"
+          @mouseout="show = false"
+          >mdi-bell-outline</v-icon>
+              </v-badge>
         </v-btn>
+
       </v-row>
     </v-app-bar>
   </div>
@@ -63,7 +88,12 @@ export default {
   data() {
     return {
       dialog: false
+
     };
+
+      return {
+        show: false,
+      }
   },
   computed: {
     user() {
