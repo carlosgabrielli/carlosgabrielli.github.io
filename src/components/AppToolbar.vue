@@ -1,10 +1,10 @@
 <template>
   <div>
-    <v-dialog v-model="dialog" hide-overlay transition="dialog-bottom-transition" fullscreen>
-      <v-btn icon dark @click="dialog = false" absolute fab small top left class="mt-6 w-0">
+    <!-- Dialog list -->
+    <v-dialog v-model="dialogList" hide-overlay transition="dialog-bottom-transition" fullscreen>
+      <v-btn icon dark @click="dialogList = false" absolute fab small top left class="mt-6 w-0">
         <v-icon>mdi-chevron-left</v-icon>
       </v-btn>
-
       <v-card class="mx-auto box-shadow-none border-0">
         <div class="bg-primary pt-4 white--text align-end border-radius-bx text-center">
           <v-avatar v-if="user" class="profile" color="grey" size="100">
@@ -16,7 +16,7 @@
           <v-list flat>
             <v-subheader>Mi cuenta</v-subheader>
             <v-list-item-group v-model="item" color="primary">
-              <v-list-item>
+              <v-list-item @click.stop="dialogUser = true">
                 <v-list-item-icon class="mr-2">
                   <v-icon>mdi-account-outline</v-icon>
                 </v-list-item-icon>
@@ -86,10 +86,44 @@
         </v-card-text>
       </v-card>
     </v-dialog>
-
+    <!-- Dialog user -->
+    <v-dialog v-model="dialogUser" hide-overlay transition="dialog-bottom-transition" fullscreen>
+      <v-btn icon dark @click="dialogUser = false" absolute fab small top left class="mt-6 w-0">
+        <v-icon>mdi-chevron-left</v-icon>
+      </v-btn>
+      <v-card class="mx-auto box-shadow-none border-0">
+        <div class="bg-primary pt-4 white--text align-end border-radius-bx text-center">
+          <v-avatar v-if="user" class="profile" color="grey" size="100">
+            <v-img :src="user.photoURL" width="100"></v-img>
+          </v-avatar>
+          <v-card-title class="d-flex justify-center" v-if="user">{{ user.displayName }}</v-card-title>
+        </div>
+        <v-card-text class="text--primary pa-0">
+          <v-list flat>
+            <v-subheader>Mi cuenta</v-subheader>
+            <v-list-item-group v-model="item" color="primary">
+              <v-list-item @click.stop="dialogUser = true">
+                <v-list-item-icon class="mr-2">
+                  <v-icon>mdi-account-outline</v-icon>
+                </v-list-item-icon>
+                <v-list-item-content>
+                  <v-list-item-title>Editar perfil</v-list-item-title>
+                </v-list-item-content>
+                <v-list-item-action>
+                  <v-btn icon>
+                    <v-icon color="grey lighten-1">mdi-chevron-right</v-icon>
+                  </v-btn>
+                </v-list-item-action>
+              </v-list-item>
+            </v-list-item-group>
+          </v-list>
+        </v-card-text>
+      </v-card>
+    </v-dialog>
+    <!-- App bar -->
     <v-app-bar app class="justify-space-between" color="primary">
       <v-row justify="space-between" align="center">
-        <v-btn icon @click.stop="dialog = true">
+        <v-btn icon @click.stop="dialogList = true">
           <v-icon>mdi-account-outline</v-icon>
         </v-btn>
 
@@ -115,7 +149,8 @@ export default {
   },
   data() {
     return {
-      dialog: false
+      dialogList: false,
+      dialogUser: false
     };
 
     return {
