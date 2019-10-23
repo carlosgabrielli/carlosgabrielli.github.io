@@ -16,7 +16,7 @@
             <v-row>
                 <v-col cols="11" sm="6">
                     <v-text-field
-                        v-model="message3"
+                        v-model="buscador"
                         filled
                         label="Buscar..."
                         clearable
@@ -24,6 +24,13 @@
                 </v-col>
                     <v-icon class="mb-5">mdi-playlist-edit</v-icon>
             </v-row>
+
+
+            <v-card-local>
+                    
+            </v-card-local>
+
+
         <!--Promociones-->
             <h2 class="title">Promociones</h2>
             <v-row>
@@ -46,30 +53,30 @@
                 <v-col>
                     <v-slide-group >
                         <v-slide-item>
-                            <v-card class="mr-2" @click="toggle" max-height="90" max-width="90">
-                            <v-img src="../assets/img/carnes.png" class="pl-8">
-                                <v-card-title class="black--text pl-1 " >Carnes</v-card-title>
+                            <v-card class="mr-2 p-0" @click="toggle" max-height="90" max-width="90">
+                            <v-img src="../assets/img/carnes.png">
+                                <v-card-title>Carnes</v-card-title>
                             </v-img>
                             </v-card>
                         </v-slide-item>
                         <v-slide-item>
                             <v-card class="mx-2" @click="toggle" max-height="90" max-width="90">
                             <v-img src="../assets/img/ensalada.png">
-                                <v-card-title class="black--text pt-1 pl-2 f-18">Ensaladas</v-card-title>
+                                <v-card-title>Ensaladas</v-card-title>
                             </v-img>
                             </v-card>
                         </v-slide-item>
                         <v-slide-item>
                             <v-card class="mx-2" @click="toggle" max-height="90" max-width="90">
                             <v-img src="../assets/img/empanada.png">
-                                <v-card-title class="black--text pt-1 pl-2 f-18">Empanadas</v-card-title>
+                                <v-card-title>Empanadas</v-card-title>
                             </v-img>
                             </v-card>
                         </v-slide-item>
                         <v-slide-item>
                             <v-card class="mx-2" @click="toggle" max-height="90" max-width="90">
                             <v-img src="../assets/img/hambur.png">
-                                <v-card-title class="black--text pt-1 pl-2 f-18">Hamburguesas</v-card-title>
+                                <v-card-title>Empanadas</v-card-title>
                             </v-img>
                             </v-card>
                         </v-slide-item>
@@ -154,6 +161,37 @@
 <script>
 export default {
   name: "BaresRestaurantes",
-  components: {}
+  components: {},
+  data() {
+      return {
+          resultados: [],
+          buscador: null
+      }
+  },
+  watch: {
+  	buscador (val) {
+       let valores = val.split(' ')       
+    	 this.resultados = this.locales.filter(function(item) {
+       		let busqueda = []
+       		let respuesta = null
+       		for(let res of valores) {
+             busqueda.push(item.Nombre.indexOf(res) > -1 || 
+       			item.Direccion.indexOf(res) > -1 ||
+       			item.Categoria.indexOf(res) > -1 )
+          }
+          
+          for(let i = 0; i < busqueda.length; i++) {
+          	if(i == 0) {
+            	respuesta = busqueda[i]
+            } else {
+            	respuesta = (respuesta && busqueda[i])
+            }
+          }
+          
+          
+          return respuesta
+       })
+    }
+  }
 };
 </script>

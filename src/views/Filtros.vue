@@ -13,31 +13,31 @@
                 </v-col>
                 <v-col>
                     <v-slide-group >
-                        <v-slide-item>
-                            <v-card class="mr-2" @click="toggle" max-height="90" max-width="90">
-                            <v-img src="../assets/img/carnes.png" class="pl-8">
-                                <v-card-title class="black--text pl-1 " >Carnes</v-card-title>
+                        <v-slide-item >
+                            <v-card class="mr-2 p-0 " @click="toggle" max-height="90" max-width="90">
+                            <v-img src="../assets/img/carnes.png">
+                                <v-card-title>Carnes</v-card-title>
                             </v-img>
                             </v-card>
                         </v-slide-item>
                         <v-slide-item>
                             <v-card class="mx-2" @click="toggle" max-height="90" max-width="90">
                             <v-img src="../assets/img/ensalada.png">
-                                <v-card-title class="black--text pt-1 pl-2 f-18">Ensaladas</v-card-title>
+                                <v-card-title>Ensaladas</v-card-title>
                             </v-img>
                             </v-card>
                         </v-slide-item>
                         <v-slide-item>
                             <v-card class="mx-2" @click="toggle" max-height="90" max-width="90">
                             <v-img src="../assets/img/empanada.png">
-                                <v-card-title class="black--text pt-1 pl-2 f-18">Empanadas</v-card-title>
+                                <v-card-title>Empanadas</v-card-title>
                             </v-img>
                             </v-card>
                         </v-slide-item>
                         <v-slide-item>
                             <v-card class="mx-2" @click="toggle" max-height="90" max-width="90">
                             <v-img src="../assets/img/hambur.png">
-                                <v-card-title class="black--text pt-1 pl-2 f-18">Hamburguesas</v-card-title>
+                                <v-card-title>Empanadas</v-card-title>
                             </v-img>
                             </v-card>
                         </v-slide-item>
@@ -51,17 +51,31 @@
                 </v-col>
             </v-row>
             <v-row>
-                <v-col cols="5" class="pb-0 pt-0">
-                    <v-checkbox v-model="checkbox1" :label="`Restaurantes`" color="#FFB74F">
-                    </v-checkbox>
-                    </v-col>
-                    <v-col cols="5" class="pb-0 pt-0">
-                    <v-checkbox v-model="checkbox2" :label="`Bares`" color="#FFB74F">
-                    </v-checkbox>
-                    </v-col>
-                    <v-col cols="5" class="pb-0 pt-0">
-                    <v-checkbox v-model="checkbox3" :label="`Cafeterias`" color="#FFB74F">
-                    </v-checkbox>
+                <v-col  cols="6">
+                    <v-btn-toggle
+                    outlined
+                    color="#FFB74F"
+                    multiple
+                    >
+                    <v-btn                    
+                     >Restaurantes</v-btn>
+                    </v-btn-toggle>
+                </v-col>
+                <v-col  cols="5" >
+                    <v-btn-toggle
+                    outlined
+                    color="#FFB74F"
+                    multiple>
+                        <v-btn>Bares</v-btn>
+                    </v-btn-toggle>
+                </v-col>
+                <v-col  cols="5">
+                    <v-btn-toggle
+                    outlined
+                    color="#FFB74F"
+                    multiple>
+                        <v-btn>Cafeterias</v-btn>
+                    </v-btn-toggle>
                 </v-col>
             </v-row>
         <!--Formas de pago-->
@@ -71,13 +85,21 @@
                 </v-col>
             </v-row>
             <v-row>
-                <v-col cols="7" class="pb-0 pt-0">
-                    <v-checkbox v-model="checkbox4" :label="`Pago con tarjeta`" color="#FFB74F">
-                    </v-checkbox>
+                <v-col  cols="7">
+                    <v-btn-toggle
+                    outlined
+                    color="#FFB74F"
+                    multiple>
+                        <v-btn>Tarjeta de credito</v-btn>
+                    </v-btn-toggle>
                 </v-col>
-                <v-col cols="5" class="pb-0 pt-0">
-                    <v-checkbox v-model="checkbo5" :label="`Efectivo`" color="#FFB74F">
-                    </v-checkbox>
+                <v-col  cols="5">
+                    <v-btn-toggle
+                    outlined
+                    color="#FFB74F"
+                    multiple>
+                        <v-btn>Efectivo</v-btn>
+                    </v-btn-toggle>
                 </v-col>
             </v-row>
         <!--Rango de precio-->
@@ -106,13 +128,13 @@
 <script>
 export default {
     data () {
-        
       return {
         checkbox1: false,
         checkbox2: false,
         checkbox3: false,
         checkbox4: false,
         checkbox5: false,
+        toggle_exclusive: [],
       }
     },
   name: "Filtros",

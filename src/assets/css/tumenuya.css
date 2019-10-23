@@ -1,0 +1,28 @@
+/* Botones filtros */
+
+.theme--light.v-btn-toggle:not(.v-btn-toggle--group) .v-btn.v-btn {
+    border-color: #FFB74F !important;
+}
+.theme--light.v-btn:not(.v-btn--flat):not(.v-btn--text):not(.v-btn--outlined) {
+    background-color: #f4f4f480;
+}
+
+.v-btn:not(.v-btn--text):not(.v-btn--outlined):hover:before {
+    opacity: 0;
+}
+
+.v-btn-toggle > .v-btn.v-btn--active {
+    color: #000;    
+    background-color: #FFB74F !important;
+}
+
+
+
+/* Texto dentro de card categorias */
+
+.v-card__text, .v-card__title {
+    padding: 0px;
+    font-size: 13px;
+    margin-top: 57px;
+    margin-left: 5px;
+}

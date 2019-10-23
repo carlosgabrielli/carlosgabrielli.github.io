@@ -5,6 +5,7 @@ import firebase from 'firebase'
 import router from './router'
 import { store } from './store/store'
 import  './assets/css/base.css'
+import  './assets/css/tumenuya.css'
 
 Vue.config.productionTip = false
 
