@@ -8,13 +8,13 @@
             </v-row>
         <!--Categorias-->
             <v-row>
-                <v-col>
+                <v-col class="pb-0">
                     <h2 class="title">Categorias</h2>
                 </v-col>
                 <v-col>
                     <v-slide-group >
-                        <v-slide-item >
-                            <v-card class="mr-2 p-0 " @click="toggle" max-height="90" max-width="90">
+                        <v-slide-item>
+                            <v-card class="mr-2 p-0" @click="toggle" max-height="90" max-width="90">
                             <v-img src="../assets/img/carnes.png">
                                 <v-card-title>Carnes</v-card-title>
                             </v-img>

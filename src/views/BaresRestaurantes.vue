@@ -43,7 +43,7 @@
             </v-row>
         <!--Categorias-->
             <v-row>
-                <v-col>
+                <v-col class="pb-0">
                     <h2 class="title">Categorias</h2>
                 </v-col>
                 <v-col>

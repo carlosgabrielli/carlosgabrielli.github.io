@@ -5,6 +5,7 @@ import Login from '@/views/Login'
 import Admin from '@/views/Admin'
 import BaresRestaurantes from '@/views/BaresRestaurantes'
 import Filtros from '@/views/Filtros'
+import Carta from '@/views/Carta'
 
 Vue.use(Router)
 
@@ -47,6 +48,14 @@ export default new Router({
             component: Filtros,
             meta: {
                 menu: false
+            }
+        },
+        {
+            path: '/Carta',
+            name: 'Carta',
+            component: Carta,
+            meta: {
+                menu: true
             }
         }
     ]
