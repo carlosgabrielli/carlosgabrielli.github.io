@@ -1,6 +1,6 @@
 <template>
   <div>
-    <!-- Dialog list -->
+    <!-- Dialog Mi cuenta -->
     <v-dialog v-model="dialogList" hide-overlay transition="dialog-bottom-transition" fullscreen>
       <v-card class="mx-auto box-shadow-none border-0">
         <v-toolbar dark color="primary" class="box-shadow-none">
@@ -8,15 +8,21 @@
             <v-icon>mdi-chevron-left</v-icon>
           </v-btn>
         </v-toolbar>
-        <div v-if="user" class="bg-primary mt-negative-40 white--text align-end border-radius-bx text-center">
+        <div
+          v-if="user"
+          class="bg-primary mt-negative-40 white--text align-end border-radius-bx text-center"
+        >
           <v-avatar v-if="user" class="profile" color="grey" size="100">
             <v-img :src="user.photoURL" width="100"></v-img>
           </v-avatar>
           <v-card-title class="d-flex justify-center" v-if="user">{{ user.displayName }}</v-card-title>
+          <v-card-subtitle v-if="user">{{ user.email }}</v-card-subtitle>
         </div>
         <v-card-text class="text--primary pa-0">
           <v-list flat>
-            <v-subheader>Mi cuenta</v-subheader>
+            <v-subheader>
+              <h3>Mi cuenta</h3>
+            </v-subheader>
             <v-list-item-group v-model="item" color="primary">
               <v-list-item @click.stop="dialogUser = true">
                 <v-list-item-icon class="mr-2">
@@ -44,7 +50,7 @@
                   </v-btn>
                 </v-list-item-action>
               </v-list-item>
-              <v-list-item>
+              <v-list-item @click.stop="dialogNotifications = true">
                 <v-list-item-icon class="mr-2">
                   <v-icon>mdi-bell-outline</v-icon>
                 </v-list-item-icon>
@@ -88,41 +94,141 @@
         </v-card-text>
       </v-card>
     </v-dialog>
-    <!-- Dialog user -->
+    <!-- Dialog Editar perfil -->
     <v-dialog v-model="dialogUser" hide-overlay transition="dialog-bottom-transition" fullscreen>
       <v-card class="mx-auto box-shadow-none border-0">
         <v-toolbar dark color="primary" class="box-shadow-none">
-          <v-btn icon dark @click="dialogList = false" absolute fab small top left class="mt-6 w-0">
+          <v-btn icon dark @click="dialogUser = false" absolute fab small top left class="mt-6 w-0">
             <v-icon>mdi-chevron-left</v-icon>
           </v-btn>
         </v-toolbar>
-        <div v-if="user" class="bg-primary mt-negative-40 white--text align-end border-radius-bx text-center">
+        <div
+          v-if="user"
+          class="bg-primary mt-negative-40 white--text align-end border-radius-bx text-center"
+        >
           <v-avatar v-if="user" class="profile" color="grey" size="100">
             <v-img :src="user.photoURL" width="100"></v-img>
           </v-avatar>
           <v-card-title class="d-flex justify-center" v-if="user">{{ user.displayName }}</v-card-title>
+          <v-card-subtitle v-if="user">{{ user.email }}</v-card-subtitle>
         </div>
         <v-card-text class="text--primary pa-0">
           <v-list flat>
-            <v-subheader>Mi cuenta</v-subheader>
-            <v-list-item-group v-model="item" color="primary">
-              <v-list-item @click.stop="dialogUser = true">
-                <v-list-item-icon class="mr-2">
-                  <v-icon>mdi-account-outline</v-icon>
-                </v-list-item-icon>
+            <v-subheader>
+              <h3>Mis datos</h3>
+            </v-subheader>
+            <v-col cols="12" sm="6">
+              <v-text-field value="Carlos" label="Nombre" outlined required></v-text-field>
+              <v-text-field value="Gabrielli" label="Apellido" outlined required></v-text-field>
+              <v-menu
+                ref="menu"
+                v-model="menu"
+                :close-on-content-click="false"
+                :return-value.sync="date"
+                transition="scale-transition"
+                offset-y
+                full-width
+                min-width="290px"
+              >
+                <template v-slot:activator="{ on }">
+                  <v-text-field
+                    class="datepicker"
+                    v-model="date"
+                    label="Fecha de nacimiento"
+                    outlined
+                    required
+                    readonly
+                    v-on="on"
+                  ></v-text-field>
+                </template>
+                <v-date-picker
+                  ref="picker"
+                  v-model="date"
+                  :max="new Date().toISOString().substr(0, 10)"
+                  min="1950-01-01"
+                  @change="save"
+                ></v-date-picker>
+              </v-menu>
+              <p>Género</p>
+              <v-radio-group v-model="radios" :mandatory="false">
+                <v-radio label="Masculino" value="radio-1"></v-radio>
+                <v-radio label="Femenino" value="radio-2"></v-radio>
+                <v-radio label="Otro" value="radio-3"></v-radio>
+              </v-radio-group>
+            </v-col>
+            <v-col cols="12" sm="6"></v-col>
+          </v-list>
+        </v-card-text>
+      </v-card>
+    </v-dialog>
+    <!-- Dialog Notificaciones -->
+    <v-dialog
+      v-model="dialogNotifications"
+      hide-overlay
+      transition="dialog-bottom-transition"
+      fullscreen
+    >
+      <v-card class="mx-auto box-shadow-none border-0">
+        <v-toolbar dark color="primary" class="box-shadow-none">
+          <v-btn
+            icon
+            dark
+            @click="dialogNotifications = false"
+            absolute
+            fab
+            small
+            top
+            left
+            class="mt-6 w-0"
+          >
+            <v-icon>mdi-chevron-left</v-icon>
+          </v-btn>
+        </v-toolbar>
+        <div
+          v-if="user"
+          class="bg-primary mt-negative-40 white--text align-end border-radius-bx text-center"
+        >
+          <v-avatar v-if="user" class="profile" color="grey" size="100">
+            <v-img :src="user.photoURL" width="100"></v-img>
+          </v-avatar>
+          <v-card-title class="d-flex justify-center" v-if="user">{{ user.displayName }}</v-card-title>
+          <v-card-subtitle v-if="user">{{ user.email }}</v-card-subtitle>
+        </div>
+        <v-card-text class="text--primary pa-0">
+          <v-list flat>
+            <v-subheader>
+              <h3>Notificaciones</h3>
+            </v-subheader>
+            <v-col class="px-4 pb-0">
+              <h3>Notificaciones en el celular</h3>
+            </v-col>
+            <v-list-item-group>
+              <v-list-item class="border-bottom px-0 mx-4">
                 <v-list-item-content>
-                  <v-list-item-title>Editar perfil</v-list-item-title>
+                  <v-list-item-title>Descuentos/Promociones</v-list-item-title>
                 </v-list-item-content>
                 <v-list-item-action>
                   <v-btn icon>
-                    <v-icon color="grey lighten-1">mdi-chevron-right</v-icon>
+                    <v-switch value="true"></v-switch>
+                  </v-btn>
+                </v-list-item-action>
+              </v-list-item>
+            </v-list-item-group>
+            <v-list-item-group>
+              <v-list-item>
+                <v-list-item-content>
+                  <v-list-item-title>Novedades</v-list-item-title>
+                </v-list-item-content>
+                <v-list-item-action>
+                  <v-btn icon>
+                    <v-switch value="true"></v-switch>
                   </v-btn>
                 </v-list-item-action>
               </v-list-item>
             </v-list-item-group>
           </v-list>
         </v-card-text>
-        </v-card>
+      </v-card>
     </v-dialog>
     <!-- App bar -->
     <v-app-bar app class="justify-space-between" color="primary">
@@ -154,12 +260,21 @@ export default {
   data() {
     return {
       dialogList: false,
-      dialogUser: false
+      dialogUser: false,
+      dialogNotifications: false,
+      date: new Date().toISOString().substr(0, 10),
+      menu: false,
+      radios: "radio-1"
     };
 
     return {
       show: false
     };
+  },
+  watch: {
+    menu(val) {
+      val && setTimeout(() => (this.$refs.picker.activePicker = "YEAR"));
+    }
   },
   computed: {
     user() {
@@ -167,6 +282,9 @@ export default {
     }
   },
   methods: {
+    save(date) {
+      this.$refs.menu.save(date);
+    },
     logout() {
       this.$store.dispatch("auth/logout").then(
         result => {

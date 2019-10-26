@@ -24,3 +24,11 @@
 .lista-locales.mb-4:last-child {
     margin-bottom: 0 !important;
 }
+/* Margin right 0 en la ultima card de promos principales */
+.promos-principales.mr-4:last-child {
+    margin-right: 0 !important;
+}
+/* Bug datepicker outline label */
+.v-input .v-label {
+    background-color: white;
+}

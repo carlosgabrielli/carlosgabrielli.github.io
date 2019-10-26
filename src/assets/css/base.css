@@ -8,6 +8,7 @@
 .border-radius-bx { border-bottom-right-radius: 25px; border-bottom-left-radius: 25px; }
 .border-0 { border-radius: 0 !important; }
 .border-top { border-top: 1px solid lightgrey; }
+.border-bottom { border-bottom: 1px solid lightgrey; }
 .border-radius-10 { border-radius:10px !important; }
 
 /* Box shadow */

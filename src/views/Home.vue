@@ -18,7 +18,7 @@
             </v-card>
           </v-slide-item>
           <v-slide-item>
-            <v-card class="mx-2 mb-4" @click="toggle">
+            <v-card class="ml-2 mb-4" @click="toggle">
               <v-img src="../assets/img/cafeterias.jpg">
                 <v-card-title class="white--text pt-1 pl-2 f-18">Cafeterias</v-card-title>
               </v-img>
