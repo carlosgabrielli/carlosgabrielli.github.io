@@ -19,6 +19,14 @@ export default new Router({
             }
         },
         {
+            path: '/',
+            name: 'Home',
+            component: Home,
+            meta: {
+                menu: true
+            }
+        },
+        {
             path: '/login',
             name: 'Login',
             component: Login,
