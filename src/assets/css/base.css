@@ -8,9 +8,11 @@
 .border-radius-bx { border-bottom-right-radius: 25px; border-bottom-left-radius: 25px; }
 .border-0 { border-radius: 0 !important; }
 .border-top { border-top: 1px solid lightgrey; }
+.border-radius-10 { border-radius:10px !important; }
 
 /* Box shadow */
 .box-shadow-none { box-shadow: none !important; }
+.shadow-sm { box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12) !important; }
 
 /* Colors */
 .bg-primary { background-color: #ffb74b !important }

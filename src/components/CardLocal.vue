@@ -1,8 +1,8 @@
 <template>
   <div v-if="locales">
-      <v-card v-for="local in locales" :key="local.Nombre" class="mb-4" max-width="380" outlined>
+      <v-card v-for="local in locales" :key="local.Nombre" class="lista-locales mb-4" outlined>
         <v-list-item three-line>
-          <v-list-item-avatar tile size="70" color="grey lighten-5">
+          <v-list-item-avatar tile size="70" color="grey lighten-3 shadow-sm border-radius-10">
             <v-img class="mr-2" :src="local.Logo"></v-img>
           </v-list-item-avatar>
           <v-btn icon class="btn-heart">

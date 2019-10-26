@@ -10,7 +10,7 @@
       </v-btn>
 
       <v-btn>
-        <v-icon>mdi-account-outline</v-icon>
+        <v-icon>mdi-heart-outline</v-icon>
       </v-btn>
     </v-bottom-navigation>
   </v-footer>

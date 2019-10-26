@@ -47,32 +47,32 @@
                     <h2 class="title">Categorias</h2>
                 </v-col>
                 <v-col>
-                    <v-slide-group >
+                    <v-slide-group>
                         <v-slide-item>
-                            <v-card class="mr-2 p-0" @click="toggle" max-height="90" max-width="90">
+                            <v-card class="mr-2 p-0" @click="toggle" height="100" width="100">
                             <v-img src="../assets/img/carnes.png">
-                                <v-card-title>Carnes</v-card-title>
+                                <v-card-title class="title-categorias">Carnes</v-card-title>
                             </v-img>
                             </v-card>
                         </v-slide-item>
                         <v-slide-item>
-                            <v-card class="mx-2" @click="toggle" max-height="90" max-width="90">
+                            <v-card class="mx-2" @click="toggle" height="100" width="100">
                             <v-img src="../assets/img/ensalada.png">
-                                <v-card-title>Ensaladas</v-card-title>
+                                <v-card-title class="title-categorias">Ensaladas</v-card-title>
                             </v-img>
                             </v-card>
                         </v-slide-item>
                         <v-slide-item>
-                            <v-card class="mx-2" @click="toggle" max-height="90" max-width="90">
+                            <v-card class="mx-2" @click="toggle" height="100" width="100">
                             <v-img src="../assets/img/empanada.png">
-                                <v-card-title>Empanadas</v-card-title>
+                                <v-card-title class="title-categorias">Empanadas</v-card-title>
                             </v-img>
                             </v-card>
                         </v-slide-item>
                         <v-slide-item>
-                            <v-card class="mx-2" @click="toggle" max-height="90" max-width="90">
+                            <v-card class="mx-2" @click="toggle" height="100" width="100">
                             <v-img src="../assets/img/hambur.png">
-                                <v-card-title>Empanadas</v-card-title>
+                                <v-card-title class="title-categorias">Hamburguesas</v-card-title>
                             </v-img>
                             </v-card>
                         </v-slide-item>

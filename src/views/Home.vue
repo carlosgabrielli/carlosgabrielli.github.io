@@ -4,21 +4,21 @@
       <v-col>
         <v-slide-group>
           <v-slide-item>
-            <v-card class="mr-2" @click="toggle">
+            <v-card class="mr-2 mb-4" @click="toggle">
               <v-img src="../assets/img/restaurantes.jpg">
                 <v-card-title class="white--text pt-1 pl-1 f-18">Restaurantes</v-card-title>
               </v-img>
             </v-card>
           </v-slide-item>
           <v-slide-item>
-            <v-card class="mx-2" @click="toggle">
+            <v-card class="mx-2 mb-4" @click="toggle">
               <v-img src="../assets/img/bares.jpg">
                 <v-card-title class="white--text pt-1 pl-2 f-18">Bares</v-card-title>
               </v-img>
             </v-card>
           </v-slide-item>
           <v-slide-item>
-            <v-card class="mx-2" @click="toggle">
+            <v-card class="mx-2 mb-4" @click="toggle">
               <v-img src="../assets/img/cafeterias.jpg">
                 <v-card-title class="white--text pt-1 pl-2 f-18">Cafeterias</v-card-title>
               </v-img>
@@ -30,14 +30,7 @@
     <h2 class="title">Promociones</h2>
     <v-row>
       <v-col>
-        <v-slide-group>
-          <v-slide-item>
-            <v-img class="mr-2" src="../assets/img/promoHamburguesa.jpg"></v-img>
-          </v-slide-item>
-          <v-slide-item>
-            <v-img class="ml-2" src="../assets/img/promoCerveza.jpg"></v-img>
-          </v-slide-item>
-        </v-slide-group>
+        <promos-principales/>
       </v-col>
     </v-row>
 
@@ -51,11 +44,13 @@
 <script>
 
 import CardLocal from '@/components/CardLocal'
+import PromosPrincipales from '@/components/PromosPrincipales'
 
 export default {
   name: "Home",
   components: {
-    CardLocal
+    CardLocal,
+    PromosPrincipales
   }
 };
 </script>

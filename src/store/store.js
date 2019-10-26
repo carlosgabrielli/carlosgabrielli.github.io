@@ -4,6 +4,7 @@ import VuexPersist from 'vuex-persist'
 
 import auth from './modules/auth'
 import locales from './modules/locales'
+import promos from './modules/promos'
 
 Vue.use(Vuex)
 
@@ -16,6 +17,7 @@ export const store = new Vuex.Store({
     plugins: [vuexPersist.plugin],
     modules: {
         auth,
-        locales
+        locales,
+        promos
     }
 })
