@@ -73,7 +73,7 @@
                   <v-icon>mdi-logout-variant</v-icon>
                 </v-list-item-icon>
                 <v-list-item-content>
-                  <v-list-item-title>Cerrar sesion</v-list-item-title>
+                  <v-list-item-title @click="logout">Cerrar sesion</v-list-item-title>
                 </v-list-item-content>
                 <v-list-item-action>
                   <v-btn icon>
