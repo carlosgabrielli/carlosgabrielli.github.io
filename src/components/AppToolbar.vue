@@ -2,11 +2,13 @@
   <div>
     <!-- Dialog list -->
     <v-dialog v-model="dialogList" hide-overlay transition="dialog-bottom-transition" fullscreen>
-      <v-btn icon dark @click="dialogList = false" absolute fab small top left class="mt-6 w-0">
-        <v-icon>mdi-chevron-left</v-icon>
-      </v-btn>
       <v-card class="mx-auto box-shadow-none border-0">
-        <div class="bg-primary pt-4 white--text align-end border-radius-bx text-center">
+        <v-toolbar dark color="primary" class="box-shadow-none">
+          <v-btn icon dark @click="dialogList = false" absolute fab small top left class="mt-6 w-0">
+            <v-icon>mdi-chevron-left</v-icon>
+          </v-btn>
+        </v-toolbar>
+        <div v-if="user" class="bg-primary mt-negative-40 white--text align-end border-radius-bx text-center">
           <v-avatar v-if="user" class="profile" color="grey" size="100">
             <v-img :src="user.photoURL" width="100"></v-img>
           </v-avatar>
@@ -88,11 +90,13 @@
     </v-dialog>
     <!-- Dialog user -->
     <v-dialog v-model="dialogUser" hide-overlay transition="dialog-bottom-transition" fullscreen>
-      <v-btn icon dark @click="dialogUser = false" absolute fab small top left class="mt-6 w-0">
-        <v-icon>mdi-chevron-left</v-icon>
-      </v-btn>
       <v-card class="mx-auto box-shadow-none border-0">
-        <div class="bg-primary pt-4 white--text align-end border-radius-bx text-center">
+        <v-toolbar dark color="primary" class="box-shadow-none">
+          <v-btn icon dark @click="dialogList = false" absolute fab small top left class="mt-6 w-0">
+            <v-icon>mdi-chevron-left</v-icon>
+          </v-btn>
+        </v-toolbar>
+        <div v-if="user" class="bg-primary mt-negative-40 white--text align-end border-radius-bx text-center">
           <v-avatar v-if="user" class="profile" color="grey" size="100">
             <v-img :src="user.photoURL" width="100"></v-img>
           </v-avatar>
@@ -118,7 +122,7 @@
             </v-list-item-group>
           </v-list>
         </v-card-text>
-      </v-card>
+        </v-card>
     </v-dialog>
     <!-- App bar -->
     <v-app-bar app class="justify-space-between" color="primary">

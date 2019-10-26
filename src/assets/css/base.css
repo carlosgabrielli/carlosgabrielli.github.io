@@ -16,3 +16,8 @@
 
 /* Colors */
 .bg-primary { background-color: #ffb74b !important }
+
+/* Margins */
+.mt-negative-40 {
+    margin-top: -40px;
+}
