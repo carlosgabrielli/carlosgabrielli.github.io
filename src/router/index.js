@@ -6,6 +6,7 @@ import Admin from '@/views/Admin'
 import BaresRestaurantes from '@/views/BaresRestaurantes'
 import Filtros from '@/views/Filtros'
 import Carta from '@/views/Carta'
+import Producto from '@/views/Producto'
 
 Vue.use(Router)
 
@@ -47,7 +48,7 @@ export default new Router({
             name: 'BaresRestaurantes',
             component: BaresRestaurantes,
             meta: {
-                menu: false
+                menu: true
             }
         },
         {
@@ -62,6 +63,14 @@ export default new Router({
             path: '/Carta',
             name: 'Carta',
             component: Carta,
+            meta: {
+                menu: true
+            }
+        },
+        {
+            path: '/Producto',
+            name: 'Producto',
+            component: Producto,
             meta: {
                 menu: true
             }

@@ -43,114 +43,14 @@
             </v-row>
         <!--Categorias-->
             <v-row>
-                <v-col class="pb-0">
-                    <h2 class="title">Categorias</h2>
-                </v-col>
                 <v-col>
-                    <v-slide-group>
-                        <v-slide-item>
-                            <v-card class="mr-2 p-0" @click="toggle" height="100" width="100">
-                            <v-img src="../assets/img/Carnes.png">
-                                <v-card-title class="title-categorias">Carnes</v-card-title>
-                            </v-img>
-                            </v-card>
-                        </v-slide-item>
-                        <v-slide-item>
-                            <v-card class="mx-2" @click="toggle" height="100" width="100">
-                            <v-img src="../assets/img/Ensaladas.png">
-                                <v-card-title class="title-categorias">Ensaladas</v-card-title>
-                            </v-img>
-                            </v-card>
-                        </v-slide-item>
-                        <v-slide-item>
-                            <v-card class="mx-2" @click="toggle" height="100" width="100">
-                            <v-img src="../assets/img/Empanadas.png">
-                                <v-card-title class="title-categorias">Empanadas</v-card-title>
-                            </v-img>
-                            </v-card>
-                        </v-slide-item>
-                        <v-slide-item>
-                            <v-card class="mx-2" @click="toggle" height="100" width="100">
-                            <v-img src="../assets/img/Hamburguesa.png">
-                                <v-card-title class="title-categorias">Hamburguesas</v-card-title>
-                            </v-img>
-                            </v-card>
-                        </v-slide-item>
-                    </v-slide-group>
+                    <categorias></categorias>
                 </v-col>
             </v-row>
         <!--Cartas-->
             <v-row>
                 <v-col>
-                    <v-card class="mb-4" max-width="380" outlined>
-                    <v-list-item three-line>
-                        <v-list-item-avatar tile size="70" color="grey lighten-5">
-                            <v-img class="mr-2" src="../assets/img/LogoJohnny.png"></v-img>
-                        </v-list-item-avatar>
-                        <v-btn icon class="btn-heart">
-                        <v-icon size="16">mdi-heart-outline</v-icon>
-                        </v-btn>
-                        <v-list-item-content class="mr-4 ml-n2">
-                        <v-list-item-title
-                            class="headline mb-1 subtitle-1 font-weight-bold"
-                        >El club de la milanesa</v-list-item-title>
-                        <v-list-item-subtitle class="subtitle-2 font-weight-regular">Ensaladas, Hamburguesas</v-list-item-subtitle>
-                        <v-card-subtitle class="caption pa-0">Av. Hipolito Yrigoyen 320 - 2km</v-card-subtitle>
-                        </v-list-item-content>
-                    </v-list-item>
-                    </v-card>
-                </v-col>
-                <v-col>
-                    <v-card class="mb-4" max-width="380" outlined>
-                        <v-list-item three-line>
-                            <v-list-item-avatar tile size="70" color="grey"></v-list-item-avatar>
-                                <v-btn icon class="btn-heart">
-                                    <v-icon size="16">mdi-heart-outline</v-icon>
-                                </v-btn>
-                            <v-list-item-content class="mr-4 ml-n2">
-                            <v-list-item-title
-                                class="headline mb-1 subtitle-1 font-weight-bold"
-                            >El club de la milanesa</v-list-item-title>
-                            <v-list-item-subtitle class="subtitle-2 font-weight-regular">Ensaladas, Hamburguesas</v-list-item-subtitle>
-                            <v-card-subtitle class="caption pa-0">Av. Hipolito Yrigoyen 320 - 2km</v-card-subtitle>
-                            </v-list-item-content>
-                        </v-list-item>
-                    </v-card>
-                </v-col>
-                <v-col>
-                    <v-card class="mb-4" max-width="380" outlined>
-                        <v-list-item three-line>
-                            <v-list-item-avatar tile size="70" color="grey"></v-list-item-avatar>
-                            <v-btn icon class="btn-heart">
-                                <v-icon size="16">mdi-heart-outline</v-icon>
-                            </v-btn>
-                            <v-list-item-content class="mr-4 ml-n2">
-                            <v-list-item-title
-                                class="headline mb-1 subtitle-1 font-weight-bold"
-                            >El club de la milanesa
-                            </v-list-item-title>
-                            <v-list-item-subtitle class="subtitle-2 font-weight-regular">Ensaladas, Hamburguesas</v-list-item-subtitle>
-                            <v-card-subtitle class="caption pa-0">Av. Hipolito Yrigoyen 320 - 2km</v-card-subtitle>
-                            </v-list-item-content>
-                        </v-list-item>
-                    </v-card>
-                </v-col>
-                <v-col>
-                    <v-card class="mb-4" max-width="380" outlined>
-                        <v-list-item three-line>
-                            <v-list-item-avatar tile size="70" color="grey"></v-list-item-avatar>
-                                <v-btn icon class="btn-heart">
-                                    <v-icon size="16">mdi-heart-outline</v-icon>
-                                </v-btn>
-                            <v-list-item-content class="mr-4 ml-n2">
-                            <v-list-item-title
-                                class="headline mb-1 subtitle-1 font-weight-bold"
-                            >El club de la milanesa</v-list-item-title>
-                            <v-list-item-subtitle class="subtitle-2 font-weight-regular">Ensaladas, Hamburguesas</v-list-item-subtitle>
-                            <v-card-subtitle class="caption pa-0">Av. Hipolito Yrigoyen 320 - 2km</v-card-subtitle>
-                            </v-list-item-content>
-                        </v-list-item>
-                    </v-card>
+                    <CardLocal></CardLocal>
                 </v-col>
             </v-row>
     </v-container>
@@ -160,9 +60,15 @@
 
 
 <script>
+import Categorias from '@/components/Categorias'
+import CardLocal from '@/components/CardLocal'
+
 export default {
   name: "BaresRestaurantes",
-  components: {},
+  components: {
+      Categorias,
+      CardLocal
+  },
   data() {
       return {
           resultados: [],
@@ -188,8 +94,6 @@ export default {
             	respuesta = (respuesta && busqueda[i])
             }
           }
-          
-          
           return respuesta
        })
     }

@@ -8,40 +8,8 @@
             </v-row>
         <!--Categorias-->
             <v-row>
-                <v-col class="pb-0">
-                    <h2 class="title">Categorias</h2>
-                </v-col>
                 <v-col>
-                    <v-slide-group >
-                        <v-slide-item>
-                            <v-card class="mr-2 p-0" @click="toggle" max-height="90" max-width="90">
-                            <v-img src="../assets/img/Carnes.png">
-                                <v-card-title>Carnes</v-card-title>
-                            </v-img>
-                            </v-card>
-                        </v-slide-item>
-                        <v-slide-item>
-                            <v-card class="mx-2" @click="toggle" max-height="90" max-width="90">
-                            <v-img src="../assets/img/Ensaladas.png">
-                                <v-card-title>Ensaladas</v-card-title>
-                            </v-img>
-                            </v-card>
-                        </v-slide-item>
-                        <v-slide-item>
-                            <v-card class="mx-2" @click="toggle" max-height="90" max-width="90">
-                            <v-img src="../assets/img/Empanadas.png">
-                                <v-card-title>Empanadas</v-card-title>
-                            </v-img>
-                            </v-card>
-                        </v-slide-item>
-                        <v-slide-item>
-                            <v-card class="mx-2" @click="toggle" max-height="90" max-width="90">
-                            <v-img src="../assets/img/Hamburguesa.png">
-                                <v-card-title>Empanadas</v-card-title>
-                            </v-img>
-                            </v-card>
-                        </v-slide-item>
-                    </v-slide-group>
+                    <categorias></categorias>
                 </v-col>
             </v-row>
         <!--Filtro Lugar-->
@@ -127,6 +95,8 @@
 </template>
 <
 <script>
+import Categorias from '@/components/Categorias'
+
 export default {
     data () {
       return {
@@ -139,6 +109,8 @@ export default {
       }
     },
   name: "Filtros",
-  components: {}
+  components: {
+      Categorias
+  }
 };
 </script>

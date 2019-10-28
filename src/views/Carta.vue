@@ -15,7 +15,7 @@
                 <v-icon color="#fff">mdi-share-variant</v-icon>
               </v-btn>
             </v-card-actions>
-            <v-col class="py-0">
+            <v-col class="py-0 pt-3">
               <v-list-item-avatar tile size="70" color="grey lighten-3 shadow-xs border-radius-10">
                 <v-img class="mr-2" src="../assets/img/LogoJohnny.png"></v-img>
               </v-list-item-avatar>
@@ -31,7 +31,11 @@
       </v-col>
     </v-row>
     <!--Categorias-->
-    <categorias></categorias>
+    <v-row>
+      <v-col>
+        <categorias></categorias>
+      </v-col>
+    </v-row>
     <!--Productos-->
     <v-row>
       <v-col class="pt-1">

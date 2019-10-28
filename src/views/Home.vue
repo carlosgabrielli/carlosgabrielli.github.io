@@ -1,21 +1,24 @@
 <template>
   <v-container>
-    <v-row>
-      <v-col>
-        <slider-locales></slider-locales>
-      </v-col>
-    </v-row>
-    <h2 class="title">Promociones</h2>
-    <v-row>
-      <v-col>
-        <promos-principales/>
-      </v-col>
-    </v-row>
-    <v-row>
-      <v-col>
-        <card-local/>
-      </v-col>
-    </v-row>
+    <!--Slider-->
+      <v-row>
+        <v-col>
+          <slider-locales></slider-locales>
+        </v-col>
+      </v-row>
+    <!--Promociones-->
+      <h2 class="title">Promociones</h2>
+      <v-row>
+        <v-col>
+          <promos-principales/>
+        </v-col>
+      </v-row>
+    <!--Locales-->
+      <v-row>
+        <v-col>
+          <card-local/>
+        </v-col>
+      </v-row>
   </v-container>
 </template>
 <script>
