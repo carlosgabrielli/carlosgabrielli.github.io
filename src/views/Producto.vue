@@ -55,9 +55,9 @@
             <v-col class="pt-0 pb-0" >
                 <v-checkbox :label="`Salsa de tomate`" class="mt-1" ></v-checkbox>
                 <v-divider></v-divider>
-                <v-checkbox :label="`Queso`" class="mt-1" ></v-checkbox>
+                <v-checkbox :label="`Queso`" class="mt-4" ></v-checkbox>
                 <v-divider></v-divider>
-                <v-checkbox :label="`Extra cheddar`" class="mt-1"></v-checkbox>
+                <v-checkbox :label="`Extra cheddar`" class="mt-4"></v-checkbox>
                 <v-divider></v-divider>
                 
             </v-col>
