@@ -23,7 +23,7 @@
             <v-subheader>
               <h3>Mi cuenta</h3>
             </v-subheader>
-            <v-list-item-group v-model="item" color="primary">
+            <v-list-item-group color="primary">
               <v-list-item @click.stop="dialogUser = true">
                 <v-list-item-icon class="mr-2">
                   <v-icon>mdi-account-outline</v-icon>
@@ -215,6 +215,45 @@
               </v-list-item>
             </v-list-item-group>
             <v-list-item-group>
+              <v-list-item class="border-bottom px-0 mx-4">
+                <v-list-item-content>
+                  <v-list-item-title>Novedades</v-list-item-title>
+                </v-list-item-content>
+                <v-list-item-action>
+                  <v-btn icon>
+                    <v-switch value="true"></v-switch>
+                  </v-btn>
+                </v-list-item-action>
+              </v-list-item>
+            </v-list-item-group>
+            <v-col class="px-4 pb-0 mt-5">
+              <h3>Notificaciones en el email</h3>
+            </v-col>
+            <v-list-item-group>
+              <v-list-item class="border-bottom px-0 mx-4">
+                <v-list-item-content>
+                  <v-list-item-title>Resumen de pedido</v-list-item-title>
+                </v-list-item-content>
+                <v-list-item-action>
+                  <v-btn icon>
+                    <v-switch value="true"></v-switch>
+                  </v-btn>
+                </v-list-item-action>
+              </v-list-item>
+            </v-list-item-group>
+            <v-list-item-group>
+              <v-list-item class="border-bottom px-0 mx-4">
+                <v-list-item-content>
+                  <v-list-item-title>Descuentos/Promociones</v-list-item-title>
+                </v-list-item-content>
+                <v-list-item-action>
+                  <v-btn icon>
+                    <v-switch value="true"></v-switch>
+                  </v-btn>
+                </v-list-item-action>
+              </v-list-item>
+            </v-list-item-group>
+            <v-list-item-group>
               <v-list-item>
                 <v-list-item-content>
                   <v-list-item-title>Novedades</v-list-item-title>
@@ -231,7 +270,7 @@
       </v-card>
     </v-dialog>
     <!-- App bar -->
-    <v-app-bar app class="justify-space-between" color="primary">
+    <v-app-bar app class="justify-space-between border-radius-bx" color="primary">
       <v-row justify="space-between" align="center">
         <v-btn icon @click.stop="dialogList = true">
           <v-icon>mdi-account-outline</v-icon>

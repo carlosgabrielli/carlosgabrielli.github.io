@@ -25,10 +25,25 @@
     margin-bottom: 0 !important;
 }
 /* Margin right 0 en la ultima card de promos principales */
+.promos-principales.mr-4:first-child {
+    margin-left: 12px !important;
+}
 .promos-principales.mr-4:last-child {
-    margin-right: 0 !important;
+    margin-right: 12px !important;
 }
 /* Bug datepicker outline label */
 .v-input .v-label {
     background-color: white;
+}
+
+/* Div de categorías con borders redondeados encima de foto del local */
+.category-overlay {
+    background: #fafafa;
+    margin-top: -74px;
+}
+
+/* Gradient negro en la imagen principal de la carta */
+.gradient-carta {
+    height: 100%;
+    background: linear-gradient(180deg, #00000000 0%, #000000 40%);
 }

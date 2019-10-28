@@ -1,8 +1,8 @@
 <template>
   <div v-if="promos">
-    <v-slide-group multiple>
+    <v-slide-group class="mx-n3">
       <v-slide-item v-for="promo in promos" :key="promo.Nombre">
-        <v-card class="promos-principales mr-4 mb-4 border-radius-10" height width="317" @click="toggle">
+        <v-card class="promos-principales mr-4 mb-4 border-radius-10 shadow-md" height width="317">
           <v-img :src="promo.Foto"></v-img>
         </v-card>
       </v-slide-item>
