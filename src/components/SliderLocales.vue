@@ -1,7 +1,7 @@
 <template>
   <div v-if="sliderlocales">
     <v-slide-group class="mx-n3">
-      <v-slide-item v-for="sliderlocal in sliderlocales" :key="sliderlocal.Local">
+      <v-slide-item v-for="sliderlocal in sliderlocales" :key="sliderlocal.Tipo">
         <v-card class="mr-2 ml-3 mb-4 shadow-md">
           <v-img :src="sliderlocal.Foto">
             <v-card-title class="white--text pt-1 pl-1 f-18">{{ sliderlocal.Tipo }}</v-card-title>

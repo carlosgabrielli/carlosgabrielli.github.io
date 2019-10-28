@@ -6,6 +6,7 @@ import auth from './modules/auth'
 import locales from './modules/locales'
 import promos from './modules/promos'
 import sliderlocales from './modules/sliderlocales'
+import categorias from './modules/categorias'
 
 Vue.use(Vuex)
 
@@ -20,6 +21,7 @@ export const store = new Vuex.Store({
         auth,
         locales,
         promos,
-        sliderlocales
+        sliderlocales,
+        categorias
     }
 })

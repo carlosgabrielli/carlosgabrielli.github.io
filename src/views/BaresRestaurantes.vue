@@ -50,28 +50,28 @@
                     <v-slide-group>
                         <v-slide-item>
                             <v-card class="mr-2 p-0" @click="toggle" height="100" width="100">
-                            <v-img src="../assets/img/carnes.png">
+                            <v-img src="../assets/img/Carnes.png">
                                 <v-card-title class="title-categorias">Carnes</v-card-title>
                             </v-img>
                             </v-card>
                         </v-slide-item>
                         <v-slide-item>
                             <v-card class="mx-2" @click="toggle" height="100" width="100">
-                            <v-img src="../assets/img/ensalada.png">
+                            <v-img src="../assets/img/Ensaladas.png">
                                 <v-card-title class="title-categorias">Ensaladas</v-card-title>
                             </v-img>
                             </v-card>
                         </v-slide-item>
                         <v-slide-item>
                             <v-card class="mx-2" @click="toggle" height="100" width="100">
-                            <v-img src="../assets/img/empanada.png">
+                            <v-img src="../assets/img/Empanadas.png">
                                 <v-card-title class="title-categorias">Empanadas</v-card-title>
                             </v-img>
                             </v-card>
                         </v-slide-item>
                         <v-slide-item>
                             <v-card class="mx-2" @click="toggle" height="100" width="100">
-                            <v-img src="../assets/img/hambur.png">
+                            <v-img src="../assets/img/Hamburguesa.png">
                                 <v-card-title class="title-categorias">Hamburguesas</v-card-title>
                             </v-img>
                             </v-card>

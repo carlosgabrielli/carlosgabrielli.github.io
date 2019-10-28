@@ -15,28 +15,28 @@
                     <v-slide-group >
                         <v-slide-item>
                             <v-card class="mr-2 p-0" @click="toggle" max-height="90" max-width="90">
-                            <v-img src="../assets/img/carnes.png">
+                            <v-img src="../assets/img/Carnes.png">
                                 <v-card-title>Carnes</v-card-title>
                             </v-img>
                             </v-card>
                         </v-slide-item>
                         <v-slide-item>
                             <v-card class="mx-2" @click="toggle" max-height="90" max-width="90">
-                            <v-img src="../assets/img/ensalada.png">
+                            <v-img src="../assets/img/Ensaladas.png">
                                 <v-card-title>Ensaladas</v-card-title>
                             </v-img>
                             </v-card>
                         </v-slide-item>
                         <v-slide-item>
                             <v-card class="mx-2" @click="toggle" max-height="90" max-width="90">
-                            <v-img src="../assets/img/empanada.png">
+                            <v-img src="../assets/img/Empanadas.png">
                                 <v-card-title>Empanadas</v-card-title>
                             </v-img>
                             </v-card>
                         </v-slide-item>
                         <v-slide-item>
                             <v-card class="mx-2" @click="toggle" max-height="90" max-width="90">
-                            <v-img src="../assets/img/hambur.png">
+                            <v-img src="../assets/img/Hamburguesa.png">
                                 <v-card-title>Empanadas</v-card-title>
                             </v-img>
                             </v-card>
