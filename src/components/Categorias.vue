@@ -1,10 +1,7 @@
 <template>
   <div v-if="categorias">
     <v-row>
-      <v-col class="pb-0 absolute category-overlay border-radius-tx">
-        <h2 class="title mt-2">Categorias</h2>
-      </v-col>
-      <v-col class="mt-n5">
+      <v-col>
         <v-slide-group>
           <v-slide-item v-for="categoria in categorias" :key="categoria.Nombre">
             <v-card class="mr-2 mb-4 shadow-md" height="100" width="100">

@@ -32,7 +32,10 @@
     </v-row>
     <!--Categorias-->
     <v-row>
-      <v-col>
+      <v-col class="pb-0 absolute category-overlay border-radius-tx">
+        <h2 class="title mt-2">Categorias</h2>
+      </v-col>
+      <v-col class="mt-n5">
         <categorias></categorias>
       </v-col>
     </v-row>
@@ -100,8 +103,7 @@
 </template>
 
 <script>
-
-import Categorias from '@/components/Categorias'
+import Categorias from "@/components/Categorias";
 
 export default {
   name: "Card",
