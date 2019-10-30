@@ -9,7 +9,43 @@
         <!--Categorias-->
             <v-row>
                 <v-col>
-                    <categorias></categorias>
+                    <h2 class="title">Categorias</h2>
+                </v-col>
+            </v-row>
+            <v-row>
+                <v-col  cols="4">
+                    <v-btn-toggle
+                    outlined
+                    color="#FFB74F"
+                    multiple
+                    >
+                    <v-btn                    
+                     >Carnes</v-btn>
+                    </v-btn-toggle>
+                </v-col>
+                <v-col  cols="5" >
+                    <v-btn-toggle
+                    outlined
+                    color="#FFB74F"
+                    multiple>
+                        <v-btn>Ensaladas</v-btn>
+                    </v-btn-toggle>
+                </v-col>
+                <v-col  cols="6">
+                    <v-btn-toggle
+                    outlined
+                    color="#FFB74F"
+                    multiple>
+                        <v-btn>Hamburguesas</v-btn>
+                    </v-btn-toggle>
+                </v-col>
+                <v-col  cols="5">
+                    <v-btn-toggle
+                    outlined
+                    color="#FFB74F"
+                    multiple>
+                        <v-btn>Empanadas</v-btn>
+                    </v-btn-toggle>
                 </v-col>
             </v-row>
         <!--Filtro Lugar-->
@@ -78,10 +114,10 @@
             </v-row>
             <v-row class="mb-10 mt-0">
                 <v-col class="p-0">
-                    <v-text-field :rules="rules" class="pt-0 mt-0" label="$0"></v-text-field>
+                    <v-text-field :rules="rules" class="pt-0 mt-0" label="$0 Minimo"></v-text-field>
                 </v-col>
                 <v-col>
-                    <v-text-field :rules="rules" class="pt-0 mt-0" label="$0"></v-text-field>
+                    <v-text-field :rules="rules" class="pt-0 mt-0" label="$0 Maximo"></v-text-field>
                 </v-col>
             </v-row>
         <!--Boton confirmar-->
