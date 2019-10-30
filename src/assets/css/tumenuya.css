@@ -87,6 +87,7 @@
 .vue-numeric-input .btn{
     background: #FFB74F !important;
     border: 1px solid #FFB74F !important; 
+    box-shadow: none !important;
     -webkit-box-shadow: none !important;
 }
 
