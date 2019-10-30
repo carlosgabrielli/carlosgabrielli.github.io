@@ -57,7 +57,13 @@
     background: linear-gradient(180deg, #00000000 0%, #000000 40%);
 }
 
+/* Color en footer de los iconos */
 .v-application .teal--text {
     color: #FFB74F !important;
     caret-color: #FFB74F !important;
+}
+
+/* Datepicker width label bug fixed */
+.datepicker legend {
+    width: 116px !important;
 }
