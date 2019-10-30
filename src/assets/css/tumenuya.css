@@ -61,3 +61,31 @@
     color: #FFB74F !important;
     caret-color: #FFB74F !important;
 }
+
+.numeric-input{
+    background-color: #FFB74F;
+    border: none !important;
+    height: 30px;   
+    border-radius: 8px; 
+    width: 110px !important;
+
+}
+
+.numeric-input .btn-increment{
+    background-color: #FFB74F;
+    
+}
+.numeric-input input{
+    border-radius: 8px !important;
+    
+}
+.numeric-input:focus{
+    outline: none !important;
+    
+}
+.vue-numeric-input .btn{
+    background: #FFB74F !important;
+    border: 1px solid #FFB74F !important; 
+    -webkit-box-shadow: none !important;
+    
+}

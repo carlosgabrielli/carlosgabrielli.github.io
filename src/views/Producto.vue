@@ -42,6 +42,12 @@
                 <v-divider class="mt-3"></v-divider>
             </v-col>
         </v-row>
+            <v-row>
+                <v-col class="d-flex justify-center mb-2">
+                    <vue-numeric-input class="numeric-input" placeholder="1" precision="1" align="center" :min="1" :max="20" ></vue-numeric-input>
+                </v-col>
+            </v-row>
+        
     <!--Personalizar-->
         <v-row>
             <v-col class="pt-0">     
@@ -59,7 +65,6 @@
                 <v-divider></v-divider>
                 <v-checkbox :label="`Extra cheddar`" class="mt-4"></v-checkbox>
                 <v-divider></v-divider>
-                
             </v-col>
         </v-row>
         <v-row>
@@ -90,11 +95,11 @@
 </template>
 
 <script>
-
+import VueNumericInput from 'vue-numeric-input'
 export default {
   name: "Producto",
   components: {
-    
+    VueNumericInput
   }
 };
 </script>
