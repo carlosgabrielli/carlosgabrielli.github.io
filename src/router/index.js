@@ -56,7 +56,7 @@ export default new Router({
             name: 'Filtros',
             component: Filtros,
             meta: {
-                menu: false
+                menu: true
             }
         },
         {

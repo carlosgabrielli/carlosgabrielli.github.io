@@ -1,12 +1,16 @@
 import firebase from 'firebase'
 
 const state = {
-    locales: []
+    locales: [],
+    filtrado: null
 }
 
 const getters = {
     locales (state) {
         return state.locales
+    },
+    filtrado (state) {
+        return state.filtrado
     }
 }
 
@@ -19,12 +23,43 @@ const actions = {
             })
             commit('setLocales', lista)
         })
-    }
+    },
+    buscador({commit},val) {
+        commit('buscador', val)
+
+      }
 }
 
 const mutations = {
+    buscador(state, val){
+        if (!val) {
+            state.filtrado = state.locales
+            return
+        }
+        let valores = val.split(" ");
+        state.filtrado = state.locales.filter(function(item) {
+          let busqueda = [];
+          let respuesta = null;
+          for (let res of valores) {
+            busqueda.push(
+              item.Nombre.toLowerCase().indexOf(res.toLowerCase()) > -1 ||
+                item.Direccion.toLowerCase().indexOf(res.toLowerCase()) > -1
+            );
+          }
+  
+          for (let i = 0; i < busqueda.length; i++) {
+            if (i == 0) {
+              respuesta = busqueda[i];
+            } else {
+              respuesta = respuesta && busqueda[i];
+            }
+          }
+          return respuesta
+        });
+    },
     setLocales (state, payload) {
         state.locales = payload
+        state.filtrado = payload
     }
 }
 

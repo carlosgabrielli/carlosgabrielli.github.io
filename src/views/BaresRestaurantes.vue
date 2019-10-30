@@ -1,6 +1,6 @@
 <template>
   <v-container>
-    <atras />
+    <atras @click="$router.push('/Home')"/>
     <!--Titulo-->
     <v-row>
       <v-col>
@@ -10,17 +10,17 @@
     <!--Campo de busqueda-->
     <v-row>
       <v-col cols="11" sm="6">
-        <v-text-field v-model="buscador" filled label="Buscar restaurantes..." clearable></v-text-field>
+        <v-text-field v-on:click:clear="clearFiltro" v-model="filtro" filled label="Buscar restaurantes..." clearable></v-text-field>
       </v-col>
-      <v-icon class="mb-5">mdi-tune</v-icon>
+      <v-icon @click="$router.push('/Filtros')" class="mb-5" >mdi-tune</v-icon>
     </v-row>
     <!--Promociones-->
-    <promos-principales />
+    <promos-principales v-if="!filtro" />
     <!--Categorias-->
-    <h2 class="title">Categorias</h2>
-    <v-row>
+    <h2 class="title" v-if="!filtro">Categorias</h2>
+    <v-row v-if="!filtro">
       <v-col>
-        <categorias></categorias>
+        <categorias/>
       </v-col>
     </v-row>
     <!--Cartas-->
@@ -45,32 +45,21 @@ export default {
   data() {
     return {
       resultados: [],
-      buscador: null
+      filtro: ''
     };
   },
   watch: {
-    buscador(val) {
-      let valores = val.split(" ");
-      this.resultados = this.locales.filter(function(item) {
-        let busqueda = [];
-        let respuesta = null;
-        for (let res of valores) {
-          busqueda.push(
-            item.Nombre.indexOf(res) > -1 ||
-              item.Direccion.indexOf(res) > -1 ||
-              item.Categoria.indexOf(res) > -1
-          );
-        }
-
-        for (let i = 0; i < busqueda.length; i++) {
-          if (i == 0) {
-            respuesta = busqueda[i];
-          } else {
-            respuesta = respuesta && busqueda[i];
-          }
-        }
-        return respuesta;
-      });
+    filtro (val) {
+      this.buscador()
+    }
+  },
+  methods: {
+    buscador() {
+      console.log(this.filtro)
+      this.$store.dispatch('locales/buscador', this.filtro)
+    },
+    clearFiltro () {
+      this.filtro = ''
     }
   }
 };

@@ -3,7 +3,7 @@
         <!--Boton atras-->
             <v-row>
                 <v-col class="pb-0">
-                    <v-icon >mdi-chevron-left</v-icon>
+                    <v-icon @click="$router.push('/BaresRestaurantes')">mdi-chevron-left</v-icon>
                 </v-col>
             </v-row>
         <!--Categorias-->

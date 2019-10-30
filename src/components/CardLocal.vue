@@ -34,7 +34,7 @@ export default {
   },
   computed: {
     locales() {
-      return this.$store.getters["locales/locales"];
+      return this.$store.getters["locales/filtrado"];
     }
   }
 };
