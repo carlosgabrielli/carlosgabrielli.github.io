@@ -106,7 +106,7 @@
 import Categorias from "@/components/Categorias";
 
 export default {
-  name: "Card",
+  name: "Carta",
   components: {
     Categorias
   }

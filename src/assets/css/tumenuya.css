@@ -31,7 +31,20 @@
 .promos-principales.mr-4:last-child {
     margin-right: 12px !important;
 }
+/* Margin right 0 en la ultima card de slider locales del home */
+.slider-locales.mr-4:first-child {
+    margin-left: 12px !important;
+}
+.slider-locales.mr-4:last-child {
+    margin-right: 12px !important;
+}
 
+.categorias.mr-4:first-child {
+    margin-left: 12px !important;
+}
+.categorias.mr-4:last-child {
+    margin-right: 12px !important;
+}
 /* Div de categorías con borders redondeados encima de foto del local */
 .category-overlay {
     background: #fafafa;
@@ -42,4 +55,9 @@
 .gradient-carta {
     height: 100%;
     background: linear-gradient(180deg, #00000000 0%, #000000 40%);
+}
+
+.v-application .teal--text {
+    color: #FFB74F !important;
+    caret-color: #FFB74F !important;
 }

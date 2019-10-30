@@ -1,6 +1,6 @@
 <template>
   <v-container>
-      <atras />
+    <atras />
     <!--Titulo-->
     <v-row>
       <v-col>
@@ -10,15 +10,19 @@
     <!--Campo de busqueda-->
     <v-row>
       <v-col cols="11" sm="6">
-        <v-text-field v-model="buscador" filled label="Buscar..." clearable></v-text-field>
+        <v-text-field v-model="buscador" filled label="Buscar restaurantes..." clearable></v-text-field>
       </v-col>
-      <v-icon class="mb-5">mdi-playlist-edit</v-icon>
+      <v-icon class="mb-5">mdi-tune</v-icon>
     </v-row>
     <!--Promociones-->
     <promos-principales />
     <!--Categorias-->
     <h2 class="title">Categorias</h2>
-    <categorias></categorias>
+    <v-row>
+      <v-col>
+        <categorias></categorias>
+      </v-col>
+    </v-row>
     <!--Cartas-->
     <CardLocal></CardLocal>
   </v-container>
