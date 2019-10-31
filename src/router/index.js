@@ -7,6 +7,7 @@ import BaresRestaurantes from '@/views/BaresRestaurantes'
 import Filtros from '@/views/Filtros'
 import Carta from '@/views/Carta'
 import Producto from '@/views/Producto'
+import CarritoEditar from '@/views/CarritoEditar'
 
 Vue.use(Router)
 
@@ -71,6 +72,14 @@ export default new Router({
             path: '/Producto',
             name: 'Producto',
             component: Producto,
+            meta: {
+                menu: true
+            }
+        },
+        {
+            path: '/CarritoEditar',
+            name: 'CarritoEditar',
+            component: CarritoEditar,
             meta: {
                 menu: true
             }

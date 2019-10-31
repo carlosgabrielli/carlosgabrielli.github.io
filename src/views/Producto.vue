@@ -42,12 +42,11 @@
                 <v-divider class="mt-3"></v-divider>
             </v-col>
         </v-row>
-            <v-row>
-                <v-col class="d-flex justify-center mb-2">
-                    <vue-numeric-input class="numeric-input" placeholder="1" precision="1" align="center" :min="1" :max="20" ></vue-numeric-input>
-                </v-col>
-            </v-row>
-        
+        <v-row>
+            <v-col class="d-flex justify-center mb-2">
+                <vue-numeric-input class="numeric-input" placeholder="1" precision="1" align="center" :min="1" :max="20" ></vue-numeric-input>
+            </v-col>
+        </v-row>
     <!--Personalizar-->
         <v-row>
             <v-col class="pt-0">     
