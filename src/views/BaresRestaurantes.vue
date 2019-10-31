@@ -24,7 +24,7 @@
       </v-col>
     </v-row>
     <!--Cartas-->
-    <CardLocal></CardLocal>
+    <CardLocal/>
   </v-container>
 </template>
 
