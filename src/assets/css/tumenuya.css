@@ -96,3 +96,13 @@
 .datepicker legend {
     width: 116px !important;
 }
+
+/* clase que modifica un div no visible que CarritoEditar*/
+.v-list-item__content{
+    overflow: initial !important;
+    padding-top: 0 !important;
+}
+
+.linea-division-carrito{
+    max-width: 80%;
+}
