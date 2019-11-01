@@ -8,6 +8,9 @@
 .v-btn:not(.v-btn--text):not(.v-btn--outlined):hover:before {
     opacity: 0;
 }
+.theme--light.v-btn--active:hover::before, .theme--light.v-btn--active::before {
+    opacity: 0 !important;
+}
 .v-btn-toggle > .v-btn.v-btn--active {
     color: #000;    
     background-color: #FFB74F !important;
@@ -61,6 +64,11 @@
 .v-application .teal--text {
     color: #FFB74F !important;
     caret-color: #FFB74F !important;
+}
+
+/* Color de fondo de las cards */
+.theme--light.v-card {
+    background-color: #fafafa !important;
 }
 
 .numeric-input{

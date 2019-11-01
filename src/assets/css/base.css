@@ -20,6 +20,7 @@
 
 /* Colors */
 .bg-primary { background-color: #ffb74b !important }
+.bg-app { background-color: #fafafa !important; }
 
 /* Margins */
 .mt-negative-40 { margin-top: -40px; }
@@ -27,3 +28,4 @@
 /* Positions */
 .absolute { position: absolute }
 .relative { position: relative; }
+.fixed-bottom { position: fixed; bottom: 0; }

@@ -4,7 +4,6 @@ import Home from '@/views/Home'
 import Login from '@/views/Login'
 import Admin from '@/views/Admin'
 import BaresRestaurantes from '@/views/BaresRestaurantes'
-import Filtros from '@/views/Filtros'
 import Carta from '@/views/Carta'
 import Producto from '@/views/Producto'
 import CarritoEditar from '@/views/CarritoEditar'
@@ -48,14 +47,6 @@ export default new Router({
             path: '/BaresRestaurantes',
             name: 'BaresRestaurantes',
             component: BaresRestaurantes,
-            meta: {
-                menu: true
-            }
-        },
-        {
-            path: '/Filtros',
-            name: 'Filtros',
-            component: Filtros,
             meta: {
                 menu: true
             }
