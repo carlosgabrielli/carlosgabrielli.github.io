@@ -7,6 +7,7 @@ import BaresRestaurantes from '@/views/BaresRestaurantes'
 import Carta from '@/views/Carta'
 import Producto from '@/views/Producto'
 import CarritoEditar from '@/views/CarritoEditar'
+import RegistrarLocal from '@/views/RegistrarLocal'
 
 Vue.use(Router)
 
@@ -71,6 +72,14 @@ export default new Router({
             path: '/CarritoEditar',
             name: 'CarritoEditar',
             component: CarritoEditar,
+            meta: {
+                menu: true
+            }
+        },
+        {
+            path: '/RegistrarLocal',
+            name: 'RegistrarLocal',
+            component: RegistrarLocal,
             meta: {
                 menu: true
             }

@@ -19,7 +19,7 @@
           <v-card-subtitle v-if="user">{{ user.email }}</v-card-subtitle>
         </div>
         <v-card-text class="text--primary pa-0">
-          <v-list flat>
+          <v-list flat class="bg-app">
             <v-subheader>
               <h3>Mi cuenta</h3>
             </v-subheader>
@@ -113,7 +113,7 @@
           <v-card-subtitle v-if="user">{{ user.email }}</v-card-subtitle>
         </div>
         <v-card-text class="text--primary pa-0">
-          <v-list flat>
+          <v-list flat class="bg-app">
             <v-subheader>
               <h3>Mis datos</h3>
             </v-subheader>
@@ -150,13 +150,18 @@
                 ></v-date-picker>
               </v-menu>
               <p>Género</p>
-              <v-radio-group v-model="radios" :mandatory="false">
+              <v-radio-group class="mb-6" v-model="radios" :mandatory="false">
                 <v-radio label="Masculino" value="radio-1"></v-radio>
                 <v-radio label="Femenino" value="radio-2"></v-radio>
                 <v-radio label="Otro" value="radio-3"></v-radio>
               </v-radio-group>
             </v-col>
-            <v-col cols="12" sm="6"></v-col>
+          <!--Boton confirmar-->
+            <div class="mt-6">
+              <v-col class="fixed-bottom border-top bg-app">
+                <v-btn block color="#FFB74F">Aplicar</v-btn>
+              </v-col>
+            </div>
           </v-list>
         </v-card-text>
       </v-card>
@@ -195,7 +200,7 @@
           <v-card-subtitle v-if="user">{{ user.email }}</v-card-subtitle>
         </div>
         <v-card-text class="text--primary pa-0">
-          <v-list flat>
+          <v-list flat class="bg-app">
             <v-subheader>
               <h3>Notificaciones</h3>
             </v-subheader>

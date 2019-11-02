@@ -114,3 +114,7 @@
 .linea-division-carrito{
     max-width: 80%;
 }
+
+.theme--light.v-btn-toggle:not(.v-btn-toggle--group) .v-btn.v-btn {
+    border-width: 1.5px;
+}

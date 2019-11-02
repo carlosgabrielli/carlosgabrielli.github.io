@@ -40,73 +40,77 @@
           <v-toolbar-title>Filtros</v-toolbar-title>
         </v-toolbar>
         <!--Categorias-->
-        <v-container>
-          <v-row class="mb-3">
-            <v-col>
-              <h2 class="title">Categorias</h2>
-              <v-btn-toggle class="mr-4 mt-4" color="#FFB74F" multiple>
-                <v-btn>Carnes</v-btn>
-              </v-btn-toggle>
-              <v-btn-toggle class="mr-4 mt-4" color="#FFB74F" multiple>
-                <v-btn>Ensaladas</v-btn>
-              </v-btn-toggle>
+        <v-list flat class="bg-app">
+          <v-container>
+            <v-row class="mb-3">
+              <v-col>
+                <h2 class="title">Categorias</h2>
+                <v-btn-toggle class="mr-4 mt-4" color="#FFB74F" multiple>
+                  <v-btn>Carnes</v-btn>
+                </v-btn-toggle>
+                <v-btn-toggle class="mr-4 mt-4" color="#FFB74F" multiple>
+                  <v-btn>Ensaladas</v-btn>
+                </v-btn-toggle>
 
-              <v-btn-toggle class="mr-4 mt-4" color="#FFB74F" multiple>
-                <v-btn>Hamburguesas</v-btn>
-              </v-btn-toggle>
-              <v-btn-toggle class="mr-4 mt-4" color="#FFB74F" multiple>
-                <v-btn>Empanadas</v-btn>
-              </v-btn-toggle>
-            </v-col>
-          </v-row>
-          <!--Filtro Lugar-->
-          <v-row class="mb-3">
-            <v-col>
-              <h2 class="title">Lugar</h2>
-              <v-btn-toggle class="mr-4 mt-4" color="#FFB74F" multiple>
-                <v-btn>Restaurantes</v-btn>
-              </v-btn-toggle>
-              <v-btn-toggle class="mr-4 mt-4" color="#FFB74F" multiple>
-                <v-btn>Bares</v-btn>
-              </v-btn-toggle>
-              <v-btn-toggle class="mr-4 mt-4" color="#FFB74F" multiple>
-                <v-btn>Cafeterias</v-btn>
-              </v-btn-toggle>
-            </v-col>
-          </v-row>
-          <!--Formas de pago-->
-          <v-row class="mb-3">
-            <v-col>
-              <h2 class="title">Formas de pago</h2>
-              <v-btn-toggle class="mr-4 mt-4" color="#FFB74F" multiple>
-                <v-btn>Tarjeta de credito</v-btn>
-              </v-btn-toggle>
-              <v-btn-toggle class="mr-4 mt-4" color="#FFB74F" multiple>
-                <v-btn>Efectivo</v-btn>
-              </v-btn-toggle>
-            </v-col>
-          </v-row>
-          <!--Rango de precio-->
-          <v-row>
-            <v-col>
-              <h2 class="title">Rango de precio</h2>
-            </v-col>
-          </v-row>
-          <v-row class="mb-3">
-            <v-col class="p-0">
-              <v-text-field :rules="rules" class="pt-0 mt-0" label="$0 Minimo"></v-text-field>
-            </v-col>
-            <v-col>
-              <v-text-field :rules="rules" class="pt-0 mt-0" label="$0 Maximo"></v-text-field>
-            </v-col>
-          </v-row>
-          <!--Boton confirmar-->
-          <v-row>
-            <v-col class="fixed-bottom border-top bg-app">
-              <v-btn block color="#FFB74F">Aplicar</v-btn>
-            </v-col>
-          </v-row>
-        </v-container>
+                <v-btn-toggle class="mr-4 mt-4" color="#FFB74F" multiple>
+                  <v-btn>Hamburguesas</v-btn>
+                </v-btn-toggle>
+                <v-btn-toggle class="mr-4 mt-4" color="#FFB74F" multiple>
+                  <v-btn>Empanadas</v-btn>
+                </v-btn-toggle>
+              </v-col>
+            </v-row>
+            <!--Filtro Lugar-->
+            <v-row class="mb-3">
+              <v-col>
+                <h2 class="title">Lugar</h2>
+                <v-btn-toggle class="mr-4 mt-4" color="#FFB74F" multiple>
+                  <v-btn>Restaurantes</v-btn>
+                </v-btn-toggle>
+                <v-btn-toggle class="mr-4 mt-4" color="#FFB74F" multiple>
+                  <v-btn>Bares</v-btn>
+                </v-btn-toggle>
+                <v-btn-toggle class="mr-4 mt-4" color="#FFB74F" multiple>
+                  <v-btn>Cafeterias</v-btn>
+                </v-btn-toggle>
+              </v-col>
+            </v-row>
+            <!--Formas de pago-->
+            <v-row class="mb-3">
+              <v-col>
+                <h2 class="title">Formas de pago</h2>
+                <v-btn-toggle class="mr-4 mt-4" color="#FFB74F" multiple>
+                  <v-btn>Tarjeta de credito</v-btn>
+                </v-btn-toggle>
+                <v-btn-toggle class="mr-4 mt-4" color="#FFB74F" multiple>
+                  <v-btn>Efectivo</v-btn>
+                </v-btn-toggle>
+              </v-col>
+            </v-row>
+            <!--Rango de precio-->
+            <v-row>
+              <v-col>
+                <h2 class="title">Rango de precio</h2>
+              </v-col>
+            </v-row>
+            <v-row class="mb-3">
+              <v-col class="p-0">
+                <v-text-field :rules="rules" class="pt-0 mt-0" label="$0 Minimo"></v-text-field>
+              </v-col>
+              <v-col>
+                <v-text-field :rules="rules" class="pt-0 mt-0" label="$0 Maximo"></v-text-field>
+              </v-col>
+            </v-row>
+            <!--Boton confirmar-->
+            <v-row>
+              <div class="mt-6">
+                <v-col class="fixed-bottom border-top bg-app">
+                  <v-btn block color="#FFB74F">Aplicar</v-btn>
+                </v-col>
+              </div>
+            </v-row>
+          </v-container>
+        </v-list>
       </v-card>
     </v-dialog>
   </v-container>

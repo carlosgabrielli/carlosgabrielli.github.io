@@ -27,7 +27,16 @@ const actions = {
     buscador({commit},val) {
         commit('buscador', val)
 
-      }
+      },
+      guardar({commit}, local) {
+        firebase.auth().createUserWithEmailAndPassword(local.Email, local.Clave).then(result => {
+            local.Uid = result.user.uid
+            delete local.Clave
+            firebase.firestore().collection('locales').add(local).catch(function(error) {
+                console.log(error)
+            })
+        })
+    }  
 }
 
 const mutations = {
