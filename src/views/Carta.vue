@@ -42,73 +42,22 @@
     <!--Productos-->
     <v-row>
       <v-col class="pt-1">
-        <h2 class="title">Carnes</h2>
+        <h2 class="title">Menú</h2>
       </v-col>
     </v-row>
-    <v-row>
-      <v-col class="pt-0 pb-0">
-        <v-card class="mb-4" outlined>
-          <v-list-item three-line>
-            <v-list-item-content class="mr-4 pt-2 pb-2">
-              <v-list-item-title class="headline mb-1 subtitle-1 font-weight-bold">Milanesa vegana</v-list-item-title>
-              <v-card-subtitle
-                class="caption pa-0"
-              >La mejor milanesa de ternera angus o suprema de pollo</v-card-subtitle>
-              <v-card-subtitle class="caption pa-0">$200</v-card-subtitle>
-            </v-list-item-content>
-            <v-list-item-avatar tile size="70" color="grey lighten-3 shadow-xs border-radius-10">
-              <v-img class="mr-2" src="../assets/img/LogoJohnny.png"></v-img>
-            </v-list-item-avatar>
-          </v-list-item>
-        </v-card>
-      </v-col>
-    </v-row>
-    <v-row>
-      <v-col class="pt-0 pb-0">
-        <v-card class="mb-4" outlined>
-          <v-list-item three-line>
-            <v-list-item-content class="mr-4 pt-2 pb-2">
-              <v-list-item-title class="headline mb-1 subtitle-1 font-weight-bold">Milanesa vegana</v-list-item-title>
-              <v-card-subtitle
-                class="caption pa-0"
-              >La mejor milanesa de ternera angus o suprema de pollo</v-card-subtitle>
-              <v-card-subtitle class="caption pa-0">$200</v-card-subtitle>
-            </v-list-item-content>
-            <v-list-item-avatar tile size="70" color="grey lighten-3 shadow-xs border-radius-10">
-              <v-img class="mr-2" src="../assets/img/LogoJohnny.png"></v-img>
-            </v-list-item-avatar>
-          </v-list-item>
-        </v-card>
-      </v-col>
-    </v-row>
-    <v-row>
-      <v-col class="pt-0 pb-0">
-        <v-card class="mb-4" outlined>
-          <v-list-item three-line>
-            <v-list-item-content class="mr-4 pt-2 pb-2">
-              <v-list-item-title class="headline mb-1 subtitle-1 font-weight-bold">Milanesa vegana</v-list-item-title>
-              <v-card-subtitle
-                class="caption pa-0"
-              >La mejor milanesa de ternera angus o suprema de pollo</v-card-subtitle>
-              <v-card-subtitle class="caption pa-0">$200</v-card-subtitle>
-            </v-list-item-content>
-            <v-list-item-avatar tile size="70" color="grey lighten-3 shadow-xs border-radius-10">
-              <v-img class="mr-2" src="../assets/img/LogoJohnny.png"></v-img>
-            </v-list-item-avatar>
-          </v-list-item>
-        </v-card>
-      </v-col>
-    </v-row>
+    <platos></platos>
   </v-container>
 </template>
 
 <script>
 import Categorias from "@/components/Categorias";
+import Platos from "@/components/Platos";
 
 export default {
   name: "Carta",
   components: {
-    Categorias
+    Categorias,
+    Platos
   }
 };
 </script>

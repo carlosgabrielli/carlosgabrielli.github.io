@@ -2,7 +2,7 @@
   <div>
     <!-- Dialog Mi cuenta -->
     <v-dialog v-model="dialogList" hide-overlay transition="dialog-bottom-transition" fullscreen>
-      <v-card class="mx-auto box-shadow-none border-0">
+      <v-card class="mx-auto box-shadow-none border-0 bg-app">
         <v-toolbar dark color="primary" class="box-shadow-none">
           <v-btn icon dark @click="dialogList = false" absolute fab small top left class="mt-6 w-0">
             <v-icon>mdi-chevron-left</v-icon>
@@ -96,7 +96,7 @@
     </v-dialog>
     <!-- Dialog Editar perfil -->
     <v-dialog v-model="dialogUser" hide-overlay transition="dialog-bottom-transition" fullscreen>
-      <v-card class="mx-auto box-shadow-none border-0">
+      <v-card class="mx-auto box-shadow-none border-0 bg-app">
         <v-toolbar dark color="primary" class="box-shadow-none">
           <v-btn icon dark @click="dialogUser = false" absolute fab small top left class="mt-6 w-0">
             <v-icon>mdi-chevron-left</v-icon>
@@ -173,7 +173,7 @@
       transition="dialog-bottom-transition"
       fullscreen
     >
-      <v-card class="mx-auto box-shadow-none border-0">
+      <v-card class="mx-auto box-shadow-none border-0 bg-app">
         <v-toolbar dark color="primary" class="box-shadow-none">
           <v-btn
             icon

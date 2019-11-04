@@ -2,7 +2,7 @@
  <div>
    <!-- Dialog buscar -->
     <v-dialog v-model="dialogBuscador" hide-overlay transition="dialog-bottom-transition" fullscreen>
-      <v-card class=" box-shadow-none ">
+      <v-card class=" box-shadow-none bg-app">
           <v-toolbar dark color="primary" class="box-shadow-none">
             <v-btn icon dark @click="dialogBuscador = false" absolute fab small top left class="mt-6 w-0">
               <v-icon class="mt-2">mdi-chevron-left</v-icon> 

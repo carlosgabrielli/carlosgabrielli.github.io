@@ -2,7 +2,12 @@
 .btn-heart { position: absolute; right: 0; top: 8px; }
 
 /* Font-sizes */
-.f-18 { font-size: 18px; }
+.f-18 { font-size: 18px !important; }
+.f-16 { font-size: 16px !important; }
+
+/* Font-weights */
+.f-semibold { font-weight: 500 !important; }
+.f-bold { font-weight: 700 !important; }
 
 /* Borders */
 .border-radius-bx { border-bottom-right-radius: 25px !important; border-bottom-left-radius: 25px !important; }
@@ -21,6 +26,7 @@
 /* Colors */
 .bg-primary { background-color: #ffb74b !important }
 .bg-app { background-color: #fafafa !important; }
+.color-primary { color: #ffb74b !important }
 
 /* Margins */
 .mt-negative-40 { margin-top: -40px; }
