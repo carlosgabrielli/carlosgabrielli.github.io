@@ -6,6 +6,9 @@ import router from './router'
 import { store } from './store/store'
 import  './assets/css/base.css'
 import  './assets/css/tumenuya.css'
+import ImageUploader from 'vue-image-upload-resize'
+
+Vue.use(ImageUploader);
 
 Vue.config.productionTip = false
 

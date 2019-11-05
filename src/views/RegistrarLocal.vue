@@ -51,11 +51,15 @@
                     small-chips
                     multiple
                   ></v-autocomplete>
-                  <v-file-input placeholder="La imagen de tu local" multiple>
-                    <template v-slot:selection="{ text }">
-                      <v-chip small label color="primary">{{ text }}</v-chip>
-                    </template>
-                  </v-file-input>
+                  <image-uploader
+                    :preview="true"
+                    :debug="1"
+                    :maxWidth="512"
+                    :quality="0.85"
+                    :autoRotate="true"
+                    doNotResize="['gif']"
+                    @input="setImage"
+                  ></image-uploader>
                   <v-text-field
                     color="#2B5E7C"
                     id="password"
@@ -79,11 +83,14 @@
 export default {
   data() {
     return {
+      imageUrl: null,
+      hasImage: null,
+      image: null,
       local: {
         Nombre: null,
         Direccion: null,
         Categorias: null,
-        Fotolocal: null,
+        Logo: null,
         Email: null,
         Clave: null
       },
@@ -96,17 +103,43 @@ export default {
           return pattern.test(value) || "Email invalido.";
         }
       },
-      components: [
-        "Milanesas",
-        "Empanadas",
-        "Pastas",
-        "Ensaladas"
-      ]
+      components: ["Milanesas", "Empanadas", "Pastas", "Ensaladas"]
     };
   },
   methods: {
+    setImage: function(output) {
+      var imageResize = this.image;
+      this.hasImage = true;
+      this.image = output;
+      this.local.Logo = this.image;
+      console.log(this.image);
+    },
     guardar() {
-      this.$store.dispatch("locales/guardar", this.local);
+      this.$store.dispatch("locales/guardar", this.local).then(result => {});
+    },
+    crear({ commit }, local) {
+      return new promise((resolve, reject) => {
+        if (local.imagen.type === "image/jpeg") {
+          extension = "jpg";
+        }
+        if (local.imagen.type === "image/png") {
+          extension = "png";
+        }
+        if (local.imagen.type === "image/gif") {
+          extension = "gif";
+        }
+
+        let imageRef = firebase.storage().ref().child('logoLocales/')
+        imagenRef.put(local.Logo).then(function(snapshot){
+          snapshot.ref.getDowloandURL().then(function(url){
+            //console.log(url)
+            local.Logo = url
+            firebase.firestore().collection('locales').add(local)
+            //console.log(Locales)
+            resolve('Enviado')
+          })
+        })
+      });
     }
   }
 };
