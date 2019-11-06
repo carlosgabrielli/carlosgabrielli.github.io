@@ -8,59 +8,32 @@
               class="mx-auto mb-10"
               width="150px"
               height="150px"
-              src="../assets/LogoVerlook.png"
+              src="../assets/icon-definitivo.png"
               aspect-ratio="1"
             ></v-img>
             <v-card class="elevation-2">
               <v-card-text>
                 <v-form>
                   <v-text-field
-                    label="Nombre del local"
+                    label="Nombre y apellido"
                     name="login"
                     prepend-icon
                     type="text"
-                    v-model="local.Nombre"
-                    :rules="[rules.required]"
-                  ></v-text-field>
-
-                  <v-text-field
-                    color="#2B5E7C"
-                    id="Direccion"
-                    label="Dirección Fisica"
-                    name="Direccion"
-                    prepend-icon
-                    v-model="local.Direccion"
-                    type="text"
+                    v-model="usuario.Nombre"
                     :rules="[rules.required]"
                   ></v-text-field>
                   <v-text-field
                     color="#2B5E7C"
                     id="Email"
-                    v-model="local.Email"
+                    v-model="usuario.Email"
                     :rules="[rules.required, rules.email]"
                     label="E-mail"
                   ></v-text-field>
-                  <v-autocomplete
-                    name="Servicios"
-                    id="Servicios"
-                    v-model="local.Servicios"
-                    label="Servicios que brindan"
-                    :items="components"
-                    dense
-                    chips
-                    small-chips
-                    multiple
-                  ></v-autocomplete>
-                  <v-file-input placeholder="La imagen de tu local" multiple>
-                    <template v-slot:selection="{ text }">
-                      <v-chip small label color="primary">{{ text }}</v-chip>
-                    </template>
-                  </v-file-input>
                   <v-text-field
                     color="#2B5E7C"
                     id="password"
                     label="Contraseña"
-                    v-model="local.Clave"
+                    v-model="usuario.Clave"
                     name="password"
                     prepend-icon
                     type="password"
@@ -79,11 +52,8 @@
 export default {
   data() {
     return {
-      local: {
+      usuario: {
         Nombre: null,
-        Direccion: null,
-        Servicios: null,
-        Fotolocal: null,
         Email: null,
         Clave: null
       },
@@ -96,18 +66,11 @@ export default {
           return pattern.test(value) || "Email invalido.";
         }
       },
-      components: [
-        "Corte de cabello",
-        "Tratamiento de barba",
-        "Corte de cabello y barba",
-        "Tintura",
-        "Corte con navaja"
-      ]
     };
   },
   methods: {
     guardar() {
-      this.$store.dispatch("locales/guardar", this.local);
+      this.$store.dispatch("usuarios/guardar", this.local);
     }
   }
 };
