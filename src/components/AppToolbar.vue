@@ -65,6 +65,19 @@
               </v-list-item>
               <v-list-item>
                 <v-list-item-icon class="mr-2">
+                  <v-icon>mdi-heart-outline</v-icon>
+                </v-list-item-icon>
+                <v-list-item-content>
+                  <v-list-item-title>Favoritos</v-list-item-title>
+                </v-list-item-content>
+                <v-list-item-action>
+                  <v-btn icon>
+                    <v-icon color="grey lighten-1">mdi-chevron-right</v-icon>
+                  </v-btn>
+                </v-list-item-action>
+              </v-list-item>
+              <v-list-item>
+                <v-list-item-icon class="mr-2">
                   <v-icon>mdi-clipboard-text-outline</v-icon>
                 </v-list-item-icon>
                 <v-list-item-content>
@@ -156,7 +169,7 @@
                 <v-radio label="Otro" value="radio-3"></v-radio>
               </v-radio-group>
             </v-col>
-          <!--Boton confirmar-->
+            <!--Boton confirmar-->
             <div class="mt-6">
               <v-col class="fixed-bottom border-top bg-app">
                 <v-btn block color="#FFB74F">Aplicar</v-btn>
@@ -288,7 +301,7 @@
         <v-btn icon fab>
           <v-badge color="red" left>
             <template v-slot:badge>2</template>
-            <v-icon @mouseover="show = true" @mouseout="show = false">mdi-bell-outline</v-icon>
+            <v-icon @mouseover="show = true" @mouseout="show = false">mdi-bullhorn-outline</v-icon>
           </v-badge>
         </v-btn>
       </v-row>

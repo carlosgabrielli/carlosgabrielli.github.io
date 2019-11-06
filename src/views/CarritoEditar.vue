@@ -1,10 +1,10 @@
 <template>
   <v-expansion-panels>
     <v-expansion-panel>
-      <v-expansion-panel-header v-slot="{ open }">
+      <v-expansion-panel-header v-slot="{ open }" class="px-3">
                 <v-list-item-content>
                 <v-fade-transition leave-absolute>
-                        <span v-if="open">
+                        <div v-if="open">
                           <v-row>
                             <v-col class="pt-0">
                               <atras @click="$router.push('/Carta')"/>
@@ -12,7 +12,7 @@
                             </v-col>
                           </v-row>
                             <v-row class="pt-4">
-                                <v-col  cols="8" class="pl-3 pr-0 pt-3">
+                                <v-col  cols="10" class="pl-3 pr-0 pt-3">
                                     <h2 class="title">Milanesa vegana</h2>
                                     <v-list-item-subtitle class="subtitle-2 font-weight-regular">
                                     La mejor milanesa de ternera angus o suprema de pollo
@@ -27,7 +27,7 @@
                             </v-row>
                             <v-divider class="linea-division-carrito pl-0"></v-divider>
                             <v-row>
-                                <v-col  cols="8" class="pl-3 pr-0 pt-3">
+                                <v-col  cols="10" class="pl-3 pr-0 pt-3">
                                     <h2 class="title">Milanesa vegana</h2>
                                     <v-list-item-subtitle class="subtitle-2 font-weight-regular">
                                     La mejor milanesa de ternera angus o suprema de pollo
@@ -42,7 +42,7 @@
                             </v-row>
                             <v-divider class="linea-division-carrito pl-0"></v-divider>
                             <v-row>
-                                <v-col  cols="8" class="pl-3 pr-0 pt-3">
+                                <v-col  cols="10" class="pl-3 pr-0 pt-3">
                                     <h2 class="title">Milanesa vegana</h2>
                                     <v-list-item-subtitle class="subtitle-2 font-weight-regular">
                                     La mejor milanesa de ternera angus o suprema de pollo
@@ -55,7 +55,7 @@
                                     <v-icon>mdi-pencil-outline</v-icon>
                                 </v-col>
                             </v-row>
-                        </span>
+                        </div>
                         <v-row
                         v-else
                         no-gutters

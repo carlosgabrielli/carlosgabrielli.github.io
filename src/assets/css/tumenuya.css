@@ -2,17 +2,22 @@
 .theme--light.v-btn-toggle:not(.v-btn-toggle--group) .v-btn.v-btn {
     border-color: #FFB74F !important;
 }
+
 .theme--light.v-btn:not(.v-btn--flat):not(.v-btn--text):not(.v-btn--outlined) {
     background-color: #f4f4f480;
 }
+
 .v-btn:not(.v-btn--text):not(.v-btn--outlined):hover:before {
     opacity: 0;
 }
-.theme--light.v-btn--active:hover::before, .theme--light.v-btn--active::before {
+
+.theme--light.v-btn--active:hover::before,
+.theme--light.v-btn--active::before {
     opacity: 0 !important;
 }
-.v-btn-toggle > .v-btn.v-btn--active {
-    color: #000;    
+
+.v-btn-toggle>.v-btn.v-btn--active {
+    color: #000;
     background-color: #FFB74F !important;
 }
 
@@ -23,21 +28,26 @@
     margin-top: 64px;
     margin-left: 5px;
 }
+
 /* Margin bottom 0 en la ultima card de lista de locales */
 .lista-locales.mb-4:last-child {
     margin-bottom: 0 !important;
 }
+
 /* Margin right 0 en la ultima card de promos principales */
 .promos-principales.mr-4:first-child {
     margin-left: 12px !important;
 }
+
 .promos-principales.mr-4:last-child {
     margin-right: 12px !important;
 }
+
 /* Margin right 0 en la ultima card de slider locales del home */
 .slider-locales.mr-4:first-child {
     margin-left: 12px !important;
 }
+
 .slider-locales.mr-4:last-child {
     margin-right: 12px !important;
 }
@@ -45,9 +55,15 @@
 .categorias.mr-4:first-child {
     margin-left: 12px !important;
 }
+
 .categorias.mr-4:last-child {
     margin-right: 12px !important;
 }
+
+.mt-neg-64 {
+    margin-top: -64px;
+}
+
 /* Div de categorías con borders redondeados encima de foto del local */
 .category-overlay {
     background: #fafafa;
@@ -60,51 +76,79 @@
     background: linear-gradient(180deg, #00000000 0%, #000000 40%);
 }
 
+/* Gradient negro en la imagen principal del producto */
+.gradient-producto {
+    height: 30%;
+    background: linear-gradient(0deg, #00000000 0%, #000000 140%);
+}
+
 /* Color en footer de los iconos */
 .v-application .teal--text {
     color: #FFB74F !important;
     caret-color: #FFB74F !important;
 }
 
-.numeric-input{
+.v-btn.v-btn--block {
+    height: 46px !important;
+}
+
+.numeric-input {
     background-color: #FFB74F;
     border: none !important;
-    height: 30px;   
-    border-radius: 8px; 
-    width: 110px !important;
+    height: 36px;
+    border-radius: 8px;
+    width: 120px !important;
 
 }
-
-.numeric-input .btn-increment{
+.numeric-input .btn-increment {
     background-color: #FFB74F;
-    
+
 }
-.numeric-input input{
+.numeric-input input {
     border-radius: 8px !important;
-    
+
 }
-.numeric-input:focus{
+.numeric-input:focus {
     outline: none !important;
-    
+
 }
-.vue-numeric-input .btn{
+.vue-numeric-input .btn {
     background: #FFB74F !important;
-    border: 1px solid #FFB74F !important; 
+    border: 1px solid #FFB74F !important;
     box-shadow: none !important;
     -webkit-box-shadow: none !important;
 }
 
-    
+
 /* Datepicker width label bug fixed */
 .datepicker legend {
     width: 116px !important;
 }
 
 /* clase que modifica un div no visible que CarritoEditar*/
-.linea-division-carrito{
+.linea-division-carrito {
     max-width: 80%;
 }
 
 .theme--light.v-btn-toggle:not(.v-btn-toggle--group) .v-btn.v-btn {
     border-width: 1.5px;
+}
+
+/* Badge de notificaciones de promociones*/
+.v-badge__badge {
+    font-size: 12px;
+    height: 18px;
+    width: 18px !important;
+    min-width: 16px;
+    top: -6px;
+}
+
+.v-badge--left .v-badge__badge {
+    left: -16px;
+    right: initial;
+}
+
+/* Quitar flecha de en v-expansion en carrito editar */
+.v-expansion-panel--active > .v-expansion-panel-header--active .v-expansion-panel-header__icon:not(.v-expansion-panel-header__icon--disable-rotate) .v-icon {
+    display: none;
 }
