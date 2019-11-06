@@ -29,6 +29,24 @@ const actions = {
         });
         firebase.auth().signInWithRedirect(provider);
     },
+    loginWithEmail ({commit}, payload) {
+        return new Promise ((resolve, reject) => {
+            firebase.auth().signInWithEmailAndPassword(payload.email, payload.password).then(result => {
+                firebase.firestore().collection('usuarios').where('uid', '==', result.user.uid).get().then(function(snapshot) {
+                    snapshot.forEach(function(childSnapshot) {
+                        dato = childSnapshot.data()
+                    })
+                    if(dato == null) {
+                        reject("No existis")
+                    } else {
+                        resolve(dato)
+                    }
+                })
+            }, error => {
+                reject("todo mal")
+            })
+        })
+    },
     logout({ commit }) {
         return new Promise((resolve, reject) => {
             firebase.auth().signOut().then(function() {

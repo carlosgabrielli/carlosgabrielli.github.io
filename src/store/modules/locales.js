@@ -31,6 +31,12 @@ const actions = {
       guardar({commit}, local) {
         firebase.auth().createUserWithEmailAndPassword(local.Email, local.Clave).then(result => {
             local.Uid = result.user.uid
+            firebase.firestore().collection('usuarios').add({
+                uid: result.user.uid,
+                nombre: result.user.displayName,
+                telefono: null,
+                rol: 'resto'
+            })
             delete local.Clave
             firebase.firestore().collection('locales').add(local).catch(function(error) {
                 console.log(error)

@@ -22,6 +22,7 @@
                   <v-text-field
                     label="Usuario"
                     name="login"
+                    v-model="usuario.email"
                     prepend-icon=""
                     type="text"
                   ></v-text-field>
@@ -30,12 +31,13 @@
                     color="#2B5E7C"
                     id="password"
                     label="Contraseña"
+                    v-model="usuario.password"
                     name="password"
                     prepend-icon=""
                     type="password"
                   ></v-text-field>
                 </v-form>
-                 <v-btn block dark color="#2F617E" class="mb-2">Entrar</v-btn>
+                 <v-btn block dark color="#2F617E" @click="login" class="mb-2">Entrar</v-btn>
                 <v-btn class="mb-2" block dark color="#2F617E">Registrarse</v-btn>
                 <v-btn block dark color="red"  @click="LoginGoogle" :loading="carga"><v-icon>mdi-google</v-icon> Ingresar con Google</v-btn>
 
@@ -64,7 +66,11 @@
     },
     data: () => ({
       drawer: null,
-      carga: false
+      carga: false,
+      usuario: {
+        email: null,
+        password: null
+      }
     }),
   
     created () {
@@ -80,6 +86,17 @@
   methods: {
     LoginGoogle() {
       this.$store.dispatch('auth/login')
+    },
+    login () {
+      this.$store.dispatch('auth/loginWithEmail', this.usuario).then(result => {
+        if(result.rol == 'resto'){
+          this.$router.push('/restohome')
+        }else {
+          this.$router.push('/home')
+        }
+      }, error => {
+
+      })
     }
   }
 }
