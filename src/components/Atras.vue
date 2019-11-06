@@ -2,9 +2,9 @@
   <div>
     <!--Boton atras-->
     <v-row>
-      <v-col>
-        <v-avatar height="0" width="24" style="min-width: 0 !important">
-          <v-icon>mdi-chevron-left</v-icon>
+      <v-col class="mt-n3">
+        <v-avatar class="ml-n1" height="0" width="24" style="min-width: 0 !important">
+          <v-icon @click="$router.push('/home')">mdi-chevron-left</v-icon>
         </v-avatar>
       </v-col>
     </v-row>

@@ -6,7 +6,7 @@
         <v-card class="p-0 b-0">
           <v-img src="../assets/img/PortadaRestaurante.png" height="280">
             <v-card-actions class="mt-5">
-              <v-icon color="#fff">mdi-chevron-left</v-icon>
+              <v-icon @click="$router.push('/baresRestaurantes')" color="#fff">mdi-chevron-left</v-icon>
               <v-spacer></v-spacer>
               <v-btn icon>
                 <v-icon color="#fff">mdi-heart-outline</v-icon>
@@ -33,7 +33,7 @@
     <!--Categorias-->
     <v-row>
       <v-col class="pb-0 absolute category-overlay border-radius-tx">
-        <h2 class="title mt-2">Categorias</h2>
+        <h2 class="title mt-5">Categorias</h2>
       </v-col>
       <v-col class="mt-n5">
         <categorias></categorias>

@@ -1,6 +1,6 @@
 <template>
   <v-container>
-    <atras @click="$router.push('/Home')" />
+    <atras></atras>
     <!--Titulo-->
     <v-row>
       <v-col>

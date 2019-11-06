@@ -32,7 +32,7 @@
         </v-btn>
     
         <v-btn>
-          <v-icon>mdi-heart-outline</v-icon>
+          <v-icon>mdi-clipboard-text-outline</v-icon>
         </v-btn>
       </v-bottom-navigation>
     </v-footer>
