@@ -1,5 +1,5 @@
 <template>
-  <v-container class="pt-0">
+  <v-container v-if="local" class="pt-0">
     <!--Encabezado-->
     <v-row class="relative mb-7 mt-n5">
       <v-col class="pa-0">
@@ -17,13 +17,13 @@
             </v-card-actions>
             <v-col class="py-0 pt-3">
               <v-list-item-avatar tile size="70" color="grey lighten-3 shadow-xs border-radius-10">
-                <v-img class="mr-2" src="../assets/img/LogoJohnny.png"></v-img>
+                <v-img class="mr-2" :src="local.Logo"></v-img>
               </v-list-item-avatar>
             </v-col>
             <div class="gradient-carta">
               <v-col class="pt-1">
-                <h2 class="title white--text">Johnny B.Good</h2>
-                <v-list-item-subtitle class="white--text">24 de septiembre 150</v-list-item-subtitle>
+                <h2 class="title white--text">{{ local.Nombre }}</h2>
+                <v-list-item-subtitle class="white--text">{{ local.Direccion }}</v-list-item-subtitle>
               </v-col>
             </div>
           </v-img>
@@ -36,7 +36,7 @@
         <h2 class="title mt-5">Categorias</h2>
       </v-col>
       <v-col class="mt-n5">
-        <categorias></categorias>
+        <categorias :clocal="local.Categorias"></categorias>
       </v-col>
     </v-row>
     <!--Productos-->
@@ -58,6 +58,14 @@ export default {
   components: {
     Categorias,
     Platos
+  },
+  mounted () {
+    this.$store.dispatch('locales/ver', this.$route.params.id)
+  },
+  computed: {
+    local () {
+      return this.$store.getters['locales/local']
+    }
   }
 };
 </script>

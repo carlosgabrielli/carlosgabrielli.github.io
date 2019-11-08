@@ -2,10 +2,14 @@ import firebase from 'firebase'
 
 const state = {
     locales: [],
-    filtrado: null
+    filtrado: null,
+    local: null
 }
 
 const getters = {
+    local (state) {
+        return state.local
+    },
     locales (state) {
         return state.locales
     },
@@ -15,11 +19,19 @@ const getters = {
 }
 
 const actions = {
+    ver ({commit}, id) {
+        console.log(id)
+        firebase.firestore().collection('locales').doc(id).get().then(function(snapshot){
+            commit('setLocal', snapshot.data())
+        })
+    },
     listar({commit}){
         let lista = []
         firebase.firestore().collection('locales').get().then(function(snapshot){
             snapshot.forEach(function(childSnapshot){
-                lista.push(childSnapshot.data())
+                let dato = childSnapshot.data()
+                dato.Id = childSnapshot.id
+                lista.push(dato)
             })
             commit('setLocales', lista)
         })
@@ -46,6 +58,9 @@ const actions = {
 }
 
 const mutations = {
+    setLocal (state, local) {
+        state.local = local
+    },
     buscador(state, val){
         if (!val) {
             state.filtrado = state.locales

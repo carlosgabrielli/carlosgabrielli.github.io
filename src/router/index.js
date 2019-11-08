@@ -53,8 +53,9 @@ export default new Router({
                 menu: true
             }
         },
+        //Nuevo
         {
-            path: '/Carta',
+            path: '/Carta/:id',
             name: 'Carta',
             component: Carta,
             meta: {
