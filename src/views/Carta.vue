@@ -45,7 +45,7 @@
         <h2 class="title">Menú</h2>
       </v-col>
     </v-row>
-    <platos></platos>
+    <platos :local="$route.params.id"></platos>
   </v-container>
 </template>
 

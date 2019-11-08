@@ -29,8 +29,16 @@
 <script>
 export default {
   name: "platos",
+  props: {
+    local: String
+  },
   mounted() {
-    this.$store.dispatch("platos/listar");
+    if(this.local) {
+      this.$store.dispatch("platos/listarLocal", this.local);
+    } else {
+      this.$store.dispatch("platos/listar");
+    }
+    
   },
   computed: {
     platos() {

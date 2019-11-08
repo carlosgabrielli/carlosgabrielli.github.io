@@ -19,6 +19,15 @@ const actions = {
             })
             commit('setplatos', lista)
         })
+    },
+    listarLocal({commit}, id){
+        let lista = []
+        firebase.firestore().collection('platos').where('Id_Local', '==', id).get().then(function(snapshot){
+            snapshot.forEach(function(childSnapshot){
+                lista.push(childSnapshot.data())
+            })
+            commit('setplatos', lista)
+        })
     }
 }
 
