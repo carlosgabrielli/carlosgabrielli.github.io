@@ -4,7 +4,8 @@
     <v-row class="relative mb-7 mt-n5">
       <v-col class="pa-0">
         <v-card class="p-0 b-0">
-          <v-img src="../assets/img/PortadaRestaurante.png" height="280">
+          <v-img :src="local.Portada" height="280">
+            <div class="gradient-carta">
             <v-card-actions class="mt-5">
               <v-icon @click="$router.push('/baresRestaurantes')" color="#fff">mdi-chevron-left</v-icon>
               <v-spacer></v-spacer>
@@ -20,11 +21,12 @@
                 <v-img class="mr-2" :src="local.Logo"></v-img>
               </v-list-item-avatar>
             </v-col>
-            <div class="gradient-carta">
+            <div>
               <v-col class="pt-1">
                 <h2 class="title white--text">{{ local.Nombre }}</h2>
                 <v-list-item-subtitle class="white--text">{{ local.Direccion }}</v-list-item-subtitle>
               </v-col>
+            </div>
             </div>
           </v-img>
         </v-card>
