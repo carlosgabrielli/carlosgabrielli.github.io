@@ -17,7 +17,7 @@
               </v-btn>
             </v-card-actions>
             <v-col class="py-0 pt-3">
-              <v-list-item-avatar tile size="70" color="grey lighten-3 shadow-xs border-radius-10">
+              <v-list-item-avatar tile size="70" color="shadow-xs border-radius-10">
                 <v-img class="mr-2" :src="local.Logo"></v-img>
               </v-list-item-avatar>
             </v-col>

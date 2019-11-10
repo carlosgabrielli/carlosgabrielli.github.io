@@ -26,7 +26,7 @@
     <h2 class="title" v-if="!filtro">Categorias</h2>
     <v-row v-if="!filtro">
       <v-col>
-        <categorias />
+    <categoriastodas></categoriastodas>
       </v-col>
     </v-row>
     <!--Cartas-->
@@ -95,10 +95,10 @@
             </v-row>
             <v-row class="mb-3">
               <v-col class="p-0">
-                <v-text-field :rules="rules" class="pt-0 mt-0" label="$0 Minimo"></v-text-field>
+                <v-text-field class="pt-0 mt-0" label="$0 Minimo"></v-text-field>
               </v-col>
               <v-col>
-                <v-text-field :rules="rules" class="pt-0 mt-0" label="$0 Maximo"></v-text-field>
+                <v-text-field class="pt-0 mt-0" label="$0 Maximo"></v-text-field>
               </v-col>
             </v-row>
             <!--Boton confirmar-->
@@ -118,6 +118,7 @@
 
 <script>
 import Categorias from "@/components/Categorias";
+import Categoriastodas from "@/components/Categoriastodas";
 import PromosPrincipales from "@/components/PromosPrincipales";
 import CardLocal from "@/components/CardLocal";
 import Atras from "@/components/Atras";
@@ -126,6 +127,7 @@ export default {
   name: "BaresRestaurantes",
   components: {
     Categorias,
+    Categoriastodas,
     PromosPrincipales,
     CardLocal,
     Atras

@@ -4,7 +4,7 @@
     <v-row class="relative mb-7 mt-n5">
       <v-col class="pa-0">
         <v-card class="p-0 b-0">
-          <v-img src="../assets/img/PortadaProducto.jpg" height="280">
+          <v-img src="../assets/img/image.png" height="280">
           <div class="gradient-producto"></div>
             <v-card-actions class="mt-neg-64">
               <v-icon @click="$router.push('/carta')" color="#fff">mdi-chevron-left</v-icon>

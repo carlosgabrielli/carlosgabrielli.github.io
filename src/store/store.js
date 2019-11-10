@@ -7,6 +7,7 @@ import locales from './modules/locales'
 import promos from './modules/promos'
 import sliderlocales from './modules/sliderlocales'
 import categorias from './modules/categorias'
+import categoriastodas from './modules/categoriastodas'
 import platos from './modules/platos'
 
 Vue.use(Vuex)
@@ -24,6 +25,7 @@ export const store = new Vuex.Store({
         promos,
         sliderlocales,
         categorias,
+        categoriastodas,
         platos
     }
 })

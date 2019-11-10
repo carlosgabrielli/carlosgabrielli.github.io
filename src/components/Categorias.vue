@@ -1,5 +1,5 @@
 <template>
-  <div v-if="categorias && clocal.length > 0">
+  <div v-if="categorias && clocal.length > 1">
         <v-slide-group class="mx-n3">
           <v-slide-item v-for="categoria in filtrado()" :key="categoria.Nombre">
             <v-card class="categorias mr-4 mb-4 shadow-md" height="100" width="100">
