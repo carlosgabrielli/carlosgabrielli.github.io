@@ -1,7 +1,7 @@
 <template>
   <v-container v-if="local" class="pt-0">
     <!--Encabezado-->
-    <v-row class="relative mb-7 mt-n5">
+    <v-row class="relative mb-7 mt-n6">
       <v-col class="pa-0">
         <v-card class="p-0 b-0">
           <v-img :src="local.Portada" height="280">
