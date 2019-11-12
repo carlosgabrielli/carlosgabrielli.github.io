@@ -37,7 +37,10 @@ const actions = {
         let lista = []
         firebase.firestore().collection('platos').where('Id_Local', '==', id).get().then(function(snapshot){
             snapshot.forEach(function(childSnapshot){
-                lista.push(childSnapshot.data())
+                let dato = childSnapshot.data()
+                dato.Id = childSnapshot.id
+                lista.push(dato)
+                
             })
             commit('setplatos', lista)
         })

@@ -7,7 +7,7 @@
           <v-img src="../assets/img/image.png" height="280">
           <div class="gradient-producto"></div>
             <v-card-actions class="mt-neg-64">
-              <v-icon @click="$router.push('/baresRestaurantes')" color="#fff">mdi-chevron-left</v-icon>
+              <v-icon @click="$router.back()" color="#fff">mdi-chevron-left</v-icon>
               <v-spacer></v-spacer>
               <v-btn icon>
                 <v-icon color="#fff">mdi-heart-outline</v-icon>
