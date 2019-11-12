@@ -53,7 +53,6 @@ export default new Router({
                 menu: true
             }
         },
-        //Nuevo
         {
             path: '/Carta/:id',
             name: 'Carta',
@@ -63,7 +62,7 @@ export default new Router({
             }
         },
         {
-            path: '/Producto',
+            path: '/Producto/:id',
             name: 'Producto',
             component: Producto,
             meta: {

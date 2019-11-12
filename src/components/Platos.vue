@@ -2,7 +2,7 @@
   <div v-if="platos">
     <v-row>
       <v-col>
-        <v-card @click="$router.push('/Carta')" v-for="plato in platos" :key="plato.Nombre" class="lista-locales mb-4" outlined>
+        <v-card @click="$router.push('/Producto/' + plato.Id)" v-for="plato in platos" :key="plato.Nombre" class="lista-locales mb-4" outlined>
           <v-list-item three-line>
             <v-list-item-avatar tile size="78" color="grey lighten-3 shadow-xs border-radius-10">
               <v-img class="mr-2" :src="plato.Foto"></v-img>

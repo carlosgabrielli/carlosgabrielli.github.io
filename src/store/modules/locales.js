@@ -19,12 +19,14 @@ const getters = {
 }
 
 const actions = {
+    // Permite ver los locales en su correspondiente página con su Id como link
     ver ({commit}, id) {
         console.log(id)
         firebase.firestore().collection('locales').doc(id).get().then(function(snapshot){
             commit('setLocal', snapshot.data())
         })
     },
+    // Lista los locales
     listar({commit}){
         let lista = []
         firebase.firestore().collection('locales').get().then(function(snapshot){
@@ -36,10 +38,12 @@ const actions = {
             commit('setLocales', lista)
         })
     },
+    // Permite buscar los locales
     buscador({commit},val) {
         commit('buscador', val)
 
       },
+      // Guarda los locales que se registran en la base de datos
       guardar({commit}, local) {
         firebase.auth().createUserWithEmailAndPassword(local.Email, local.Clave).then(result => {
             local.Uid = result.user.uid

@@ -1,5 +1,5 @@
 <template>
-  <v-container class="pt-0">
+  <v-container v-if="plato" class="pt-0">
     <!--Encabezado-->
     <v-row class="relative mb-7 mt-n5">
       <v-col class="pa-0">
@@ -7,7 +7,7 @@
           <v-img src="../assets/img/image.png" height="280">
           <div class="gradient-producto"></div>
             <v-card-actions class="mt-neg-64">
-              <v-icon @click="$router.push('/carta')" color="#fff">mdi-chevron-left</v-icon>
+              <v-icon @click="$router.push('/baresRestaurantes')" color="#fff">mdi-chevron-left</v-icon>
               <v-spacer></v-spacer>
               <v-btn icon>
                 <v-icon color="#fff">mdi-heart-outline</v-icon>
@@ -24,11 +24,11 @@
     <v-row>
       <v-col class="pb-0 absolute category-overlay border-radius-tx">
         <v-list-item-content class="pt-0 pb-0">
-          <h2 class="title mt-5">Milanesa vegana</h2>
+          <h2 class="title mt-5">{{ plato.Nombre }}</h2>
           <v-list-item-subtitle
             class="subtitle-2 font-weight-regular"
-          >La mejor milanesa de ternera angus o suprema de pollo</v-list-item-subtitle>
-          <v-list-item-title class="mb-1 subtitle-1">$100</v-list-item-title>
+          >{{ plato.Descripcion }}</v-list-item-subtitle>
+          <v-list-item-title class="mb-1 subtitle-1">{{ plato.Precio }}</v-list-item-title>
         </v-list-item-content>
       </v-col>
     </v-row>
@@ -96,6 +96,14 @@ export default {
   name: "Producto",
   components: {
     VueNumericInput
+  },
+  mounted () {
+    this.$store.dispatch('platos/ver', this.$route.params.id)
+  },
+  computed: {
+    plato () {
+      return this.$store.getters['platos/plato']
+    }
   }
 };
 </script>
