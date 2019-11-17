@@ -103,7 +103,7 @@
             </v-row>
             <!--Boton confirmar-->
             <v-row>
-              <div class="mt-6">
+              <div class="mt-12">
                 <v-col class="fixed-bottom border-top bg-app">
                   <v-btn block color="#FFB74F">Aplicar</v-btn>
                 </v-col>

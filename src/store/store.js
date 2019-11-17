@@ -9,6 +9,7 @@ import sliderlocales from './modules/sliderlocales'
 import categorias from './modules/categorias'
 import categoriastodas from './modules/categoriastodas'
 import platos from './modules/platos'
+import ingredientes from './modules/ingredientes'
 
 Vue.use(Vuex)
 
@@ -26,6 +27,7 @@ export const store = new Vuex.Store({
         sliderlocales,
         categorias,
         categoriastodas,
-        platos
+        platos,
+        ingredientes
     }
 })
