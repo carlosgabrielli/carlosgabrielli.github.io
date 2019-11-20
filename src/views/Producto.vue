@@ -5,9 +5,9 @@
       <v-col class="pa-0">
         <v-card class="p-0 b-0">
           <v-img :src="plato.Foto" height="280">
-            <div class="gradient-producto"></div>
-            <v-card-actions class="mt-neg-64">
-              <v-icon @click="$router.back()" color="#fff">mdi-chevron-left</v-icon>
+            <div class="gradient-producto">
+            <v-card-actions class="mt-5">
+              <v-icon @click="$router.push('/baresRestaurantes')" color="#fff">mdi-chevron-left</v-icon>
               <v-spacer></v-spacer>
               <v-btn icon>
                 <v-icon color="#fff">mdi-heart-outline</v-icon>
@@ -16,6 +16,7 @@
                 <v-icon color="#fff">mdi-share-variant</v-icon>
               </v-btn>
             </v-card-actions>
+            </div>
           </v-img>
         </v-card>
       </v-col>
@@ -64,7 +65,7 @@
     <!--Boton continuar-->
     <v-row>
       <v-col class="pt-0">
-        <v-btn block color="#FFB74F">Continuar</v-btn>
+        <v-btn @click="$router.push('/CarritoEditar')" block color="#FFB74F">Continuar</v-btn>
       </v-col>
     </v-row>
   </v-container>
@@ -90,6 +91,9 @@ export default {
   computed: {
     plato() {
       return this.$store.getters["platos/plato"];
+    },
+        local () {
+      return this.$store.getters['locales/local']
     }
   }
 };

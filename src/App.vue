@@ -1,10 +1,10 @@
 <template>
   <v-app>
-    <AppToolbar v-if="$route.meta.menu"/>
+    <AppToolbar class="z-index-999" v-if="$route.meta.menu"/>
      <v-content>
      <router-view/>
     </v-content>
-   <Footer/>
+   <Footer class="z-index-999" />
   </v-app>
 </template>
 

@@ -35,3 +35,8 @@
 .absolute { position: absolute }
 .relative { position: relative; }
 .fixed-bottom { position: fixed; bottom: 0; }
+
+/* Z index */
+.z-index-999 {
+    z-index: 999 !important;
+}

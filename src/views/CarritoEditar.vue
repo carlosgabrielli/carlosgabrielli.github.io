@@ -1,147 +1,120 @@
 <template>
-  <v-expansion-panels>
-    <v-expansion-panel>
-      <v-expansion-panel-header v-slot="{ open }" class="px-3">
-                <v-list-item-content>
-                <v-fade-transition leave-absolute>
-                        <div v-if="open">
-                          <v-row>
-                            <v-col class="pt-0">
-                              <atras @click="$router.push('/Carta')"/>
-                              <h2 class="title">Mi pedido</h2>
-                            </v-col>
-                          </v-row>
-                            <v-row class="pt-4">
-                                <v-col  cols="10" class="pl-3 pr-0 pt-3">
-                                    <h2 class="title">Milanesa vegana</h2>
-                                    <v-list-item-subtitle class="subtitle-2 font-weight-regular">
-                                    La mejor milanesa de ternera angus o suprema de pollo
-                                    </v-list-item-subtitle>
-                                </v-col>
-                                <v-col  cols="1" class="pl-0 pr-0 pt-4 pb-0">
-                                    <v-icon>mdi-close-circle-outline</v-icon>
-                                </v-col>
-                                <v-col  cols="1" class="pl-1 pr-0 pt-4 pb-0">
-                                    <v-icon>mdi-pencil-outline</v-icon>
-                                </v-col>
-                            </v-row>
-                            <v-divider class="linea-division-carrito pl-0"></v-divider>
-                            <v-row>
-                                <v-col  cols="10" class="pl-3 pr-0 pt-3">
-                                    <h2 class="title">Milanesa vegana</h2>
-                                    <v-list-item-subtitle class="subtitle-2 font-weight-regular">
-                                    La mejor milanesa de ternera angus o suprema de pollo
-                                    </v-list-item-subtitle>
-                                </v-col>
-                                <v-col  cols="1" class="pl-0 pr-0 pt-4 pb-0">
-                                    <v-icon>mdi-close-circle-outline</v-icon>
-                                </v-col>
-                                <v-col  cols="1" class="pl-1 pr-0 pt-4 pb-0">
-                                    <v-icon>mdi-pencil-outline</v-icon>
-                                </v-col>
-                            </v-row>
-                            <v-divider class="linea-division-carrito pl-0"></v-divider>
-                            <v-row>
-                                <v-col  cols="10" class="pl-3 pr-0 pt-3">
-                                    <h2 class="title">Milanesa vegana</h2>
-                                    <v-list-item-subtitle class="subtitle-2 font-weight-regular">
-                                    La mejor milanesa de ternera angus o suprema de pollo
-                                    </v-list-item-subtitle>
-                                </v-col>
-                                <v-col  cols="1" class="pl-0 pr-0 pt-4 pb-0">
-                                    <v-icon>mdi-close-circle-outline</v-icon>
-                                </v-col>
-                                <v-col  cols="1" class="pl-1 pr-0 pt-4 pb-0">
-                                    <v-icon>mdi-pencil-outline</v-icon>
-                                </v-col>
-                            </v-row>
-                        </div>
-                        <v-row
-                        v-else
-                        no-gutters
-                         >
-                         <v-row>
-                           <v-col class="pt-0">
-                             <atras @click="$router.push('/Carta')"/>
-                             <h2 class="title">Mi pedido</h2>
-                           </v-col>
-                        </v-row>
-                         <v-row class="pt-4">
-                            <v-col cols="1" class="pt-3 pb-0 pl-1 pr-0 ">
-                                <v-list-item-subtitle class="mt-1 subtitle-2 font-weight-regular">x2</v-list-item-subtitle>
-                            </v-col>
-                            <v-col cols="7" class="pr-0 pl-1">
-                                <h2 class="title">Milanesa vegana</h2>
-                                <v-list-item-subtitle class="subtitle-2 font-weight-regular">
-                                    La mejor milanesa de ternera angus o suprema de pollo
-                                </v-list-item-subtitle>
-                            </v-col>
-                            <v-col cols="2" class="pl-3 pr-0">
-                               <v-list-item-title class=" mt-2 subtitle-2 ">
-                                 $100
-                                </v-list-item-title>
-                            </v-col>
-                          </v-row>  
-                          <v-divider class="linea-division-carrito pl-0"></v-divider>
-                          <v-row>
-                            <v-col cols="1" class="pt-3 pb-0 pl-1 pr-0">
-                                <v-list-item-subtitle class="mt-1 subtitle-2 font-weight-regular">x2</v-list-item-subtitle>
-                            </v-col>
-                            <v-col cols="7" class="pl-1">
-                                <h2 class="title">Milanesa vegana</h2>
-                                <v-list-item-subtitle class="subtitle-2 font-weight-regular">
-                                    La mejor milanesa de ternera angus o suprema de pollo
-                                </v-list-item-subtitle>
-                            </v-col>
-                            <v-col cols="2">
-                               <v-list-item-title class=" mt-2 subtitle-2 ">
-                                 $100
-                                </v-list-item-title>
-                            </v-col>
-                          </v-row>
-                          <v-divider class="linea-division-carrito pl-0"></v-divider>
-                          <v-row>
-                            <v-col cols="1" class="pt-3 pb-0 pl-1 pr-0">
-                                <v-list-item-subtitle class="mt-1 subtitle-2 font-weight-regular">x2</v-list-item-subtitle>
-                            </v-col>
-                            <v-col cols="7" class="pl-1">
-                                <h2 class="title">Milanesa vegana</h2>
-                                <v-list-item-subtitle class="subtitle-2 font-weight-regular">
-                                    La mejor milanesa de ternera angus o suprema de pollo
-                                </v-list-item-subtitle>
-                            </v-col>
-                            <v-col cols="2">
-                               <v-list-item-title class=" mt-2 subtitle-2 ">
-                                 $100
-                                </v-list-item-title>
-                            </v-col>
-                            
-                          </v-row>
-                        </v-row> 
-                </v-fade-transition>
-            </v-list-item-content>
-      </v-expansion-panel-header>
-    </v-expansion-panel>
-  </v-expansion-panels>
+  <v-container>
+    <v-dialog v-model="dialogEdit" transition="fade-transition" persistent fullscreen>
+      <v-card class="bg-app">
+        <v-container style="margin-top: 56px">
+          <v-row justify="center" class="mb-3">
+            <v-col cols="1">
+              <v-icon
+                @click="$router.push('/baresRestaurantes')"
+                color="#000"
+                class="ml-n2"
+              >mdi-chevron-left</v-icon>
+            </v-col>
+            <v-col md="auto" class="px-0">
+              <h3>Mi pedido</h3>
+            </v-col>
+            <v-col cols="4">
+              <p @click.stop="dialogEdit = false" class="float-right">Cancelar</p>
+            </v-col>
+          </v-row>
+          <div class="border-bottom">
+            <v-row>
+              <v-col md="auto">
+                <h4>Milanesa vegana</h4>
+                <p>
+                  La mejor milanesa de ternera angus o
+                  suprema de pollo
+                </p>
+              </v-col>
+              <v-col cols="1">
+                <v-btn icon>
+                  <v-icon color="rgba(0, 0, 0, 0.70)">mdi-pencil-outline</v-icon>
+                </v-btn>
+              </v-col>
+              <v-col cols="1">
+                <v-btn icon>
+                  <v-icon color="rgba(0, 0, 0, 0.70)">mdi-close-circle-outline</v-icon>
+                </v-btn>
+              </v-col>
+            </v-row>
+          </div>
+          <v-row>
+            <v-col>
+              <p>Subtotal</p>
+            </v-col>
+            <v-col>
+              <p class="float-right">$100</p>
+            </v-col>
+          </v-row>
+          <v-row>
+            <v-col class="fixed-bottom border-top bg-app" style="margin-bottom:70px">
+              <v-btn block color="#FFB74F">Aplicar</v-btn>
+            </v-col>
+          </v-row>
+        </v-container>
+      </v-card>
+    </v-dialog>
+    <v-row justify="center" class="mb-3">
+      <v-col cols="1">
+        <v-icon
+          @click="$router.push('/baresRestaurantes')"
+          color="#000"
+          class="ml-n2"
+        >mdi-chevron-left</v-icon>
+      </v-col>
+      <v-col md="auto" class="px-0">
+        <h3>Mi pedido</h3>
+      </v-col>
+      <v-col cols="4">
+        <p @click.stop="dialogEdit = true" class="float-right">Editar</p>
+      </v-col>
+    </v-row>
+    <div class="border-bottom">
+      <v-row>
+        <v-col cols="2" class="mr-n3">
+          <p>x2</p>
+        </v-col>
+        <v-col md="auto" class="px-0">
+          <h4>Milanesa vegana</h4>
+          <p>
+            La mejor milanesa de ternera angus o
+            suprema de pollo
+          </p>
+        </v-col>
+        <v-col cols="2">
+          <p class="float-right">$100</p>
+        </v-col>
+      </v-row>
+    </div>
+    <v-row>
+      <v-col>
+        <p>Subtotal</p>
+      </v-col>
+      <v-col>
+        <p class="float-right">$100</p>
+      </v-col>
+    </v-row>
+    <v-row>
+      <v-col class="fixed-bottom border-top bg-app" style="margin-bottom:70px">
+        <v-btn block color="#FFB74F">Aplicar</v-btn>
+      </v-col>
+    </v-row>
+  </v-container>
 </template>
 
 <script>
 import Atras from "@/components/Atras";
 
-  export default {
-    data: () => ({
-      date: null,
-      trip: {
-        name: '',
-        location: null,
-        start: null,
-        end: null,
-      },
-
-      locations: ['Australia', 'Barbados', 'Chile', 'Denmark', 'Equador', 'France'],
-    }),
-      components: {
+export default {
+  data: () => ({
+    dialogEdit: false
+  }),
+  components: {
     Atras
+  },
+  plato() {
+    return this.$store.getters["platos/plato"];
   }
-  }
+};
 </script>
