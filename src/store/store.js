@@ -10,6 +10,7 @@ import categorias from './modules/categorias'
 import categoriastodas from './modules/categoriastodas'
 import platos from './modules/platos'
 import ingredientes from './modules/ingredientes'
+import pedidos from './modules/pedidos'
 
 Vue.use(Vuex)
 
@@ -28,6 +29,7 @@ export const store = new Vuex.Store({
         categorias,
         categoriastodas,
         platos,
-        ingredientes
+        ingredientes,
+        pedidos
     }
 })

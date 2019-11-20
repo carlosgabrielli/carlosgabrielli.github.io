@@ -19,7 +19,7 @@
               <v-list-item-subtitle
                 class="subtitle-2 font-weight-regular"
               >{{ plato.Descripcion }}</v-list-item-subtitle>
-              <v-card-subtitle class="pa-0 color-primary f-16 f-semibold">{{ plato.Precio }}</v-card-subtitle>
+              <v-card-subtitle class="pa-0 color-primary f-16 f-semibold">${{ plato.Precio }}</v-card-subtitle>
             </v-list-item-content>
           </v-list-item>
                     </div>

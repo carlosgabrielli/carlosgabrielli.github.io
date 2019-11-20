@@ -7,7 +7,7 @@
           <v-img :src="plato.Foto" height="280">
             <div class="gradient-producto">
             <v-card-actions class="mt-5">
-              <v-icon @click="$router.push('/baresRestaurantes')" color="#fff">mdi-chevron-left</v-icon>
+              <v-icon @click="$router.back()" color="#fff">mdi-chevron-left</v-icon>
               <v-spacer></v-spacer>
               <v-btn icon>
                 <v-icon color="#fff">mdi-heart-outline</v-icon>
@@ -27,7 +27,7 @@
         <v-list-item-content class="pt-0 pb-0">
           <h2 class="title mt-5">{{ plato.Nombre }}</h2>
           <v-list-item-subtitle class="subtitle-2 font-weight-regular">{{ plato.Descripcion }}</v-list-item-subtitle>
-          <v-list-item-title class="mb-1 subtitle-1">{{ plato.Precio }}</v-list-item-title>
+          <v-list-item-title class="mb-1 subtitle-1">${{ plato.Precio }}</v-list-item-title>
         </v-list-item-content>
       </v-col>
     </v-row>
@@ -43,7 +43,7 @@
         <vue-numeric-input
           class="numeric-input"
           align="center"
-          v-model="value"
+          v-model="plato.cantidad"
           :min="1"
           :max="20"
           :step="1"
@@ -51,7 +51,27 @@
       </v-col>
     </v-row>
     <!--Personalizar-->
-    <ingredientes :ilocal="plato.Ingredientes"></ingredientes>
+    <v-row>
+      <v-col cols="12">
+        <v-divider class="mt-3"></v-divider>
+      </v-col>
+      <v-col class="pt-0">
+        <v-list-item-title class="headline mb-1 subtitle-1">Personaliza tu pedido</v-list-item-title>
+        <v-divider class="mt-3"></v-divider>
+      </v-col>
+    </v-row>
+    <v-row>
+      <v-col
+        cols="12"
+        v-for="ingrediente in plato.Ingredientes"
+        :key="ingrediente.Nombre"
+        class="pt-0 pb-0"
+      >
+        <v-checkbox :label="ingrediente.Nombre" v-model="ingrediente.agregado" class="mt-1"></v-checkbox>
+        ${{ ingrediente.Precio }}
+        <v-divider></v-divider>
+      </v-col>
+    </v-row>
     <v-row>
       <v-col>
         <v-list-item-title class="headline mb-1 subtitle-1">Aclaraciones</v-list-item-title>
@@ -59,13 +79,13 @@
     </v-row>
     <v-row>
       <v-col cols="12" sm="6" class="py-0">
-        <v-textarea filled auto-grow label="Notas al producto..." rows="2" row-height="20"></v-textarea>
+        <v-textarea v-model="plato.aclaracion" filled auto-grow label="Notas al producto..." rows="2" row-height="20"></v-textarea>
       </v-col>
     </v-row>
     <!--Boton continuar-->
     <v-row>
       <v-col class="pt-0">
-        <v-btn @click="$router.push('/CarritoEditar')" block color="#FFB74F">Continuar</v-btn>
+        <v-btn @click="guardar" block color="#FFB74F">Continuar</v-btn>
       </v-col>
     </v-row>
   </v-container>
@@ -90,10 +110,21 @@ export default {
   },
   computed: {
     plato() {
+      let plato = this.$store.getters["platos/plato"]
+      plato.cantidad = 1
+      plato.aclaracion = null
+      plato.total = plato.cantidad * plato.Precio
       return this.$store.getters["platos/plato"];
     },
-        local () {
+    local () {
       return this.$store.getters['locales/local']
+    }
+  },
+  methods: {
+    guardar () {
+      console.log(this.plato)
+      this.$store.dispatch('pedidos/guardar', this.plato)
+      this.$router.back()
     }
   }
 };

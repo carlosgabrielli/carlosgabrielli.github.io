@@ -6,7 +6,7 @@
           <v-row justify="center" class="mb-3">
             <v-col cols="1">
               <v-icon
-                @click="$router.push('/baresRestaurantes')"
+                @click="$router.back()"
                 color="#000"
                 class="ml-n2"
               >mdi-chevron-left</v-icon>
@@ -18,13 +18,12 @@
               <p @click.stop="dialogEdit = false" class="float-right">Cancelar</p>
             </v-col>
           </v-row>
-          <div class="border-bottom">
+          <div v-for="(pedido, index) in pedidos" :key="pedido.Nombre" class="border-bottom">
             <v-row>
               <v-col md="auto">
-                <h4>Milanesa vegana</h4>
+                <h4>{{ pedido.Nombre }}</h4>
                 <p>
-                  La mejor milanesa de ternera angus o
-                  suprema de pollo
+                  
                 </p>
               </v-col>
               <v-col cols="1">
@@ -33,7 +32,7 @@
                 </v-btn>
               </v-col>
               <v-col cols="1">
-                <v-btn icon>
+                <v-btn @click="eliminarPedido(index)" icon>
                   <v-icon color="rgba(0, 0, 0, 0.70)">mdi-close-circle-outline</v-icon>
                 </v-btn>
               </v-col>
@@ -44,7 +43,7 @@
               <p>Subtotal</p>
             </v-col>
             <v-col>
-              <p class="float-right">$100</p>
+              <p class="float-right">${{total}}</p>
             </v-col>
           </v-row>
           <v-row>
@@ -58,32 +57,32 @@
     <v-row justify="center" class="mb-3">
       <v-col cols="1">
         <v-icon
-          @click="$router.push('/baresRestaurantes')"
+          @click="$router.back()"
           color="#000"
           class="ml-n2"
         >mdi-chevron-left</v-icon>
       </v-col>
       <v-col md="auto" class="px-0">
-        <h3>Mi pedido</h3>
+        <h3 v-if="pedidos.length === 1">Mi pedido</h3>
+        <h3 v-if="pedidos.length > 1">Mis pedidos</h3>
       </v-col>
       <v-col cols="4">
         <p @click.stop="dialogEdit = true" class="float-right">Editar</p>
       </v-col>
     </v-row>
-    <div class="border-bottom">
+    <div v-for="pedido in pedidos" :key="pedido.Nombre" class="border-bottom">
       <v-row>
         <v-col cols="2" class="mr-n3">
-          <p>x2</p>
+          <p>x{{ pedido.cantidad }}</p>
         </v-col>
         <v-col md="auto" class="px-0">
-          <h4>Milanesa vegana</h4>
-          <p>
-            La mejor milanesa de ternera angus o
-            suprema de pollo
+          <h4>{{ pedido.Nombre }}</h4>
+          <p v-for="ingrediente in pedido.Ingredientes" v-if="ingrediente.agregado" :key="ingrediente.Nombre">
+            {{ ingrediente.Nombre }}
           </p>
         </v-col>
         <v-col cols="2">
-          <p class="float-right">$100</p>
+          <p class="float-right">${{pedido.total}}</p>
         </v-col>
       </v-row>
     </div>
@@ -92,7 +91,7 @@
         <p>Subtotal</p>
       </v-col>
       <v-col>
-        <p class="float-right">$100</p>
+        <p class="float-right">${{total}}</p>
       </v-col>
     </v-row>
     <v-row>
@@ -113,8 +112,30 @@ export default {
   components: {
     Atras
   },
-  plato() {
-    return this.$store.getters["platos/plato"];
+  watch: {
+    pedidos (val) {
+      if (val.length == 0) {
+        this.$router.back()
+      }
+    }
+  },
+  computed: {
+    pedidos () {
+      return this.$store.getters['pedidos/pedido'].items
+    },
+    total () {
+      let total = 0
+      for (let pedido of this.pedidos) {
+        total += pedido.total
+      }
+
+      return total
+    }
+  },
+  methods: {
+    eliminarPedido (i) {
+      this.$store.dispatch('pedidos/eliminar', i)
+    }
   }
 };
 </script>

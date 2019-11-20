@@ -1,5 +1,5 @@
  <template>
-  <div v-if="ingredientes && ilocal.length > 1">
+  <div v-if="ingredientes">
     <v-row>
       <v-col cols="12">
         <v-divider class="mt-3"></v-divider>
@@ -17,6 +17,7 @@
         class="pt-0 pb-0"
       >
         <v-checkbox :label="ingrediente.Nombre" class="mt-1"></v-checkbox>
+        ${{ ingrediente.Precio }}
         <v-divider></v-divider>
       </v-col>
     </v-row>
@@ -27,15 +28,7 @@
 export default {
   name: "Ingredientes",
   props: {
-    ilocal: Array
-  },
-  mounted() {
-      this.$store.dispatch("ingredientes/listar");
-  },
-  computed: {
-    ingredientes() {
-      return this.$store.getters["ingredientes/ingredientes"];
-    }
+    ingredientes: Array
   }
 };
 </script>

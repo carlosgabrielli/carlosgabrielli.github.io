@@ -18,7 +18,15 @@ const actions = {
     ver ({commit}, id) {
         console.log(id)
         firebase.firestore().collection('platos').doc(id).get().then(function(snapshot){
-            commit('setplato', snapshot.data())
+            let dato = snapshot.data()
+            dato.Ingredientes = []
+            firebase.firestore().collection('platos').doc(id).collection('Ingredientes').get().then(function(ingredientesSnap){
+                ingredientesSnap.forEach(function(childSnapshot) {
+                    dato.Ingredientes.push(childSnapshot.data())
+                })     
+                console.log(dato)
+                commit('setplato', dato)      
+            })            
         })
     },
     listar({commit}){

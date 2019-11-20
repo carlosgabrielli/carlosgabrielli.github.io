@@ -1,0 +1,14 @@
+<template>
+    <v-container>
+        <v-row>
+            <v-col>
+                <v-btn>Aceptar</v-btn>
+            </v-col>
+            <v-col>
+                <v-btn>
+                    Rechazar
+                </v-btn>
+            </v-col>
+        </v-row>
+    </v-container>
+</template>
