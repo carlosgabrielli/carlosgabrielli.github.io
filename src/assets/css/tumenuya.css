@@ -70,7 +70,7 @@
 }
 
 /* Gradient negro en la imagen principal de la carta */
-.gradient-carta{
+.gradient-carta {
     background-image: linear-gradient(180deg, #00000000 10%, #000000 92%);
     height: 100%;
 }
@@ -99,18 +99,22 @@
     width: 120px !important;
 
 }
+
 .numeric-input .btn-increment {
     background-color: #FFB74F;
 
 }
+
 .numeric-input input {
     border-radius: 8px !important;
 
 }
+
 .numeric-input:focus {
     outline: none !important;
 
 }
+
 .vue-numeric-input .btn {
     background: #FFB74F !important;
     border: 1px solid #FFB74F !important;
@@ -148,6 +152,65 @@
 }
 
 /* Quitar flecha de en v-expansion en carrito editar */
-.v-expansion-panel--active > .v-expansion-panel-header--active .v-expansion-panel-header__icon:not(.v-expansion-panel-header__icon--disable-rotate) .v-icon {
+.v-expansion-panel--active>.v-expansion-panel-header--active .v-expansion-panel-header__icon:not(.v-expansion-panel-header__icon--disable-rotate) .v-icon {
     display: none;
+}
+
+/* Carta header fixed al hacer scroll */
+.classA {
+    transition: all ease 0.5s;
+}
+
+.classB {
+    transition: all ease 0.5s;
+    position: fixed;
+    z-index: 100;
+    border-radius: 0 0 50px 50px;
+    height: 100px;
+    overflow: hidden;
+}
+
+.classB .hola {
+    display: none;
+}
+
+.classB .hola {
+    display: none;
+}
+
+.classB .name-menu {
+    margin-top: 40px;
+}
+
+.classB .adress-menu {
+    display: none;
+}
+
+.classB .adress-menu {
+    display: none;
+}
+
+.classB .v-image__image--cover {
+    background-image: none !important;
+    background-color: red;
+}
+
+.classB .gradient-carta {
+    background-image: none !important;
+}
+
+.classB .title-name-menu {
+    color: rgba(0, 0, 0, 0.87) !important;
+}
+
+.classB .description-menu {
+    padding-bottom: 0 !important;
+}
+
+.classB .button-back {
+    display: block !important;
+}
+
+.hola2 {
+    margin-top: 240px;
 }
