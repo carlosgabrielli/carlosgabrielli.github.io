@@ -26,11 +26,12 @@
     <h2 class="title" v-if="!filtro">Categorias</h2>
     <v-row v-if="!filtro">
       <v-col>
-    <categoriastodas></categoriastodas>
+        <categoriastodas></categoriastodas>
       </v-col>
     </v-row>
     <!--Cartas-->
     <CardLocal />
+    <!--Modal filtros-->
     <v-dialog v-model="Filtros" hide-overlay transition="dialog-bottom-transition" fullscreen>
       <v-card class="mx-auto box-shadow-none border-0">
         <v-toolbar dark color="primary" class="box-shadow-none">
@@ -39,7 +40,6 @@
           </v-btn>
           <v-toolbar-title>Filtros</v-toolbar-title>
         </v-toolbar>
-        <!--Categorias-->
         <v-list flat class="bg-app">
           <v-container>
             <v-row class="mb-3">

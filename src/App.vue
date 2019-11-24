@@ -4,7 +4,7 @@
      <v-content>
      <router-view/>
     </v-content>
-   <Footer class="z-index-201" />
+   <Footer class="z-index-201" v-if="$route.meta.menu"/>
   </v-app>
 </template>
 

@@ -173,3 +173,19 @@
   .sub-header-local.sub-header-local--hidden {
     transform: translate3d(0, 2px, 0);
   }
+
+@media (max-width: 354px) {
+    .col.forgot-password {
+        max-width: 100%;
+        flex: 100%;
+        text-align: left !important;
+        padding-top: 0;
+    }
+    .remember {
+        padding-bottom: 0;
+    }
+} 
+
+.illustration-login {
+    height: 200px;
+}
