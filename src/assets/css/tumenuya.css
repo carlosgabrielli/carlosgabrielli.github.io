@@ -156,61 +156,20 @@
     display: none;
 }
 
-/* Carta header fixed al hacer scroll */
-.classA {
-    transition: all ease 0.5s;
-}
-
-.classB {
-    transition: all ease 0.5s;
+/* Sub header local al hacer scroll */
+.sub-header-local {
+    height: 72px;
+    width: 100vw;
+    background: #fff;
     position: fixed;
-    z-index: 100;
-    border-radius: 0 0 50px 50px;
-    height: 100px;
-    overflow: hidden;
-}
-
-.classB .hola {
-    display: none;
-}
-
-.classB .hola {
-    display: none;
-}
-
-.classB .name-menu {
-    margin-top: 40px;
-}
-
-.classB .adress-menu {
-    display: none;
-}
-
-.classB .adress-menu {
-    display: none;
-}
-
-.classB .v-image__image--cover {
-    background-image: none !important;
-    background-color: red;
-}
-
-.classB .gradient-carta {
-    background-image: none !important;
-}
-
-.classB .title-name-menu {
-    color: rgba(0, 0, 0, 0.87) !important;
-}
-
-.classB .description-menu {
-    padding-bottom: 0 !important;
-}
-
-.classB .button-back {
-    display: block !important;
-}
-
-.hola2 {
-    margin-top: 240px;
-}
+    box-shadow: 0 2px 15px rgba(71, 120, 120, 0.5);
+    transform: translate3d(0, -100%, 0);
+    transition: 0.1s all ease-out;
+    z-index: 200;
+    margin-left: -12px;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+  }
+  .sub-header-local.sub-header-local--hidden {
+    transform: translate3d(0, 2px, 0);
+  }
