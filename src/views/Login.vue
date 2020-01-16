@@ -12,9 +12,10 @@
               aspect-ratio="1"
             ></v-img>
             <v-form>
-              <v-text-field label="Email" name="login" v-model="usuario.email" type="email"></v-text-field>
+              <v-text-field label="Email" outlined name="login" v-model="usuario.email" type="email"></v-text-field>
               <v-text-field
                 label="Contraseña"
+                outlined
                 name="password"
                 v-model="usuario.password"
                 id="password"

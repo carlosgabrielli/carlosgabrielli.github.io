@@ -1,78 +1,78 @@
 <template>
   <v-app id="inspire">
     <v-content>
-      <v-container fluid fill-height class="fondo">
-        <v-layout align-center justify-center>
+      <v-container fluid fill-height class="pb-0">
+        <v-layout justify-center>
           <v-flex xs12 sm8 md4>
             <v-img
               class="mx-auto mb-10"
-              width="150px"
-              height="150px"
+              width="100px"
+              height="100px"
               src="../assets/icon-definitivo.png"
               aspect-ratio="1"
             ></v-img>
-            <v-card class="elevation-2">
-              <v-card-text>
-                <v-form>
-                  <v-text-field
-                    label="Nombre del local"
-                    name="login"
-                    prepend-icon
-                    type="text"
-                    v-model="local.Nombre"
-                    :rules="[rules.required]"
-                  ></v-text-field>
+            <v-form>
+              <v-text-field
+                label="Nombre del local"
+                outlined
+                name="login"
+                prepend-icon
+                type="text"
+                v-model="local.Nombre"
+                :rules="[rules.required]"
+              ></v-text-field>
 
-                  <v-text-field
-                    color="#2B5E7C"
-                    id="Direccion"
-                    label="Dirección Fisica"
-                    name="Direccion"
-                    prepend-icon
-                    v-model="local.Direccion"
-                    type="text"
-                    :rules="[rules.required]"
-                  ></v-text-field>
-                  <v-text-field
-                    color="#2B5E7C"
-                    id="Email"
-                    v-model="local.Email"
-                    :rules="[rules.required, rules.email]"
-                    label="E-mail"
-                  ></v-text-field>
-                  <v-autocomplete
-                    name="Categorias"
-                    id="Categorias"
-                    v-model="local.Categorias"
-                    label="Categorias"
-                    :items="components"
-                    dense
-                    chips
-                    small-chips
-                    multiple
-                  ></v-autocomplete>
-                  <image-uploader
-                    :preview="true"
-                    :debug="1"
-                    :maxWidth="512"
-                    :quality="0.85"
-                    :autoRotate="true"
-                    doNotResize="['gif']"
-                    @input="setImage"
-                  ></image-uploader>
-                  <v-text-field
-                    color="#2B5E7C"
-                    id="password"
-                    label="Contraseña"
-                    v-model="local.Clave"
-                    name="password"
-                    prepend-icon
-                    type="password"
-                  ></v-text-field>
-                </v-form>
-                <v-btn class="mb-2" @click="guardar" block dark>Registrar local</v-btn>
-              </v-card-text>
-            </v-card>
+              <v-text-field
+                color="#2B5E7C"
+                id="Direccion"
+                label="Dirección Fisica"
+                outlined
+                name="Direccion"
+                prepend-icon
+                v-model="local.Direccion"
+                type="text"
+                :rules="[rules.required]"
+              ></v-text-field>
+              <v-text-field
+                color="#2B5E7C"
+                id="Email"
+                v-model="local.Email"
+                :rules="[rules.required, rules.email]"
+                label="E-mail"
+                outlined
+              ></v-text-field>
+              <v-autocomplete
+                name="Categorias"
+                id="Categorias"
+                v-model="local.Categorias"
+                label="Categorias"
+                :items="components"
+                outlined
+                chips
+                small-chips
+                multiple
+              ></v-autocomplete>
+              <image-uploader
+                :preview="true"
+                :debug="1"
+                :maxWidth="512"
+                :quality="0.85"
+                :autoRotate="true"
+                doNotResize="['gif']"
+                @input="setImage"
+              ></image-uploader>
+              <v-text-field
+                color="#2B5E7C"
+                id="password"
+                label="Contraseña"
+                outlined
+                v-model="local.Clave"
+                name="password"
+                prepend-icon
+                type="password"
+              ></v-text-field>
+            </v-form>
+            <v-btn class="mb-2 bg-primary" @click="guardar" block>Registrar local</v-btn>
           </v-flex>
         </v-layout>
       </v-container>
@@ -129,16 +129,22 @@ export default {
           extension = "gif";
         }
 
-        let imageRef = firebase.storage().ref().child('logoLocales/')
-        imagenRef.put(local.Logo).then(function(snapshot){
-          snapshot.ref.getDowloandURL().then(function(url){
+        let imageRef = firebase
+          .storage()
+          .ref()
+          .child("logoLocales/");
+        imagenRef.put(local.Logo).then(function(snapshot) {
+          snapshot.ref.getDowloandURL().then(function(url) {
             //console.log(url)
-            local.Logo = url
-            firebase.firestore().collection('locales').add(local)
+            local.Logo = url;
+            firebase
+              .firestore()
+              .collection("locales")
+              .add(local);
             //console.log(Locales)
-            resolve('Enviado')
-          })
-        })
+            resolve("Enviado");
+          });
+        });
       });
     }
   }

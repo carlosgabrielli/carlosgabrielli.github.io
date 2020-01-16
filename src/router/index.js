@@ -87,7 +87,7 @@ export default new Router({
             name: 'Registrar',
             component: Registrar,
             meta: {
-                menu: true
+                menu: false
             }
         },
         {
@@ -95,7 +95,7 @@ export default new Router({
             name: 'RegistrarLocal',
             component: RegistrarLocal,
             meta: {
-                menu: true
+                menu: false
             }
         },
         {
