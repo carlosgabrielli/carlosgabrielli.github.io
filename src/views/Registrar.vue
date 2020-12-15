@@ -27,7 +27,7 @@
                     id="Email"
                     v-model="usuario.Email"
                     :rules="[rules.required, rules.email]"
-                    label="E-mail"
+                    label="Correo electrónico"
                   ></v-text-field>
                   <v-text-field
                     color="#2B5E7C"

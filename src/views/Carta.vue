@@ -49,7 +49,7 @@
     <!--Categorias-->
     <v-row :class="{hola1: scrollPosition < 100, hola2: scrollPosition > 100}">
       <v-col class="pb-0 absolute category-overlay border-radius-tx">
-        <h2 class="title mt-5">Categorias</h2>
+        <h2 class="title mt-5">Categorías</h2>
       </v-col>
       <v-col class="mt-n5">
         <categorias :clocal="local.Categorias"></categorias>
@@ -102,7 +102,8 @@ export default {
     return {
       dialog: false,
       showHeaderLocal: true,
-      lastScrollPosition: 0
+      lastScrollPosition: 0,
+      scrollPosition: 0
     };
   },
   mounted() {

@@ -1,18 +1,23 @@
-<template>
+<template >
   <v-app id="inspire">
-    <v-content>
-      <v-container fluid fill-height class="pb-0">
+    <v-content class="bg-login">
+      <v-container>
         <v-layout justify-center>
-          <v-flex xs12 sm8 md4>
-            <v-img
-              class="mx-auto mb-10"
-              width="100px"
-              height="100px"
-              src="../assets/icon-definitivo.png"
-              aspect-ratio="1"
-            ></v-img>
+          <v-flex xs12 sm8 md4 class="py-5" style="padding-top: 130px !important">
+            <v-row class="mb-5">
+              <v-col class="pt-0">
+                <h1>¡Bievenido!</h1>
+                <h3>Inicia sesión para continuar</h3>
+              </v-col>
+            </v-row>
             <v-form>
-              <v-text-field label="Email" outlined name="login" v-model="usuario.email" type="email"></v-text-field>
+              <v-text-field
+                label="Email"
+                outlined
+                name="login"
+                v-model="usuario.email"
+                type="email"
+              ></v-text-field>
               <v-text-field
                 label="Contraseña"
                 outlined
@@ -31,23 +36,13 @@
               </v-col>
             </v-row>
             <v-btn block @click="login" class="mb-2 bg-primary">Ingresar</v-btn>
-            <v-row>
+            <v-btn block color="#FFFFFF" class="mt-6" @click="LoginGoogle" :loading="carga">
+              <v-img src="../assets/img/google_logo.png" max-width="28px" class="mr-3"></v-img>Ingresar con Google
+            </v-btn>
+            <v-row class="mt-4">
               <v-col class="text-center">
                 <p>¿Aún no tienes una cuenta?</p>
                 <a class="mb-2 font-weight-bold">Crear una cuenta</a>
-              </v-col>
-            </v-row>
-            <p class="text-center">O</p>
-            <v-btn block color="#FFFFFF" @click="LoginGoogle" :loading="carga">
-              <v-img src="../assets/img/google_logo.png" max-width="28px" class="mr-3"></v-img>Ingresar con Google
-            </v-btn>
-            <v-row>
-              <v-col
-                cols="12"
-                class="px-0 py-0 d-flex justify-center mt-8 d-block d-sm-none"
-                style="overflow-x: hidden;"
-              >
-                <v-img src="../assets/img/ilustracion_login_xs.png"></v-img>
               </v-col>
             </v-row>
           </v-flex>

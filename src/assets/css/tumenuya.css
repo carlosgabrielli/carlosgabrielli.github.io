@@ -122,7 +122,6 @@
     -webkit-box-shadow: none !important;
 }
 
-
 /* Datepicker width label bug fixed */
 .datepicker legend {
     width: 116px !important;
@@ -169,10 +168,11 @@
     margin-left: -12px;
     border-bottom-left-radius: 25px;
     border-bottom-right-radius: 25px;
-  }
-  .sub-header-local.sub-header-local--hidden {
+}
+
+.sub-header-local.sub-header-local--hidden {
     transform: translate3d(0, 2px, 0);
-  }
+}
 
 @media (max-width: 354px) {
     .col.forgot-password {
@@ -181,11 +181,39 @@
         text-align: left !important;
         padding-top: 0;
     }
+
     .remember {
         padding-bottom: 0;
     }
-} 
+}
 
-.illustration-login {
-    height: 200px;
+/* File image */
+
+#fileInput {
+}
+
+.image-resize img {
+    max-width: 100%;
+}
+
+
+/* Change Autocomplete styles in Chrome*/
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0px 1000px #fafafa inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+@media (max-width: 425px) {
+    .bg-login {
+        background-image: url('../img/bg_login.png');
+        background-size: contain;
+    }
 }

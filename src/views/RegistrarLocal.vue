@@ -45,7 +45,7 @@
                 name="Categorias"
                 id="Categorias"
                 v-model="local.Categorias"
-                label="Categorias"
+                label="Categorías"
                 :items="components"
                 outlined
                 chips
@@ -128,7 +128,6 @@ export default {
         if (local.imagen.type === "image/gif") {
           extension = "gif";
         }
-
         let imageRef = firebase
           .storage()
           .ref()
