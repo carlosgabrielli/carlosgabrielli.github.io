@@ -4,6 +4,7 @@
 /* Font-sizes */
 .f-18 { font-size: 18px !important; }
 .f-16 { font-size: 16px !important; }
+.f-13 { font-size: 13px !important; }
 
 /* Font-weights */
 .f-semibold { font-weight: 500 !important; }
@@ -27,6 +28,8 @@
 .bg-primary { background-color: #ffb74b !important }
 .bg-app { background-color: #fafafa !important; }
 .color-primary { color: #ffb74b !important }
+.color-white { color: #fff !important }
+.color-disabled { color: #C9C9C9 !important; }
 
 /* Margins */
 .mt-negative-40 { margin-top: -40px; }

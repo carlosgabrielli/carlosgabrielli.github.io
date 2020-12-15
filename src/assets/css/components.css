@@ -1,0 +1,6 @@
+/* List Cards */
+.border-radius-10.v-list-item__avatar {
+    border-radius: 10px !important;
+}
+
+.pos-left-card { position: absolute; right: 16px; top: 8px; }

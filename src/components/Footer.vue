@@ -36,15 +36,43 @@
               ></v-text-field>
             </v-col>
           </v-row>
-                  <CardLocal />
+          <CardLocal />
         </v-container>
-
 
         <!--Cartas-->
       </v-card>
     </v-dialog>
+    <!-- Dialog pedidos -->
+    <v-dialog
+      v-model="dialogPedidos"
+      hide-overlay
+      transition="dialog-bottom-transition"
+      fullscreen
+    >
+      <v-card class="mx-auto box-shadow-none border-0 bg-app">
+        <v-toolbar dark color="primary" class="box-shadow-none">
+          <v-btn
+            icon
+            dark
+            @click="dialogPedidos = false"
+            absolute
+            fab
+            small
+            top
+            left
+            class="mt-6 w-0"
+          >
+            <v-icon class="mt-2">mdi-chevron-left</v-icon>
+          </v-btn>
+          <h2 class="title ml-7">Pedidos</h2>
+        </v-toolbar>
+        <v-container>
+          <CardPedidos />
+        </v-container>
+      </v-card>
+    </v-dialog>
     <!-- Footer -->
-    <v-footer app fixed style="padding:0;">
+    <v-footer app fixed style="padding: 0">
       <v-bottom-navigation grow color="teal">
         <v-btn @click="$router.push('/home')">
           <v-icon>mdi-home-outline</v-icon>
@@ -52,8 +80,7 @@
         <v-btn @click.stop="dialogBuscador = true">
           <v-icon>mdi-magnify</v-icon>
         </v-btn>
-
-        <v-btn>
+        <v-btn @click.stop="dialogPedidos = true">
           <v-icon>mdi-clipboard-text-outline</v-icon>
         </v-btn>
       </v-bottom-navigation>
@@ -62,22 +89,25 @@
 </template>
 
 <script>
+import CardPedidos from "@/components/CardPedidos";
 import CardLocal from "@/components/CardLocal";
 
 export default {
   name: "Footer",
   components: {
-    CardLocal
+    CardLocal,
+    CardPedidos
   },
   props: {
-    source: String
+    source: String,
   },
   data() {
     return {
       dialogBuscador: false,
+      dialogPedidos: false,
       show: false,
       resultados: [],
-      filtro: ""
+      filtro: "",
     };
   },
   watch: {
@@ -86,7 +116,7 @@ export default {
     },
     filtro(val) {
       this.buscador();
-    }
+    },
   },
 
   methods: {
@@ -99,7 +129,7 @@ export default {
     },
     clearFiltro() {
       this.filtro = "";
-    }
-  }
+    },
+  },
 };
 </script>
