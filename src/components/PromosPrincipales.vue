@@ -2,8 +2,8 @@
   <div v-if="promos">
     <h2 class="title">Promociones</h2>
     <v-row>
-      <v-col>
-        <v-slide-group class="mx-n3">
+      <v-col class="px-0">
+        <v-slide-group>
           <v-slide-item v-for="promo in promos" :key="promo.Nombre">
             <v-card
               class="promos-principales mr-4 mb-4 border-radius-10 shadow-md"

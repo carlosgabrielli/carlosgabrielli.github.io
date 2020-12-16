@@ -38,8 +38,6 @@
           </v-row>
           <CardLocal />
         </v-container>
-
-        <!--Cartas-->
       </v-card>
     </v-dialog>
     <!-- Dialog pedidos -->

@@ -7,7 +7,7 @@
 
           <v-list-item three-line>
             <v-list-item-avatar tile size="78" color="grey lighten-3 shadow-xs border-radius-10">
-              <v-img class="mr-2" :src="plato.Foto"></v-img>
+              <v-img :src="plato.Foto"></v-img>
             </v-list-item-avatar>
             <v-btn icon class="btn-heart">
               <v-icon size="16">mdi-heart-outline</v-icon>

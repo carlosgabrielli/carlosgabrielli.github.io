@@ -14,7 +14,6 @@
               color="shadow-xs border-radius-10"
             >
               <v-img
-                class="mr-2"
                 src="../assets/img/logo_club_milanesa.png"
               ></v-img>
             </v-list-item-avatar>

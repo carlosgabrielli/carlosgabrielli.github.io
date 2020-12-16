@@ -43,7 +43,7 @@
             <v-list-item-group color="primary">
               <v-list-item @click.stop="dialogUser = true">
                 <v-list-item-icon class="mr-2">
-                  <v-icon>mdi-account-outline</v-icon>
+                  <v-icon class="f-26">mdi-account-outline</v-icon>
                 </v-list-item-icon>
                 <v-list-item-content>
                   <v-list-item-title>Editar perfil</v-list-item-title>
@@ -54,9 +54,9 @@
                   </v-btn>
                 </v-list-item-action>
               </v-list-item>
-              <v-list-item  @click.stop="dialogTarjetas = true">
-                <v-list-item-icon class="mr-2">
-                  <v-icon>mdi-credit-card-outline</v-icon>
+              <v-list-item @click.stop="dialogTarjetas = true">
+                <v-list-item-icon class="mr-2 ">
+                  <v-icon class="f-26">mdi-credit-card-outline</v-icon>
                 </v-list-item-icon>
                 <v-list-item-content>
                   <v-list-item-title>Tarjetas</v-list-item-title>
@@ -68,8 +68,8 @@
                 </v-list-item-action>
               </v-list-item>
               <v-list-item @click.stop="dialogNotifications = true">
-                <v-list-item-icon class="mr-2">
-                  <v-icon>mdi-bell-outline</v-icon>
+                <v-list-item-icon class="mr-2 ">
+                  <v-icon class="f-26">mdi-bell-outline</v-icon>
                 </v-list-item-icon>
                 <v-list-item-content>
                   <v-list-item-title
@@ -83,8 +83,8 @@
                 </v-list-item-action>
               </v-list-item>
               <v-list-item>
-                <v-list-item-icon class="mr-2">
-                  <v-icon>mdi-heart-outline</v-icon>
+                <v-list-item-icon class="mr-2 ">
+                  <v-icon class="f-26">mdi-heart-outline</v-icon>
                 </v-list-item-icon>
                 <v-list-item-content>
                   <v-list-item-title>Favoritos</v-list-item-title>
@@ -96,8 +96,8 @@
                 </v-list-item-action>
               </v-list-item>
               <v-list-item @click.stop="dialogPedidos = true">
-                <v-list-item-icon class="mr-2">
-                  <v-icon>mdi-clipboard-text-outline</v-icon>
+                <v-list-item-icon class="mr-2 ">
+                  <v-icon class="f-26">mdi-clipboard-text-outline</v-icon>
                 </v-list-item-icon>
                 <v-list-item-content>
                   <v-list-item-title>Mis pedidos</v-list-item-title>
@@ -109,8 +109,8 @@
                 </v-list-item-action>
               </v-list-item>
               <v-list-item>
-                <v-list-item-icon class="mr-2">
-                  <v-icon>mdi-logout-variant</v-icon>
+                <v-list-item-icon class="mr-2 ">
+                  <v-icon class="f-26">mdi-logout-variant</v-icon>
                 </v-list-item-icon>
                 <v-list-item-content>
                   <v-list-item-title @click="logout"
@@ -399,7 +399,122 @@
           <h2 class="title ml-7">Tarjetas</h2>
         </v-toolbar>
         <v-container>
+          <v-row>
+            <v-col>
+              <v-card class="lista-locales mb-4" outlined>
+                <v-list-item three-line>
+                  <v-btn
+                    icon
+                    class="btn-heart"
+                    @click.stop="dialogTarjetaCargada = true"
+                  >
+                    <v-icon size="16">mdi-pencil</v-icon>
+                  </v-btn>
+                  <v-list-item-content class="mr-4 ml-n2 my-2">
+                    <v-list-item-title
+                      class="headline mb-1 subtitle-1 font-weight-bold d-flex align-items-center"
+                    >
+                      <img
+                        src="../assets/img/visa_logo.png"
+                        height="20"
+                        class="mr-3"
+                      />
+                      **** **** **** 3704</v-list-item-title
+                    >
+                    <v-list-item-subtitle
+                      class="subtitle-2 font-weight-regular mt-4"
+                      >Fecha de vencimiento: 12/23</v-list-item-subtitle
+                    >
+                    <v-card-subtitle class="caption pa-0 mt-2"
+                      >Titular: Carlos Gabrielli</v-card-subtitle
+                    >
+                  </v-list-item-content>
+                </v-list-item>
+              </v-card>
+            </v-col>
+          </v-row>
+          <v-btn
+            @click.stop="dialogAgregarTarjeta = true"
+            depressed
+            color="#ffb74b"
+            class="mt-6"
+          >
+            Agregar tarjeta
+          </v-btn>
+        </v-container>
+      </v-card>
+    </v-dialog>
+    <!-- Dialog agregar tarjeta -->
+    <v-dialog
+      v-model="dialogAgregarTarjeta"
+      hide-overlay
+      transition="dialog-bottom-transition"
+      fullscreen
+    >
+      <v-card class="mx-auto box-shadow-none border-0 bg-app">
+        <v-toolbar dark color="primary" class="box-shadow-none">
+          <v-btn
+            icon
+            dark
+            @click="dialogAgregarTarjeta = false"
+            absolute
+            fab
+            small
+            top
+            left
+            class="mt-6 w-0"
+          >
+            <v-icon class="mt-2">mdi-chevron-left</v-icon>
+          </v-btn>
+          <h2 class="title ml-7">Agregar tarjeta</h2>
+        </v-toolbar>
+        <v-container>
           <Tarjetas />
+          <!--Boton guardar tarjeta -->
+          <v-row>
+            <v-col class="mt-6 px-3">
+              <v-btn @click="dialogAgregarTarjeta = false" block color="#FFB74F"
+                >Guardar tarjeta</v-btn
+              >
+            </v-col>
+          </v-row>
+        </v-container>
+      </v-card>
+    </v-dialog>
+    <!-- Dialog tarjeta cargada -->
+    <v-dialog
+      v-model="dialogTarjetaCargada"
+      hide-overlay
+      transition="dialog-bottom-transition"
+      fullscreen
+    >
+      <v-card class="mx-auto box-shadow-none border-0 bg-app">
+        <v-toolbar dark color="primary" class="box-shadow-none">
+          <v-btn
+            icon
+            dark
+            @click="dialogTarjetaCargada = false"
+            absolute
+            fab
+            small
+            top
+            left
+            class="mt-6 w-0"
+          >
+            <v-icon class="mt-2">mdi-chevron-left</v-icon>
+          </v-btn>
+          <h2 class="title ml-7">Editar tarjeta</h2>
+        </v-toolbar>
+        <v-container>
+          <TarjetaCargada />
+          <!--Boton guardar tarjeta -->
+          <v-row>
+            <v-col class="mt-6 px-3">
+              <v-btn @click="dialogAgregarTarjeta = false" block color="#FFB74F"
+                >Guardar tarjeta</v-btn
+              >
+            </v-col>
+          </v-row>
         </v-container>
       </v-card>
     </v-dialog>
@@ -417,15 +532,46 @@
         <v-avatar>
           <img src="@/assets/icon-definitivo.png" alt />
         </v-avatar>
+        <v-menu offset-y class="z-index-201">
+          <template v-slot:activator="{ on, attrs }">
+            <v-btn icon fab v-bind="attrs" v-on="on">
+              <v-badge color="red" left>
+                <template v-slot:badge class="f-11">2</template>
+                <v-icon @mouseover="show = true" @mouseout="show = false"
+                  >mdi-bullhorn-outline</v-icon
+                >
+              </v-badge>
+            </v-btn>
+          </template>
+          <v-list three-line>
+            <template v-for="(item, index) in items">
+              <v-subheader
+                v-if="item.header"
+                :key="item.header"
+                v-text="item.header"
+              ></v-subheader>
 
-        <v-btn icon fab>
-          <v-badge color="red" left>
-            <template v-slot:badge>2</template>
-            <v-icon @mouseover="show = true" @mouseout="show = false"
-              >mdi-bullhorn-outline</v-icon
-            >
-          </v-badge>
-        </v-btn>
+              <v-divider
+                v-else-if="item.divider"
+                :key="index"
+                :inset="item.inset"
+              ></v-divider>
+
+              <v-list-item v-else :key="item.title">
+                <v-list-item-avatar>
+                  <v-img :src="item.avatar"></v-img>
+                </v-list-item-avatar>
+
+                <v-list-item-content>
+                  <v-list-item-title v-html="item.title"></v-list-item-title>
+                  <v-list-item-subtitle
+                    v-html="item.subtitle"
+                  ></v-list-item-subtitle>
+                </v-list-item-content>
+              </v-list-item>
+            </template>
+          </v-list>
+        </v-menu>
       </v-row>
     </v-app-bar>
   </div>
@@ -434,13 +580,15 @@
 <script>
 import CardPedidos from "@/components/CardPedidos";
 import Tarjetas from "@/components/Tarjetas";
+import TarjetaCargada from "@/components/TarjetaCargada";
 export default {
   props: {
     source: String,
   },
   components: {
     CardPedidos,
-    Tarjetas
+    Tarjetas,
+    TarjetaCargada,
   },
   data() {
     return {
@@ -449,9 +597,25 @@ export default {
       dialogNotifications: false,
       dialogPedidos: false,
       dialogTarjetas: false,
+      dialogTarjetaCargada: false,
+      dialogAgregarTarjeta: false,
       date: new Date().toISOString().substr(0, 10),
       menu: false,
       radios: "radio-1",
+      items: [
+        { header: 'Hoy' },
+        {
+          avatar: 'https://pbs.twimg.com/profile_images/1032285191837036544/TkaW5MO8_400x400.jpg',
+          title: 'Milanesa de la casa',
+          subtitle: `<span class="text--primary">Pedido aceptado</span> &mdash; El restaurante está preparando tu pedido.`,
+        },
+        { divider: true, inset: true },
+        {
+          avatar: 'https://pbs.twimg.com/profile_images/1032285191837036544/TkaW5MO8_400x400.jpg',
+          title: 'La revoltosa',
+          subtitle: `<span class="text--primary">Pedido finalizado</span> &mdash; El restaurante entrego tu pedido.`,
+        },
+      ],
     };
 
     return {

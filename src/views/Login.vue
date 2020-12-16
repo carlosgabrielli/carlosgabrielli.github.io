@@ -12,7 +12,7 @@
             </v-row>
             <v-form>
               <v-text-field
-                label="Email"
+                label="Correo electrónico"
                 outlined
                 name="login"
                 v-model="usuario.email"

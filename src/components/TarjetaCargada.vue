@@ -16,7 +16,7 @@
             type="tel"
             :id="inputFields.cardNumber"
             title="Number"
-            :value="valueFields.cardNumber"
+            value="4509 9535 6623 3704"
             @input="changeNumber"
             data-card-field
             autocomplete="off"
@@ -31,7 +31,7 @@
             :id="inputFields.cardName"
             title="Name"
             v-letter-only
-            :value="valueFields.cardName"
+            value="Carlos Gabrielli"
             @input="changeName"
             data-card-field
             autocomplete="off"
@@ -116,7 +116,7 @@
 import { VuePaycard } from "vue-paycard";
 
 export default {
-  name: "Tarjetas",
+  name: "TarjetaCargada",
   components: { VuePaycard },
   directives: {
     "number-only": {

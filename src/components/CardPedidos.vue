@@ -44,7 +44,6 @@
               color="shadow-xs border-radius-10"
             >
               <v-img
-                class="mr-2"
                 src="../assets/img/logo_club_milanesa.png"
               ></v-img>
             </v-list-item-avatar>
@@ -81,10 +80,7 @@
               size="70"
               color="shadow-xs border-radius-10"
             >
-              <v-img
-                class="mr-2"
-                src="../assets/img/logo_club_milanesa.png"
-              ></v-img>
+              <v-img src="../assets/img/logo_club_milanesa.png"></v-img>
             </v-list-item-avatar>
             <v-btn icon class="pos-left-card">
               <h3>$405</h3>
@@ -98,7 +94,7 @@
                 >La revoltosa</v-list-item-subtitle
               >
               <v-card-subtitle class="caption pa-0"
-                >17 de noviembre a las 21:00hs</v-card-subtitle
+                >25 de noviembre a las 21:00hs</v-card-subtitle
               >
               <v-card-actions class="pl-0">
                 <v-chip color="#29CC97" class="color-white">Entregado</v-chip>

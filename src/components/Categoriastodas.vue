@@ -1,6 +1,6 @@
 <template>
   <div v-if="categoriastodas">
-        <v-slide-group class="mx-n3">
+        <v-slide-group>
           <v-slide-item v-for="categoriastoda in categoriastodas" :key="categoriastoda.Nombre">
             <v-card class="categorias mr-4 mb-4 shadow-md" height="100" width="100">
               <v-img :src="categoriastoda.Foto">

@@ -1,6 +1,6 @@
 <template>
   <div v-if="sliderlocales">
-    <v-slide-group class="mx-n3 pt-2">
+    <v-slide-group>
       <v-slide-item v-for="sliderlocal in sliderlocales" :key="sliderlocal.Tipo">
         <v-card @click="$router.push('/BaresRestaurantes')" class="slider-locales mr-4 mb-4 shadow-md">
           <v-img :src="sliderlocal.Foto">
