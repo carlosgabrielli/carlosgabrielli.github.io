@@ -1,6 +1,6 @@
 
 export default [{
     path: '/',
-    redirect: '/home'
+    redirect: '/login'
 }, ]
 

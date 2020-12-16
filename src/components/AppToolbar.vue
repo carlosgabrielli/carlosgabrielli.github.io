@@ -82,7 +82,7 @@
                   </v-btn>
                 </v-list-item-action>
               </v-list-item>
-              <v-list-item>
+              <v-list-item @click.stop="dialogFavoritos = true">
                 <v-list-item-icon class="mr-2 ">
                   <v-icon class="f-26">mdi-heart-outline</v-icon>
                 </v-list-item-icon>
@@ -518,6 +518,35 @@
         </v-container>
       </v-card>
     </v-dialog>
+        <!-- Dialog Favoritos -->
+    <v-dialog
+      v-model="dialogFavoritos"
+      hide-overlay
+      transition="dialog-bottom-transition"
+      fullscreen
+    >
+      <v-card class="mx-auto box-shadow-none border-0 bg-app">
+        <v-toolbar dark color="primary" class="box-shadow-none">
+          <v-btn
+            icon
+            dark
+            @click="dialogFavoritos = false"
+            absolute
+            fab
+            small
+            top
+            left
+            class="mt-6 w-0"
+          >
+            <v-icon class="mt-2">mdi-chevron-left</v-icon>
+          </v-btn>
+          <h2 class="title ml-7">Favoritos</h2>
+        </v-toolbar>
+        <v-container>
+          <Favoritos />
+        </v-container>
+      </v-card>
+    </v-dialog>
     <!-- App bar -->
     <v-app-bar
       app
@@ -581,6 +610,7 @@
 import CardPedidos from "@/components/CardPedidos";
 import Tarjetas from "@/components/Tarjetas";
 import TarjetaCargada from "@/components/TarjetaCargada";
+import Favoritos from "@/components/Favoritos";
 export default {
   props: {
     source: String,
@@ -589,6 +619,7 @@ export default {
     CardPedidos,
     Tarjetas,
     TarjetaCargada,
+    Favoritos,
   },
   data() {
     return {
@@ -599,6 +630,7 @@ export default {
       dialogTarjetas: false,
       dialogTarjetaCargada: false,
       dialogAgregarTarjeta: false,
+      dialogFavoritos: false,
       date: new Date().toISOString().substr(0, 10),
       menu: false,
       radios: "radio-1",

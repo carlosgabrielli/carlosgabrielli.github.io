@@ -51,7 +51,7 @@
       <v-col class="pb-0 absolute category-overlay border-radius-tx">
         <h2 class="title mt-5">Categorías</h2>
       </v-col>
-      <v-col class="mt-n5">
+      <v-col class="mt-n5 px-0">
         <categorias :clocal="local.Categorias"></categorias>
       </v-col>
     </v-row>

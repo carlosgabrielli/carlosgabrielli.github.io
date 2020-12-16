@@ -10,10 +10,10 @@ import CarritoEditar from '@/views/CarritoEditar'
 import Registrar from '@/views/Registrar'
 import RegistrarLocal from '@/views/RegistrarLocal'
 import RecibirPedido from '@/views/RecibirPedido'
-import ListaPedidos from '@/views/ListaPedidos'
-import Pedido from '@/views/Pedido'
-import MensajePedido from '@/views/MensajePedido'
-
+import Escanear from '@/views/Escanear'
+import MetodoPago from '@/views/MetodoPago'
+import Efectivo from '@/views/Efectivo'
+import Exito from '@/views/Exito'
 
 Vue.use(Router)
 
@@ -28,10 +28,10 @@ export default new Router({
         },
         {
             path: '/',
-            name: 'Home',
-            component: Home,
+            name: 'Login',
+            component: Login,
             meta: {
-                menu: true
+                menu: false
             }
         },
         {
@@ -105,6 +105,38 @@ export default new Router({
             meta: {
                 menu: true
             }
-        }
+        },
+        {
+            path: '/Escanear',
+            name: 'Escanear',
+            component: Escanear,
+            meta: {
+                menu: true
+            }
+        },
+        {
+            path: '/MetodoPago',
+            name: 'MetodoPago',
+            component: MetodoPago,
+            meta: {
+                menu: true
+            }
+        },
+        {
+            path: '/Efectivo',
+            name: 'Efectivo',
+            component: Efectivo,
+            meta: {
+                menu: true
+            }
+        },
+        {
+            path: '/Exito',
+            name: 'Exito',
+            component: Exito,
+            meta: {
+                menu: true
+            }
+        },
     ]
 })

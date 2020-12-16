@@ -42,7 +42,7 @@
             <v-row class="mt-4">
               <v-col class="text-center">
                 <p>¿Aún no tienes una cuenta?</p>
-                <a class="mb-2 font-weight-bold">Crear una cuenta</a>
+                <a class="mb-2 font-weight-bold" @click="$router.push('/registrar')">Crear una cuenta</a>
               </v-col>
             </v-row>
           </v-flex>
@@ -75,7 +75,7 @@ export default {
     this.$store.dispatch("auth/verify").then(
       result => {
         this.carga = false;
-        this.$router.replace("/");
+        this.$router.replace("/home");
         console.log(result);
       },
       error => {

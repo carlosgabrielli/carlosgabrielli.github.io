@@ -1,12 +1,11 @@
 <template>
-  <v-container>
-    <v-dialog v-model="dialogEdit" transition="fade-transition" persistent fullscreen>
-      <v-card class="bg-app">
-        <v-container style="margin-top: 56px">
+  <v-container class="mt-2">
+    <v-dialog v-model="dialogEdit" transition="fade-transition" persistent fullscreen lass="z-index-0">
+      <v-card class="bg-app dialogCarrito">
+        <v-container style="margin-top: 64px">
           <v-row justify="center" class="mb-3">
             <v-col cols="1">
               <v-icon
-                @click="$router.back()"
                 color="#000"
                 class="ml-n2"
               >mdi-chevron-left</v-icon>
@@ -26,14 +25,14 @@
                   
                 </p>
               </v-col>
-              <v-col cols="1">
-                <v-btn icon>
-                  <v-icon color="rgba(0, 0, 0, 0.70)">mdi-pencil-outline</v-icon>
+              <v-col cols="1" class="mr-n2">
+                <v-btn icon @click="$router.back()">
+                  <v-icon color="rgba(0, 0, 0, 0.70)">mdi-pencil</v-icon>
                 </v-btn>
               </v-col>
-              <v-col cols="1">
+              <v-col cols="2" class="text-right">
                 <v-btn @click="eliminarPedido(index)" icon>
-                  <v-icon color="rgba(0, 0, 0, 0.70)">mdi-close-circle-outline</v-icon>
+                  <v-icon color="rgba(0, 0, 0, 0.70)" class="mr-n2">mdi-close-circle-outline</v-icon>
                 </v-btn>
               </v-col>
             </v-row>
@@ -96,7 +95,7 @@
     </v-row>
     <v-row>
       <v-col class="fixed-bottom border-top bg-app" style="margin-bottom:70px">
-        <v-btn block color="#FFB74F">Aplicar</v-btn>
+        <v-btn @click="$router.push('/escanear')" block color="#FFB74F">Realizar pedido</v-btn>
       </v-col>
     </v-row>
   </v-container>

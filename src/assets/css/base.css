@@ -1,3 +1,7 @@
+.theme--light.v-application {
+    background-color: #fafafa !important;
+}
+
 /* Icons */
 .btn-heart { position: absolute; right: 0; top: 8px; }
 
@@ -7,6 +11,7 @@
 .f-16 { font-size: 16px !important; }
 .f-13 { font-size: 13px !important; }
 .f-11 { font-size: 11px !important; }
+.f-12 { font-size: 12px !important; }
 
 /* Font-weights */
 .f-semibold { font-weight: 500 !important; }
@@ -32,6 +37,7 @@
 .color-primary { color: #ffb74b !important }
 .color-white { color: #fff !important }
 .color-disabled { color: #C9C9C9 !important; }
+.color-grey { color: #00000099 !important; }
 
 /* Margins */
 .mt-negative-40 { margin-top: -40px; }
@@ -40,10 +46,22 @@
 .absolute { position: absolute }
 .relative { position: relative; }
 .fixed-bottom { position: fixed; bottom: 0; }
+.fixed-bottom-button { position: fixed; bottom: 68px; left: 0; }
 
 /* Z index */
 .z-index-201 {
     z-index: 201 !important;
+}
+.z-index-202 {
+    z-index: 202 !important;
+}
+.z-index-0 {
+    z-index: 0 !important;
+}
+
+/* Widths */
+.w-100 {
+    width: 100%;
 }
 
 body, html {
