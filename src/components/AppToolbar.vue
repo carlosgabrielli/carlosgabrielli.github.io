@@ -559,7 +559,7 @@
         </v-btn>
 
         <v-avatar>
-          <img src="@/assets/icon-definitivo.png" alt />
+          <img src="@/assets/logo-definitivo.svg" alt />
         </v-avatar>
         <v-menu offset-y class="z-index-201">
           <template v-slot:activator="{ on, attrs }">

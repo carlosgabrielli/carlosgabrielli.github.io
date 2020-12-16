@@ -2,12 +2,19 @@
     background-color: #fafafa !important;
 }
 
+.v-application { font-family: 'Spartan', sans-serif !important; }
+.v-application .title { font-family: 'Spartan', sans-serif !important; }
+.v-application .subtitle-1 { font-family: 'Spartan', sans-serif !important; }
+.v-application .subtitle-2 { font-family: 'Spartan', sans-serif !important; }
+.v-application .caption { font-family: 'Spartan', sans-serif !important; }
+
 /* Icons */
 .btn-heart { position: absolute; right: 0; top: 8px; }
 
 /* Font-sizes */
 .f-26 { font-size: 26px !important; }
 .f-18 { font-size: 18px !important; }
+.f-17 { font-size: 17px !important; }
 .f-16 { font-size: 16px !important; }
 .f-13 { font-size: 13px !important; }
 .f-11 { font-size: 11px !important; }

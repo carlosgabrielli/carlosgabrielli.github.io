@@ -8,7 +8,7 @@
               class="mx-auto mb-10"
               width="100px"
               height="100px"
-              src="../assets/icon-definitivo.png"
+              src="../assets/logo-definitivo.svg"
               aspect-ratio="1"
             ></v-img>
             <v-form>
